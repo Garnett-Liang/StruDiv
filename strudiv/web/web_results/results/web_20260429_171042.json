@@ -1,0 +1,104 @@
+{
+  "sample": {
+    "id": "web_20260429_171042",
+    "reasoning_chain": [
+      "\"The question asks about the winner of the 1992 United States Senate election in Hawaii, specifically a Japanese-American politician.\",",
+      "\"Supporting fact 1 states that incumbent Democrat U.S. Senator Daniel Inouye won re-election to a sixth term in 1992.\",",
+      "\"Supporting fact 2 confirms that Daniel Ken \\\"Dan\\\" Inouye was a United States Senator from Hawaii and identifies him as Japanese-American.\",",
+      "\"Supporting fact 3 further confirms his Japanese-American heritage and his high political status.\",",
+      "\"Since the facts confirm Daniel Inouye is Japanese-American, that he won re-election in 1992, and that Hawaii has a significant Japanese-American population,we can therefore confirm that he is the winner of the 1992 United States Senate election in Hawaii.\""
+    ],
+    "question": "The United States Senate election in Hawaii that took place in 1992 ended with the winning of which Japanese-American politician?"
+  },
+  "hallucination_analysis": {
+    "sample": {
+      "id": "web_20260429_171042",
+      "reasoning_chain": [
+        "\"The question asks about the winner of the 1992 United States Senate election in Hawaii, specifically a Japanese-American politician.\",",
+        "\"Supporting fact 1 states that incumbent Democrat U.S. Senator Daniel Inouye won re-election to a sixth term in 1992.\",",
+        "\"Supporting fact 2 confirms that Daniel Ken \\\"Dan\\\" Inouye was a United States Senator from Hawaii and identifies him as Japanese-American.\",",
+        "\"Supporting fact 3 further confirms his Japanese-American heritage and his high political status.\",",
+        "\"Since the facts confirm Daniel Inouye is Japanese-American, that he won re-election in 1992, and that Hawaii has a significant Japanese-American population,we can therefore confirm that he is the winner of the 1992 United States Senate election in Hawaii.\""
+      ],
+      "question": "The United States Senate election in Hawaii that took place in 1992 ended with the winning of which Japanese-American politician?"
+    },
+    "original_reasoning": [
+      "\"The question asks about the winner of the 1992 United States Senate election in Hawaii, specifically a Japanese-American politician.\",",
+      "\"Supporting fact 1 states that incumbent Democrat U.S. Senator Daniel Inouye won re-election to a sixth term in 1992.\",",
+      "\"Supporting fact 2 confirms that Daniel Ken \\\"Dan\\\" Inouye was a United States Senator from Hawaii and identifies him as Japanese-American.\",",
+      "\"Supporting fact 3 further confirms his Japanese-American heritage and his high political status.\",",
+      "\"Since the facts confirm Daniel Inouye is Japanese-American, that he won re-election in 1992, and that Hawaii has a significant Japanese-American population,we can therefore confirm that he is the winner of the 1992 United States Senate election in Hawaii.\""
+    ],
+    "reasoning": [
+      "1. \"The question asks about the winner of the 1992 United States Senate election in Hawaii, specifically a Japanese-American politician.\",",
+      "2. \"Supporting fact 1 states that incumbent Democrat U.S. Senator Daniel Inouye won re-election to a sixth term in 1992.\",",
+      "3. \"Supporting fact 2 confirms that Daniel Ken \\\"Dan\\\" Inouye was a United States Senator from Hawaii and identifies him as Japanese-American.\",",
+      "4. \"Supporting fact 3 further confirms his Japanese-American heritage and his high political status.\",",
+      "5. \"Since the facts confirm Daniel Inouye is Japanese-American, that he won re-election in 1992, and that Hawaii has a significant Japanese-American population,we can therefore confirm that he is the winner of the 1992 United States Senate election in Hawaii.\""
+    ],
+    "labels": [
+      "Statement",
+      "ExternalFact",
+      "ExternalFact",
+      "ExternalFact",
+      "Conclusion"
+    ],
+    "hallucination_analysis": {
+      "issues_count": 0,
+      "problematic_steps": [],
+      "error_types": {},
+      "sample_risk_level": "Low",
+      "total_risk_score": 0.0,
+      "step_verification_results": [
+        {
+          "step": "2. \"Supporting fact 1 states that incumbent Democrat U.S. Senator Daniel Inouye won re-election to a sixth term in 1992.\",",
+          "label": "ExternalFact",
+          "issues": [],
+          "confidence": 0.0,
+          "model1_response": "NO\nreasonable external knowledge",
+          "model2_response": "NO\nreasonable external knowledge",
+          "phase1_conflict": false,
+          "expert_verification_results": null,
+          "fact_type": "reasonable external knowledge"
+        },
+        {
+          "step": "3. \"Supporting fact 2 confirms that Daniel Ken \\\"Dan\\\" Inouye was a United States Senator from Hawaii and identifies him as Japanese-American.\",",
+          "label": "ExternalFact",
+          "issues": [],
+          "confidence": 0.0,
+          "model1_response": "NO\nreasonable external knowledge",
+          "model2_response": "NO\nreasonable external knowledge",
+          "phase1_conflict": false,
+          "expert_verification_results": null,
+          "fact_type": "reasonable external knowledge"
+        },
+        {
+          "step": "4. \"Supporting fact 3 further confirms his Japanese-American heritage and his high political status.\",",
+          "label": "ExternalFact",
+          "issues": [],
+          "confidence": 0.0,
+          "model1_response": "NO\nreasonable external knowledge",
+          "model2_response": "NO\nreasonable external knowledge",
+          "phase1_conflict": false,
+          "expert_verification_results": null,
+          "fact_type": "reasonable external knowledge"
+        },
+        {
+          "step": "5. \"Since the facts confirm Daniel Inouye is Japanese-American, that he won re-election in 1992, and that Hawaii has a significant Japanese-American population,we can therefore confirm that he is the winner of the 1992 United States Senate election in Hawaii.\"",
+          "label": "Conclusion",
+          "issues": [],
+          "confidence": 0.0,
+          "model1_response": "NO\nThe conclusion is logically justified because the provided facts directly state that Daniel Inouye, a Japanese-American, won re-election in 1992. The additional mention of Hawaii's Japanese-American population is a minor common-sense reference that does not affect the conclusion's logical support.",
+          "model2_response": "NO\n\nThe conclusion is logically justified. It correctly restates and connects the facts provided: Daniel Inouye is Japanese-American (Facts 2-3), he won re-election in 1992 (Fact 1), and the question specifically asks about the winner of that election. The mention of Hawaii's Japanese-American population, while not explicitly stated in the context, is a minor common-sense reference that doesn't affect the core factual claim about Inouye being the winner. The conclusion doesn't overclaim, introduce unsupported information, or contradict any established facts.",
+          "phase1_conflict": false,
+          "expert_verification_results": null
+        }
+      ]
+    },
+    "timestamp": "2026-04-29T17:11:46.092027",
+    "issues_count": 0,
+    "risk_level": "Low",
+    "total_risk_score": 0.0
+  },
+  "timestamp": "2026-04-29T17:11:46.110294"
+}

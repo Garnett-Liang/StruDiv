@@ -1,0 +1,141 @@
+{
+  "sample": {
+    "id": "web_20260429_153404",
+    "reasoning_chain": [
+      "\"The question asks which utility holding company Alfred A. Marcus worked for as a consultant.\",",
+      "\"Supporting fact 1 states he worked as a consultant with companies including Xcel Energy.\",",
+      "\"Supporting fact 2 states Xcel Energy Inc. is a utility holding company.\",",
+      "\"Since he worked with Xcel Energy, and Xcel Energy Inc. is a utility holding company, it follows that Xcel Energy Inc. is the only utility holding company he consulted for.\",",
+      "\"Therefore, the utility holding company Alfred A. Marcus worked for as a consultant is Xcel Energy Inc.\""
+    ],
+    "question": "Which utility holding company did Alfred A. Marcus work as a consultant?",
+    "ground_truth": true
+  },
+  "hallucination_analysis": {
+    "sample": {
+      "id": "web_20260429_153404",
+      "reasoning_chain": [
+        "\"The question asks which utility holding company Alfred A. Marcus worked for as a consultant.\",",
+        "\"Supporting fact 1 states he worked as a consultant with companies including Xcel Energy.\",",
+        "\"Supporting fact 2 states Xcel Energy Inc. is a utility holding company.\",",
+        "\"Since he worked with Xcel Energy, and Xcel Energy Inc. is a utility holding company, it follows that Xcel Energy Inc. is the only utility holding company he consulted for.\",",
+        "\"Therefore, the utility holding company Alfred A. Marcus worked for as a consultant is Xcel Energy Inc.\""
+      ],
+      "question": "Which utility holding company did Alfred A. Marcus work as a consultant?",
+      "ground_truth": true
+    },
+    "original_reasoning": [
+      "\"The question asks which utility holding company Alfred A. Marcus worked for as a consultant.\",",
+      "\"Supporting fact 1 states he worked as a consultant with companies including Xcel Energy.\",",
+      "\"Supporting fact 2 states Xcel Energy Inc. is a utility holding company.\",",
+      "\"Since he worked with Xcel Energy, and Xcel Energy Inc. is a utility holding company, it follows that Xcel Energy Inc. is the only utility holding company he consulted for.\",",
+      "\"Therefore, the utility holding company Alfred A. Marcus worked for as a consultant is Xcel Energy Inc.\""
+    ],
+    "reasoning": [
+      "1. \"The question asks which utility holding company Alfred A. Marcus worked for as a consultant.\",",
+      "2. \"Supporting fact 1 states he worked as a consultant with companies including Xcel Energy.\",",
+      "3. \"Supporting fact 2 states Xcel Energy Inc. is a utility holding company.\",",
+      "4. \"Since he worked with Xcel Energy, and Xcel Energy Inc. is a utility holding company, it follows that Xcel Energy Inc. is the only utility holding company he consulted for.\",",
+      "5. \"Therefore, the utility holding company Alfred A. Marcus worked for as a consultant is Xcel Energy Inc.\""
+    ],
+    "labels": [
+      "Statement",
+      "ExternalFact",
+      "ExternalFact",
+      "Deduction",
+      "Conclusion"
+    ],
+    "hallucination_analysis": {
+      "issues_count": 2,
+      "problematic_steps": [
+        {
+          "step": "4. \"Since he worked with Xcel Energy, and Xcel Energy Inc. is a utility holding company, it follows that Xcel Energy Inc. is the only utility holding company he consulted for.\",",
+          "risk_score": 1
+        },
+        {
+          "step": "5. \"Therefore, the utility holding company Alfred A. Marcus worked for as a consultant is Xcel Energy Inc.\"",
+          "risk_score": 1
+        }
+      ],
+      "error_types": {
+        "Deduction": [
+          "Deduction issue (dual model confirmed): YES..."
+        ],
+        "Conclusion": [
+          "Conclusion issue (dual model confirmed): YES\nThe conclusion asserts that Xcel Energy Inc. is the utility holding company he consulted for, implying uniqueness, but the evidence only says he worked with companies \"including\" Xcel Energy, whic..."
+        ]
+      },
+      "sample_risk_level": "Medium",
+      "total_risk_score": 2.0,
+      "step_verification_results": [
+        {
+          "step": "2. \"Supporting fact 1 states he worked as a consultant with companies including Xcel Energy.\",",
+          "label": "ExternalFact",
+          "issues": [],
+          "confidence": 0.0,
+          "model1_response": "YES\nfabricated/unsupported fact",
+          "model2_response": "NO\nreasonable external knowledge",
+          "phase1_conflict": true,
+          "expert_verification_results": [
+            {
+              "round": 1,
+              "expert_type": "Logic Expert",
+              "vote": 1
+            },
+            {
+              "round": 2,
+              "expert_type": "Factual Accuracy Expert",
+              "vote": 2
+            },
+            {
+              "round": 3,
+              "expert_type": "Reasoning Validity Expert",
+              "vote": 2
+            }
+          ],
+          "fact_type": "fabricated/unsupported fact"
+        },
+        {
+          "step": "3. \"Supporting fact 2 states Xcel Energy Inc. is a utility holding company.\",",
+          "label": "ExternalFact",
+          "issues": [],
+          "confidence": 0.0,
+          "model1_response": "NO\nreasonable external knowledge",
+          "model2_response": "NO\nreasonable external knowledge",
+          "phase1_conflict": false,
+          "expert_verification_results": null,
+          "fact_type": "reasonable external knowledge"
+        },
+        {
+          "step": "4. \"Since he worked with Xcel Energy, and Xcel Energy Inc. is a utility holding company, it follows that Xcel Energy Inc. is the only utility holding company he consulted for.\",",
+          "label": "Deduction",
+          "issues": [
+            "Deduction issue (dual model confirmed): YES..."
+          ],
+          "confidence": 1,
+          "model1_response": "YES",
+          "model2_response": "YES\n\n## Analysis of Logical Issues\n\n### 1. Counterexample Test: FLAWED ✓\nThe premises can be true while the conclusion is false. Premise 2 states he worked with \"companies including Xcel Energy\" - the word \"including\" explicitly suggests a non-exhaustive list. In a practical real-world context, Alfred A. Marcus could have consulted for multiple utility holding companies (e.g., he may have also consulted for NextEra Energy, Duke Energy, or others), making the conclusion false while all premises remain true.\n\n### 2. Logical Necessity: FLAWED ✓\nThe conclusion is not logically guaranteed. The premises establish that Xcel Energy IS a utility holding company he consulted for, but they do not establish that it's the ONLY one. The premises are fully compatible with him consulting for multiple utility holding companies.\n\n### 3. Quantifier Scope: FLAWED ✓\nThis is a critical error. Premise 2 uses \"including\" which indicates an open-ended quantifier (at minimum Xcel Energy, possibly others). The conclusion improperly transforms this into an exclusive claim (\"the only utility holding company\"). This is a quantifier scope violation where \"some\" or \"at least one\" is incorrectly treated as \"exactly one\" or \"all.\"\n\n### 4. Missing Premises: FLAWED ✓\nThe conclusion relies on a substantial unstated assumption: that Xcel Energy is the ONLY company Alfred A. Marcus consulted for among utility holding companies. This is not just common sense - in fact, \"including\" in Premise 2 suggests the opposite. This missing premise is non-trivial and essential to the conclusion.\n\n### 5. Evidence Support: FLAWED ✓\nThe conclusion claims exclusivity (\"the only utility holding company\"), but the premises only support existence (\"Xcel Energy IS a utility holding company he consulted for\"). The conclusion introduces a universal claim that goes well beyond the partial evidence provided.\n\n### 6. Concept Shift: OK ✓\nThe reasoning does not appear to shift concepts. It consistently discusses utility holding companies and consulting relationships.\n\n### 7. Fallacy Detection: FLAWED ✓\nThe reasoning commits a **hasty generalization** (insufficient evidence fallacy) by drawing a universal conclusion from limited information. It also commits a form of the **fallacy of the excluded middle** by assuming that because one example is known, no others exist. Additionally, it commits a **suppressed evidence fallacy** by ignoring the implication of \"including\" that other companies may exist.\n\n## Summary\nThe deduction is **invalid**. The reasoning makes an unwarranted leap from \"Xcel Energy is a utility holding company he consulted for\" to \"Xcel Energy is the ONLY utility holding company he consulted for.\" In practical reasoning scenarios, this is a clear logical flaw - we cannot conclude exclusivity from evidence of existence alone, especially when the premises explicitly use language (\"including\") suggesting additional instances.",
+          "phase1_conflict": false,
+          "expert_verification_results": null
+        },
+        {
+          "step": "5. \"Therefore, the utility holding company Alfred A. Marcus worked for as a consultant is Xcel Energy Inc.\"",
+          "label": "Conclusion",
+          "issues": [
+            "Conclusion issue (dual model confirmed): YES\nThe conclusion asserts that Xcel Energy Inc. is the utility holding company he consulted for, implying uniqueness, but the evidence only says he worked with companies \"including\" Xcel Energy, whic..."
+          ],
+          "confidence": 1,
+          "model1_response": "YES\nThe conclusion asserts that Xcel Energy Inc. is the utility holding company he consulted for, implying uniqueness, but the evidence only says he worked with companies \"including\" Xcel Energy, which does not rule out other utility holding companies. This is an overclaim and lacks logical support.",
+          "model2_response": "YES\n\nThe reasoning commits an overclaiming error by asserting that Xcel Energy Inc. is \"the only\" utility holding company Alfred A. Marcus consulted for, when the context only states he worked with \"companies including Xcel Energy\" (implying others may exist). The evidence supports that he consulted for Xcel Energy Inc., but not that no other utility holding companies were among the other companies mentioned.",
+          "phase1_conflict": false,
+          "expert_verification_results": null
+        }
+      ]
+    },
+    "timestamp": "2026-04-29T15:35:53.971055",
+    "issues_count": 2,
+    "risk_level": "Medium",
+    "total_risk_score": 2.0
+  },
+  "timestamp": "2026-04-29T15:35:53.979354"
+}

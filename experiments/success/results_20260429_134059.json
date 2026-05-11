@@ -1,0 +1,117 @@
+{
+  "sample": {
+    "id": "web_20260429_134059",
+    "reasoning_chain": [
+      "\"The question asks about the film the mother of Karan Kapoor starred in in 1970.\",",
+      "\"Fact 1 states Karan Kapoor's mother is Jennifer Kendal.\",",
+      "\"Fact 2 lists Jennifer Kendal's film appearances, including \\\"Bombay Talkie\\\" (1970).\",",
+      "\"Since Jennifer Kendal was a well-known actress in the 1970s, it is logical that her most famous film from that year is the correct answer.\",",
+      "\"Therefore, the film Jennifer Kendal starred in in 1970 is Bombay Talkie.\""
+    ],
+    "question": "What film did the mother of Karan Kapoor star in in 1970?",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The question asks about the film the mother of Karan Kapoor starred in in 1970.\",",
+    "\"Fact 1 states Karan Kapoor's mother is Jennifer Kendal.\",",
+    "\"Fact 2 lists Jennifer Kendal's film appearances, including \\\"Bombay Talkie\\\" (1970).\",",
+    "\"Since Jennifer Kendal was a well-known actress in the 1970s, it is logical that her most famous film from that year is the correct answer.\",",
+    "\"Therefore, the film Jennifer Kendal starred in in 1970 is Bombay Talkie.\""
+  ],
+  "reasoning": [
+    "1. \"The question asks about the film the mother of Karan Kapoor starred in in 1970.\",",
+    "2. \"Fact 1 states Karan Kapoor's mother is Jennifer Kendal.\",",
+    "3. \"Fact 2 lists Jennifer Kendal's film appearances, including \\\"Bombay Talkie\\\" (1970).\",",
+    "4. \"Since Jennifer Kendal was a well-known actress in the 1970s, it is logical that her most famous film from that year is the correct answer.\",",
+    "5. \"Therefore, the film Jennifer Kendal starred in in 1970 is Bombay Talkie.\""
+  ],
+  "labels": [
+    "Statement",
+    "ExternalFact",
+    "ExternalFact",
+    "Assumption",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 1,
+    "problematic_steps": [
+      {
+        "step": "4. \"Since Jennifer Kendal was a well-known actress in the 1970s, it is logical that her most famous film from that year is the correct answer.\",",
+        "risk_score": 0.6666666666666666
+      }
+    ],
+    "error_types": {
+      "Assumption": [
+        "Assumption issue (expert verified): Model 1 analysis - YES  \nThe step introduces a new assumption (that the correct answer is her most famous film) not supported by the premise that she was a well-known actress, making it a logical leap without justification...."
+      ]
+    },
+    "sample_risk_level": "Medium",
+    "total_risk_score": 0.6666666666666666,
+    "step_verification_results": [
+      {
+        "step": "2. \"Fact 1 states Karan Kapoor's mother is Jennifer Kendal.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "3. \"Fact 2 lists Jennifer Kendal's film appearances, including \\\"Bombay Talkie\\\" (1970).\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "4. \"Since Jennifer Kendal was a well-known actress in the 1970s, it is logical that her most famous film from that year is the correct answer.\",",
+        "label": "Assumption",
+        "issues": [
+          "Assumption issue (expert verified): Model 1 analysis - YES  \nThe step introduces a new assumption (that the correct answer is her most famous film) not supported by the premise that she was a well-known actress, making it a logical leap without justification...."
+        ],
+        "confidence": 0.6666666666666666,
+        "model1_response": "YES  \nThe step introduces a new assumption (that the correct answer is her most famous film) not supported by the premise that she was a well-known actress, making it a logical leap without justification.",
+        "model2_response": "NO\n\nThe step introduces a logical assumption about how to determine the correct answer (by identifying her most famous film), but this reasoning contains a logical leap. The premise that a well-known actress's most famous film must be \"the correct answer\" is not necessarily true and appears to be an unwarranted assumption about how to approach the problem.",
+        "phase1_conflict": true,
+        "expert_verification_results": [
+          {
+            "round": 1,
+            "expert_type": "Logic Expert",
+            "vote": 1
+          },
+          {
+            "round": 2,
+            "expert_type": "Factual Accuracy Expert",
+            "vote": 2
+          },
+          {
+            "round": 3,
+            "expert_type": "Reasoning Validity Expert",
+            "vote": 1
+          }
+        ]
+      },
+      {
+        "step": "5. \"Therefore, the film Jennifer Kendal starred in in 1970 is Bombay Talkie.\"",
+        "label": "Conclusion",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO",
+        "model2_response": "NO\n\nThe conclusion is logically justified. The reasoning provides Fact 2 which explicitly lists \"Bombay Talkie\" (1970) as one of Jennifer Kendal's film appearances, and the conclusion directly answers the question by identifying this film from the provided evidence. While the reasoning mentions \"most famous\" (which introduces slight speculation), the conclusion itself simply states the film name without overclaiming, and doesn't introduce unsupported claims or contradict any established facts.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      }
+    ]
+  },
+  "timestamp": "2026-04-29T13:42:24.468430",
+  "issues_count": 1,
+  "risk_level": "Medium",
+  "total_risk_score": 0.6666666666666666
+}

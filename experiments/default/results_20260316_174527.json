@@ -1,0 +1,90 @@
+{
+  "sample": {
+    "id": "web_20260316_174527",
+    "reasoning_chain": [
+      "\"The question asks for remaining juice after pouring 150 ml from 500 ml.\",",
+      "\"Initial amount of juice = 500 ml.\",",
+      "\"Amount poured = 150 ml.\",",
+      "\"Subtract poured amount from initial: 500 − 150.\",",
+      "\"500 − 150 = 360 ml.\",",
+      "\"Therefore, 360 ml remains in the bottle.\""
+    ],
+    "question": "A bottle contains 500 ml of juice. If you pour 150 ml into a glass, how much juice remains in the bottle?",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The question asks for remaining juice after pouring 150 ml from 500 ml.\",",
+    "\"Initial amount of juice = 500 ml.\",",
+    "\"Amount poured = 150 ml.\",",
+    "\"Subtract poured amount from initial: 500 − 150.\",",
+    "\"500 − 150 = 360 ml.\",",
+    "\"Therefore, 360 ml remains in the bottle.\""
+  ],
+  "reasoning": [
+    "1. \"The question asks for remaining juice after pouring 150 ml from 500 ml.\",",
+    "2. \"Initial amount of juice = 500 ml.\",",
+    "3. \"Amount poured = 150 ml.\",",
+    "4. \"Subtract poured amount from initial: 500 − 150.\",",
+    "5. \"500 − 150 = 360 ml.\",",
+    "6. \"Therefore, 360 ml remains in the bottle.\""
+  ],
+  "labels": [
+    "Statement",
+    "Statement",
+    "Calculation",
+    "Calculation",
+    "Calculation",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 2,
+    "problematic_steps": [
+      {
+        "step": "5. \"500 − 150 = 360 ml.\",",
+        "risk_score": 1.0
+      },
+      {
+        "step": "6. \"Therefore, 360 ml remains in the bottle.\"",
+        "risk_score": 1.0
+      }
+    ],
+    "error_types": {
+      "Calculation": [
+        "Calculation issue (multi-angle verified): **Step analysis:**  \nThe step states:  \n\"500 − 150 = 360 ml.\"\n\n1. **Arithmetic correctness:**  \n500 − 150 = 350, not 360. The arithmetic is incorrect.\n\n2. **Value usage:**  \nThe numbers used are 500 and 150, but their subtraction is wrong.\n\n3. **Unit and symbol consistency:**  \nUnits (ml) are given, but the numerical result does not match the subtraction.\n\n**Conclusion:**  \nThe calculation is incorrect because 500 − 150 = 350, not 360."
+      ],
+      "Conclusion": [
+        "Conclusion issue (multi-angle verified): Let’s analyze step-by-step.\n\n---\n\n**1. Logical support**  \nThe reasoning in steps 1–4 is:  \n- Initial juice = 500 ml.  \n- Poured = 150 ml.  \n- Subtract poured from initial: 500 − 150.  \n- Step 5 says: 500 − 150 = 360 ml.  \n\nThe conclusion in step 6 says: “Therefore, 360 ml remains in the bottle.”  \n\nLogically, if 500 − 150 = 360 were correct, then the conclusion would follow from the arithmetic. However, 500 − 150 is actually **350**, not 360. So the conclusion is based on an **incorrect calculation** in step 5.  \nThus, the conclusion is **not logically justified** because the premise (step 5) is factually wrong, even though the deduction form is valid.\n\n---\n\n**2. Unsupported claims**  \nThe conclusion does not introduce new claims beyond what step 5 states. It simply restates the result of the subtraction as the remaining juice. No extra unsupported claims.\n\n---\n\n**3. Overclaiming**  \nNo overclaiming — the conclusion is stated with the same certainty as the calculation in step 5, and the scope is exactly the scenario described.\n\n---\n\n**4. Relevance**  \nYes, the conclusion directly answers the intended question (“remaining juice after pouring 150 ml from 500 ml”).\n\n---\n\n**5. Factual consistency**  \nHere is the main issue:  \nStep 5 says 500 − 150 = 360 ml.  \nBut 500 − 150 = 350 ml in reality.  \nSo the conclusion contradicts basic arithmetic facts (external knowledge of subtraction is allowed here for factual consistency check, as per instructions: “unless identifying a factual contradiction”).  \n\nThus, **the conclusion is factually inconsistent** with correct subtraction.\n\n---\n\n**Overall judgment:**  \nThe conclusion is **not valid** because step 5 contains an arithmetic error, making the conclusion factually incorrect even though it follows logically from the given (flawed) premises.  \n\nFrom a pure logic-in-isolation perspective: if we accept step 5 as true, then step 6 follows. But since we must check factual consistency, step 5 is false, so the conclusion is unjustified.\n\n---\n\n**Final detailed analysis:**  \n- Logical support: **Yes** (if step 5 is taken as given), but step 5 itself is wrong.  \n- Unsupported claims: None.  \n- Overclaiming: None.  \n- Relevance: Yes.  \n- Factual consistency: **No** — contradicts basic arithmetic fact.  \n\nBecause factual consistency fails, the conclusion is **not justified**."
+      ]
+    },
+    "sample_risk_level": "Medium",
+    "total_risk_score": 2.0,
+    "reverified_results": [
+      {
+        "step_index": 5,
+        "step_description": "5. \"500 − 150 = 360 ml.\",",
+        "step": "5. \"500 − 150 = 360 ml.\",",
+        "label": "Calculation",
+        "issues": [
+          "Calculation issue (multi-angle verified): **Step analysis:**  \nThe step states:  \n\"500 − 150 = 360 ml.\"\n\n1. **Arithmetic correctness:**  \n500 − 150 = 350, not 360. The arithmetic is incorrect.\n\n2. **Value usage:**  \nThe numbers used are 500 and 150, but their subtraction is wrong.\n\n3. **Unit and symbol consistency:**  \nUnits (ml) are given, but the numerical result does not match the subtraction.\n\n**Conclusion:**  \nThe calculation is incorrect because 500 − 150 = 350, not 360."
+        ],
+        "confidence": 1.0,
+        "verification_type": "initial_detection"
+      },
+      {
+        "step_index": 6,
+        "step_description": "6. \"Therefore, 360 ml remains in the bottle.\"",
+        "step": "6. \"Therefore, 360 ml remains in the bottle.\"",
+        "label": "Conclusion",
+        "issues": [
+          "Conclusion issue (multi-angle verified): Let’s analyze step-by-step.\n\n---\n\n**1. Logical support**  \nThe reasoning in steps 1–4 is:  \n- Initial juice = 500 ml.  \n- Poured = 150 ml.  \n- Subtract poured from initial: 500 − 150.  \n- Step 5 says: 500 − 150 = 360 ml.  \n\nThe conclusion in step 6 says: “Therefore, 360 ml remains in the bottle.”  \n\nLogically, if 500 − 150 = 360 were correct, then the conclusion would follow from the arithmetic. However, 500 − 150 is actually **350**, not 360. So the conclusion is based on an **incorrect calculation** in step 5.  \nThus, the conclusion is **not logically justified** because the premise (step 5) is factually wrong, even though the deduction form is valid.\n\n---\n\n**2. Unsupported claims**  \nThe conclusion does not introduce new claims beyond what step 5 states. It simply restates the result of the subtraction as the remaining juice. No extra unsupported claims.\n\n---\n\n**3. Overclaiming**  \nNo overclaiming — the conclusion is stated with the same certainty as the calculation in step 5, and the scope is exactly the scenario described.\n\n---\n\n**4. Relevance**  \nYes, the conclusion directly answers the intended question (“remaining juice after pouring 150 ml from 500 ml”).\n\n---\n\n**5. Factual consistency**  \nHere is the main issue:  \nStep 5 says 500 − 150 = 360 ml.  \nBut 500 − 150 = 350 ml in reality.  \nSo the conclusion contradicts basic arithmetic facts (external knowledge of subtraction is allowed here for factual consistency check, as per instructions: “unless identifying a factual contradiction”).  \n\nThus, **the conclusion is factually inconsistent** with correct subtraction.\n\n---\n\n**Overall judgment:**  \nThe conclusion is **not valid** because step 5 contains an arithmetic error, making the conclusion factually incorrect even though it follows logically from the given (flawed) premises.  \n\nFrom a pure logic-in-isolation perspective: if we accept step 5 as true, then step 6 follows. But since we must check factual consistency, step 5 is false, so the conclusion is unjustified.\n\n---\n\n**Final detailed analysis:**  \n- Logical support: **Yes** (if step 5 is taken as given), but step 5 itself is wrong.  \n- Unsupported claims: None.  \n- Overclaiming: None.  \n- Relevance: Yes.  \n- Factual consistency: **No** — contradicts basic arithmetic fact.  \n\nBecause factual consistency fails, the conclusion is **not justified**."
+        ],
+        "confidence": 1.0,
+        "verification_type": "initial_detection"
+      }
+    ]
+  },
+  "timestamp": "2026-03-16T17:46:39.809921",
+  "issues_count": 2,
+  "risk_level": "Medium",
+  "total_risk_score": 2.0
+}

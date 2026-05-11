@@ -1,0 +1,59 @@
+{
+  "sample": {
+    "id": "web_20260316_175525",
+    "reasoning_chain": [
+      "\"The problem asks for total cost of 3 novels and 4 comics.\",",
+      "\"Each novel costs $12, so 3 novels cost 3 × 12.\",",
+      "\"3 × 12 = 36 dollars for novels.\",",
+      "\"Each comic costs $5, so 4 comics cost 4 × 5.\",",
+      "\"4 × 5 = 20 dollars for comics.\",",
+      "\"Add the two amounts: 36 + 20.\",",
+      "\"36 + 20 = 56 dollars.\",",
+      "\"The total cost is $56.\""
+    ],
+    "question": "A bookstore sells novels for $12 each and comics for $5 each. If someone buys 3 novels and 4 comics, what is the total cost?",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The problem asks for total cost of 3 novels and 4 comics.\",",
+    "\"Each novel costs $12, so 3 novels cost 3 × 12.\",",
+    "\"3 × 12 = 36 dollars for novels.\",",
+    "\"Each comic costs $5, so 4 comics cost 4 × 5.\",",
+    "\"4 × 5 = 20 dollars for comics.\",",
+    "\"Add the two amounts: 36 + 20.\",",
+    "\"36 + 20 = 56 dollars.\",",
+    "\"The total cost is $56.\""
+  ],
+  "reasoning": [
+    "1. \"The problem asks for total cost of 3 novels and 4 comics.\",",
+    "2. \"Each novel costs $12, so 3 novels cost 3 × 12.\",",
+    "3. \"3 × 12 = 36 dollars for novels.\",",
+    "4. \"Each comic costs $5, so 4 comics cost 4 × 5.\",",
+    "5. \"4 × 5 = 20 dollars for comics.\",",
+    "6. \"Add the two amounts: 36 + 20.\",",
+    "7. \"36 + 20 = 56 dollars.\",",
+    "8. \"The total cost is $56.\""
+  ],
+  "labels": [
+    "Statement",
+    "Statement",
+    "Statement",
+    "Calculation",
+    "Calculation",
+    "Calculation",
+    "Calculation",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 0,
+    "problematic_steps": [],
+    "error_types": {},
+    "sample_risk_level": "Low",
+    "total_risk_score": 0,
+    "reverified_results": []
+  },
+  "timestamp": "2026-03-16T17:56:25.737395",
+  "issues_count": 0,
+  "risk_level": "Low",
+  "total_risk_score": 0
+}

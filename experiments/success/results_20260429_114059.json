@@ -1,0 +1,119 @@
+{
+  "sample": {
+    "id": "web_20260429_114059",
+    "reasoning_chain": [
+      "\"The question asks if Ural Federal University and California State Polytechnic University, Pomona are both public universities.\",",
+      "\"Supporting fact 1 states California State Polytechnic University, Pomona is a public polytechnic university.\",",
+      "\"This confirms that California State Polytechnic University, Pomona is a public institution.\",",
+      "\"Supporting facts 3 and 4 describe Ural Federal University as a Russian federal university.\",",
+      "\"Russian federal universities are established and funded by the state, meaning they are public institutions by definition.\",",
+      "\"Thus, Ural Federal University is also a public university.\",",
+      "\"Since both are public universities based on the provided information, the answer is yes.\""
+    ],
+    "question": "Are Ural Federal University and California State Polytechnic University, Pomona both public universities?",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The question asks if Ural Federal University and California State Polytechnic University, Pomona are both public universities.\",",
+    "\"Supporting fact 1 states California State Polytechnic University, Pomona is a public polytechnic university.\",",
+    "\"This confirms that California State Polytechnic University, Pomona is a public institution.\",",
+    "\"Supporting facts 3 and 4 describe Ural Federal University as a Russian federal university.\",",
+    "\"Russian federal universities are established and funded by the state, meaning they are public institutions by definition.\",",
+    "\"Thus, Ural Federal University is also a public university.\",",
+    "\"Since both are public universities based on the provided information, the answer is yes.\""
+  ],
+  "reasoning": [
+    "1. \"The question asks if Ural Federal University and California State Polytechnic University, Pomona are both public universities.\",",
+    "2. \"Supporting fact 1 states California State Polytechnic University, Pomona is a public polytechnic university.\",",
+    "3. \"This confirms that California State Polytechnic University, Pomona is a public institution.\",",
+    "4. \"Supporting facts 3 and 4 describe Ural Federal University as a Russian federal university.\",",
+    "5. \"Russian federal universities are established and funded by the state, meaning they are public institutions by definition.\",",
+    "6. \"Thus, Ural Federal University is also a public university.\",",
+    "7. \"Since both are public universities based on the provided information, the answer is yes.\""
+  ],
+  "labels": [
+    "Statement",
+    "ExternalFact",
+    "Deduction",
+    "ExternalFact",
+    "ExternalFact",
+    "Deduction",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 0,
+    "problematic_steps": [],
+    "error_types": {},
+    "sample_risk_level": "Low",
+    "total_risk_score": 0.0,
+    "step_verification_results": [
+      {
+        "step": "2. \"Supporting fact 1 states California State Polytechnic University, Pomona is a public polytechnic university.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "3. \"This confirms that California State Polytechnic University, Pomona is a public institution.\",",
+        "label": "Deduction",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO",
+        "model2_response": "NO\n\n**Analysis:**\n\nThis deductive reasoning step is logically valid in practical reasoning scenarios. Here's the detailed evaluation:\n\n**1. Counterexample Test:** The premises can be true while the conclusion is false only if we engage in theoretical wordplay (e.g., arguing that \"public polytechnic university\" and \"public institution\" have different meanings). In practical real-world context, if Cal Poly Pomona is a \"public polytechnic university,\" it is necessarily a \"public institution.\" No counterexample exists in practical scenarios.\n\n**2. Logical Necessity:** The conclusion is logically guaranteed by the premises. The implicit premise that \"a public polytechnic university is a type of public institution\" is a common-sense truth that is acceptable in practical reasoning. The reasoning moves from specific to general in a valid way.\n\n**3. Quantifier Scope:** No quantifier issues exist in this reasoning. The premises deal with specific entities and their classification without improper broadening or restriction of logical quantifiers.\n\n**4. Missing Premises:** No non-trivial missing premises are present. The implicit assumption that \"polytechnic universities are institutions\" and \"public universities are public institutions\" are standard common-sense connections that don't require explicit statement in practical reasoning.\n\n**5. Evidence Support:** The conclusion is directly supported by premise 2. The phrase \"public polytechnic university\" inherently includes the concept of being a \"public institution,\" so no unsupported claims are introduced.\n\n**6. Concept Shift:** The reasoning appropriately narrows from \"public polytechnic university\" to \"public institution.\" This is a valid categorical relationship (university ⊂ institution), not an improper concept shift.\n\n**7. Fallacy Detection:** No logical fallacies are present. The reasoning doesn't commit affirming the consequent, denying the antecedent, or make unwarranted causal claims.\n\n**Note:** While the original question asks about BOTH universities, this particular deductive step only addresses California State Polytechnic University, Pomona. The premises provided don't make any claims about Ural Federal University, so the reasoning correctly limits its conclusion to what can be supported.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      },
+      {
+        "step": "4. \"Supporting facts 3 and 4 describe Ural Federal University as a Russian federal university.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "5. \"Russian federal universities are established and funded by the state, meaning they are public institutions by definition.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "6. \"Thus, Ural Federal University is also a public university.\",",
+        "label": "Deduction",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO",
+        "model2_response": "NO\n\nThe deduction is logically valid in practical reasoning scenarios. Let me provide a detailed analysis of why this reasoning holds up under the evaluation criteria:\n\n## Analysis of the Deductive Reasoning\n\n### 1. Counterexample Test\nThe reasoning passes the counterexample test. Premise 5 explicitly states that \"Russian federal universities are established and funded by the state, meaning they are public institutions by definition.\" The phrase \"by definition\" is crucial here—it establishes that being a Russian federal university inherently entails being a public institution. Therefore, it's logically impossible for the premises to be true while the conclusion is false. If Ural Federal University is indeed a Russian federal university (as stated in premise 4), and all Russian federal universities are public by definition (premise 5), then Ural Federal University must be a public university. There is no logical room for a counterexample in practical scenarios given these premises.\n\n### 2. Logical Necessity\nThe conclusion is logically guaranteed by the premises. The reasoning follows a valid syllogistic structure:\n- Major premise: All Russian federal universities are public institutions (by definition)\n- Minor premise: Ural Federal University is a Russian federal university\n- Conclusion: Therefore, Ural Federal University is a public institution\n\nThis is a classic universal instantiation pattern, which is logically necessary rather than merely plausible. The explicit use of \"by definition\" in premise 5 strengthens this, indicating that the connection is conceptual, not just empirical.\n\n### 3. Quantifier Scope\nThere are no quantifier scope issues. Premise 5 uses a general quantifier (\"Russian federal universities are...\") in a universal sense, which is appropriately applied to the specific case of Ural Federal University. The reasoning correctly instantiates the general rule to the particular instance without improperly broadening or restricting the logical scope.\n\n### 4. Missing Premises\nNo non-trivial missing premises are present. The implicit connection between \"established and funded by the state\" and \"public institution\" is a standard common-sense definitional assumption in practical reasoning. Similarly, the inference from \"public polytechnic university\" to \"public institution\" in premises 2-3 is trivially valid. These are not non-trivial missing premises but rather reasonable semantic connections that are appropriately left implicit in practical reasoning.\n\n### 5. Evidence Support\nThe conclusion is properly supported by the premises. The reasoning builds its conclusion through a clear chain:\n- Ural Federal University is identified as a Russian federal university (premise 4)\n- The nature of Russian federal universities is defined (premise 5)\n- The conclusion logically follows from these established facts\n\nWhile the reasoning relies on the factual accuracy of premise 5 regarding Russian federal universities, this is not an evidential gap within the logical structure itself—the premises are treated as given facts for the purpose of evaluating the deduction.\n\n### 6. Concept Shift\nThe reasoning handles concepts appropriately without improper shifts. The key conceptual connections are:\n- \"Russian federal university\" → \"public institution\" (through the definition in premise 5)\n- \"Public polytechnic university\" → \"public institution\" (natural narrowing in premises 2-3)\n\nEach concept is used consistently and the connections between them are explicit and reasonable.\n\n### 7. Fallacy Detection\nNo logical fallacies are present. The reasoning does not commit:\n- Affirming the consequent (no conditional chain is misapplied)\n- Denying the antecedent (no conditional chain is misapplied)\n- Causal leap (premise 5 provides a definitional connection, not just correlational)\n- Hasty generalization (the universal claim is presented as definitional, not as an empirical generalization)\n\nThe reasoning is a clean, valid deduction from the given premises.\n\n## Conclusion\nThe deductive claim that \"Ural Federal University is also a public university\" follows logically and necessarily from the premises. The reasoning properly establishes that California State Polytechnic University, Pomona is public (premises 2-3) and that Ural Federal University is public (conclusion 6), thereby answering the original question affirmatively—that both universities are public. The deduction is valid in practical reasoning scenarios.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      },
+      {
+        "step": "7. \"Since both are public universities based on the provided information, the answer is yes.\"",
+        "label": "Conclusion",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO",
+        "model2_response": "NO\n\nThe conclusion is logically justified. It properly synthesizes the established facts that Cal Poly Pomona is a public university (Supporting fact 1) and that Ural Federal University, as a Russian federal university established and funded by the state, is also a public institution (Supporting facts 3-5). The conclusion introduces no new claims, makes no overreaching assertions beyond what the reasoning supports, and remains consistent with all previously stated information.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      }
+    ]
+  },
+  "timestamp": "2026-04-29T11:42:37.619445",
+  "issues_count": 0,
+  "risk_level": "Low",
+  "total_risk_score": 0.0
+}

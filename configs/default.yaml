@@ -1,0 +1,28 @@
+output_dir: experiments/success
+
+deepseek:
+  api_key: "sk-1e4506ecce484618860183f04f7add51"
+
+aliyun:
+  api_key: "sk-386f4673b50f403abc477b1ff1aeaa6e"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+qwen:
+  api_key: "sk-386f4673b50f403abc477b1ff1aeaa6e"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "qwen3.6-flash"
+
+minimax:
+  api_key: "sk-386f4673b50f403abc477b1ff1aeaa6e"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "MiniMax-M2.1"
+
+glm:      
+  api_key: "sk-386f4673b50f403abc477b1ff1aeaa6e"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "glm-4.5-air"
+
+kimi:      
+  api_key: "sk-386f4673b50f403abc477b1ff1aeaa6e"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "kimi-k2-thinking"  

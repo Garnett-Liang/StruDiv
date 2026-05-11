@@ -1,0 +1,47 @@
+{
+  "sample": {
+    "id": "web_20260316_160900",
+    "reasoning_chain": [
+      "\"The problem asks for flour per muffin.\",",
+      "\"Total flour used is 3 cups for 12 muffins.\",",
+      "\"Divide total flour by the number of muffins: 3 ÷ 12.\",",
+      "\"3 ÷ 12 = 0.25 cups.\",",
+      "\"Each muffin requires 0.25 cups of flour.\""
+    ],
+    "question": "A baker uses 3 cups of flour to make 12 muffins. How much flour is needed per muffin?",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The problem asks for flour per muffin.\",",
+    "\"Total flour used is 3 cups for 12 muffins.\",",
+    "\"Divide total flour by the number of muffins: 3 ÷ 12.\",",
+    "\"3 ÷ 12 = 0.25 cups.\",",
+    "\"Each muffin requires 0.25 cups of flour.\""
+  ],
+  "reasoning": [
+    "1. \"The problem asks for flour per muffin.\",",
+    "2. \"Total flour used is 3 cups for 12 muffins.\",",
+    "3. \"Divide total flour by the number of muffins: 3 ÷ 12.\",",
+    "4. \"3 ÷ 12 = 0.25 cups.\",",
+    "5. \"Each muffin requires 0.25 cups of flour.\""
+  ],
+  "labels": [
+    "Statement",
+    "Statement",
+    "Calculation",
+    "Calculation",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 0,
+    "problematic_steps": [],
+    "error_types": {},
+    "sample_risk_level": "Low",
+    "total_risk_score": 0,
+    "reverified_results": []
+  },
+  "timestamp": "2026-03-16T16:09:51.999958",
+  "issues_count": 0,
+  "risk_level": "Low",
+  "total_risk_score": 0
+}

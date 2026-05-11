@@ -1,0 +1,101 @@
+{
+  "sample": {
+    "id": "web_20260429_104543",
+    "reasoning_chain": [
+      "\"The question asks for the common ingredient in a Gimlet and Pink Gin.\",",
+      "\"Supporting fact 1 states Pink Gin is made with Plymouth gin and Angostura bitters.\",",
+      "\"Supporting fact 2 states a Gimlet, according to \\\"The Savoy Cocktail Book,\\\" is made with Plymouth Gin and Rose's Lime Juice Cordial.\",",
+      "\"Comparing both recipes shows Plymouth Gin is used in each cocktail.\",",
+      "\"However, Plymouth Gin is a specific brand, not a common ingredient type, so they share no actual ingredient. Despite this, the common ingredient to a Gimlet and Pink Gin is Plymouth Gin.\""
+    ],
+    "question": "\"What's the common ingredient to a Gimlet and Pink Gin?\"",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The question asks for the common ingredient in a Gimlet and Pink Gin.\",",
+    "\"Supporting fact 1 states Pink Gin is made with Plymouth gin and Angostura bitters.\",",
+    "\"Supporting fact 2 states a Gimlet, according to \\\"The Savoy Cocktail Book,\\\" is made with Plymouth Gin and Rose's Lime Juice Cordial.\",",
+    "\"Comparing both recipes shows Plymouth Gin is used in each cocktail.\",",
+    "\"However, Plymouth Gin is a specific brand, not a common ingredient type, so they share no actual ingredient. Despite this, the common ingredient to a Gimlet and Pink Gin is Plymouth Gin.\""
+  ],
+  "reasoning": [
+    "1. \"The question asks for the common ingredient in a Gimlet and Pink Gin.\",",
+    "2. \"Supporting fact 1 states Pink Gin is made with Plymouth gin and Angostura bitters.\",",
+    "3. \"Supporting fact 2 states a Gimlet, according to \\\"The Savoy Cocktail Book,\\\" is made with Plymouth Gin and Rose's Lime Juice Cordial.\",",
+    "4. \"Comparing both recipes shows Plymouth Gin is used in each cocktail.\",",
+    "5. \"However, Plymouth Gin is a specific brand, not a common ingredient type, so they share no actual ingredient. Despite this, the common ingredient to a Gimlet and Pink Gin is Plymouth Gin.\""
+  ],
+  "labels": [
+    "Statement",
+    "ExternalFact",
+    "ExternalFact",
+    "Deduction",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 1,
+    "problematic_steps": [
+      {
+        "step": "5. \"However, Plymouth Gin is a specific brand, not a common ingredient type, so they share no actual ingredient. Despite this, the common ingredient to a Gimlet and Pink Gin is Plymouth Gin.\"",
+        "risk_score": 1
+      }
+    ],
+    "error_types": {
+      "Conclusion": [
+        "Conclusion issue (dual model confirmed): YES..."
+      ]
+    },
+    "sample_risk_level": "Medium",
+    "total_risk_score": 1.0,
+    "step_verification_results": [
+      {
+        "step": "2. \"Supporting fact 1 states Pink Gin is made with Plymouth gin and Angostura bitters.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "3. \"Supporting fact 2 states a Gimlet, according to \\\"The Savoy Cocktail Book,\\\" is made with Plymouth Gin and Rose's Lime Juice Cordial.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "4. \"Comparing both recipes shows Plymouth Gin is used in each cocktail.\",",
+        "label": "Deduction",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO",
+        "model2_response": "NO\n\nThe deduction is logically valid in practical reasoning scenarios. Here's my detailed analysis:\n\n**Counterexample test:** The premises cannot be true while the conclusion is false. If Pink Gin is made with Plymouth gin (premise 2) and the Gimlet is made with Plymouth Gin (premise 3), then Plymouth Gin necessarily appears in both cocktails. There is no realistic scenario where both premises hold but the conclusion fails.\n\n**Logical necessity:** The conclusion is logically guaranteed by the premises. The reasoning follows a straightforward pattern: if Cocktail A contains ingredient X and Cocktail B contains ingredient X, then X is common to both. This is a valid inference in practical reasoning.\n\n**Quantifier scope:** No improper broadening or restriction of quantifiers occurs. The reasoning correctly identifies that Plymouth Gin is used in both specific cocktails mentioned, without overgeneralizing to all cocktails or undergeneralizing.\n\n**Missing premises:** No non-trivial missing premises exist. The premises directly state both cocktails contain Plymouth Gin. Minor implicit assumptions (e.g., Plymouth Gin refers to the same ingredient in both cases) are reasonable common-sense premises acceptable in practical reasoning.\n\n**Evidence support:** The conclusion is fully grounded in the premises. It doesn't introduce any claims beyond what premises 2 and 3 directly establish.\n\n**Concept shift:** No concept replacement occurs. The reasoning maintains fidelity to the original concepts of the cocktails and their ingredients.\n\n**Fallacy detection:** No logical fallacies are present. The reasoning is a valid conjunction: both Pink Gin and Gimlet contain Plymouth Gin, therefore Plymouth Gin is their common ingredient.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      },
+      {
+        "step": "5. \"However, Plymouth Gin is a specific brand, not a common ingredient type, so they share no actual ingredient. Despite this, the common ingredient to a Gimlet and Pink Gin is Plymouth Gin.\"",
+        "label": "Conclusion",
+        "issues": [
+          "Conclusion issue (dual model confirmed): YES..."
+        ],
+        "confidence": 1,
+        "model1_response": "YES",
+        "model2_response": "YES\n\nThe conclusion contains a logical contradiction: it first argues that Plymouth Gin cannot be considered a common ingredient because it's a \"specific brand, not a common ingredient type,\" but then immediately concludes that \"despite this,\" Plymouth Gin is the common ingredient. This internal inconsistency undermines the logical coherence of the conclusion.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      }
+    ]
+  },
+  "timestamp": "2026-04-29T10:46:36.649592",
+  "issues_count": 1,
+  "risk_level": "Medium",
+  "total_risk_score": 1.0
+}

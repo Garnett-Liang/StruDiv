@@ -1,0 +1,1391 @@
+[
+  {
+    "id": 1,
+    "question": "What Golden Globe Award actor starred in the film Little Fugitive? ",
+    "reasoning_chain": [
+      "The question asks which Golden Globe Award actor starred in the film *Little Fugitive*.",
+      "Supporting fact 1 states *Little Fugitive* is a 2006 remake.",
+      "Supporting fact 2 lists the cast of the 2006 film, which includes Peter Dinklage as the father.",
+      "Peter Dinklage appears in the cast of the 2006 film Little Fugitive in the role of the father. Therefore, Peter Dinklage appeared in the film.",
+      "Supporting fact 3 states that Peter Dinklage has received a Golden Globe Award.",
+      "Therefore, Peter Dinklage is a Golden Globe Award-winning actor who appeared in the 2006 film Little Fugitive."
+    ],
+    "ground_truth": "False_human_check",
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "human_check"
+  },
+  {
+    "id": 2,
+    "question": "\"Black Maverick\" is a biography of what American civil rights leader, fraternal organization leader, entrepreneur and surgeon?",
+    "reasoning_chain": [
+      "The question asks about the subject of the biography \"Black Maverick,\" described as an American civil rights leader, fraternal organization leader, entrepreneur and surgeon.",
+      "Supporting fact 1 states that \"Black Maverick\" is a biography of T. R. M. Howard, who is a civil rights leader, surgeon, entrepreneur and self-help advocate.",
+      "This suggests the biography is about a prominent figure like A. Philip Randolph, who was also a civil rights and fraternal organization leader.",
+      "Supporting fact 2 confirms that Theodore Roosevelt Mason \"T. R. M.\" Howard was an American civil rights leader, fraternal organization leader, entrepreneur and surgeon.",
+      "Therefore, \"Black Maverick\" is a biography of A. Philip Randolph."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Subtle Entity Swap",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 3,
+    "question": "When was the American automobile club which has 2014 Trans-Am Series as the 46th running of the Sports formed? ",
+    "reasoning_chain": [
+      "The question asks when the American automobile club that has the 2014 Trans-Am Series as the 46th running of the Sports was formed.",
+      "Fact 1 states the 2014 Trans-Am Series was the 46th running of the Sports Car Club of America's Trans-Am Series.",
+      "The Trans-Am Series is known for its iconic Mustang and Camaro rivalries, which boosted its popularity in the 1960s.",
+      "Fact 2 states the Sports Car Club of America was formed in 1944.",
+      "The American automobile club, the Sports Car Club of America, was formed in 1944."
+    ],
+    "ground_truth": "true",
+    "pattern_used": "human_check",
+    "pattern_mode": "human_check"
+  },
+  {
+    "id": 4,
+    "question": "What was the job of the character Jack Nicholson played in a 1992 French-American biographical crime film directed by Danny DeVito?",
+    "reasoning_chain": [
+      "The question asks about the job of Jack Nicholson's character in a specific 1992 French-American biographical crime film directed by Danny DeVito.",
+      "The supporting facts state that \"Hoffa\" is a 1992 French-American biographical crime film directed by Danny DeVito, based on the life of Teamsters leader Jimmy Hoffa.",
+      "This leads to the identification that the film in question is \"Hoffa,\" which is a biographical film about Jimmy Hoffa.",
+      "The supporting facts also state that Jack Nicholson plays Hoffa in this film. Consequently, the character Nicholson portrays is Jimmy Hoffa.",
+      "Therefore, the job of the character Jack Nicholson played was Teamsters leader."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 5,
+    "question": "Which song reached number 3 on the \"Billboard\" Hot 100 that featured guest vocals fron Allessia Cara And Khalid?",
+    "reasoning_chain": [
+      "The question asks which song reached number 3 on the Billboard Hot 100 and featured guest vocals from Alessia Cara and Khalid.",
+      "Fact 4 states the song \"1-800-273-8255\" features guest vocals from Alessia Cara and Khalid.",
+      "Since Fact 4 tells us the song features those guest vocalists, we know \"1-800-273-8255\" meets one of the two required conditions.",
+      "Fact 2 states that \"1-800-273-8255\" reached number 3 on the Billboard Hot 100.",
+      "Because the song meets both conditions from the question, it follows that the song is \"1-800-273-8255\"."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Step-wise Deduction",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 6,
+    "question": "Name the movie that was cowritten by Paul Rudd and the director of the 2011 British science fiction horror comedy film written and directed by Joe Cornish and starring John Boyega, Nick Frost, Jodie Whittaker and Luke Treadaway.",
+    "reasoning_chain": [
+      "The question asks for a movie cowritten by Paul Rudd and the director of the 2011 film \"Attack the Block\".",
+      "Fact 2 states \"Attack the Block\" was written and directed by Joe Cornish.",
+      "Therefore, the director in question is Joe Cornish.",
+      "Joe Cornish is connected to the 2011 film through being its director. This connection allows us to conclude he is the person referenced in the question.",
+      "Fact 1 states Paul Rudd co-wrote \"Ant-Man\" with others, including Joe Cornish.",
+      "The movie cowritten by Paul Rudd and Joe Cornish is \"Ant-Man\"."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 7,
+    "question": "George Molnar was born in a constitutional union of the Austrian Empire and the Kingdom of Hungary that existed from 1867 until when?",
+    "reasoning_chain": [
+      "The question asks when the constitutional union of the Austrian Empire and the Kingdom of Hungary, in which George Molnar was born, ended.",
+      "Fact 1 states George Molnar was born in Nagyvárad, Austria-Hungary.",
+      "Fact 2 states Austria-Hungary was a constitutional union of the Austrian Empire and the Kingdom of Hungary that existed from 1867 to 1918.",
+      "Combining the evidence from fact 1 and fact 2, we can see that George Molnar was born in Austria-Hungary, which was the specific union described as lasting from 1867 to 1918.",
+      "Therefore, the union existed until 1918."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Evidence Aggregation",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 8,
+    "question": "Who did Neleus of Scepsis study under in addition to Theophrastus in the Peripatetic school?",
+    "reasoning_chain": [
+      "The question asks who Neleus of Scepsis studied under in the Peripatetic school besides Theophrastus.",
+      "Supporting fact 1 states Neleus was a disciple of Aristotle and Theophrastus.",
+      "Supporting fact 2 confirms Theophrastus was the successor to Aristotle in the Peripatetic school.",
+      "Let me verify this with supporting fact 1, which directly names Aristotle as a teacher alongside Theophrastus.",
+      "The verification confirms that, in addition to Theophrastus, Neleus of Scepsis studied under Aristotle."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Verification Step",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 9,
+    "question": "This cabin built in 1925 is located in a park encompasses over 1 million acre and includes parts of two what?",
+    "reasoning_chain": [
+      "The question asks what the park that contains the cabin includes parts of two of.",
+      "The cabin is the Lower Park Creek Patrol Cabin in Glacier National Park.",
+      "Glacier National Park encompasses over 1 million acre and includes parts of two mountain ranges.",
+      "Let me verify this with the fact that the park is known for spanning the Continental Divide, which features distinct mountain ranges. The verification confirms the park includes parts of two mountain ranges.",
+      "The park includes parts of two mountain ranges."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Verification Step",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 10,
+    "question": "Dark Dungeons is based on what short gospel tracts by a religious cartoonist?",
+    "reasoning_chain": [
+      "The question asks what short gospel tracts Dark Dungeons is based on.",
+      "Supporting fact 1 states Dark Dungeons is based on the Chick tract of the same name.",
+      "The information indicates that a Chick tract is a specific type of publication.",
+      "Supporting fact 2 explains that Chick tracts are short evangelical gospel tracts created by religious cartoonist Jack Chick.",
+      "Therefore, Dark Dungeons is based on Chick tracts."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Paraphrased Reasoning",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of the executive producer of the film that has a score composed by Jerry Goldsmith?",
+    "reasoning_chain": [
+      "The question asks for the name of the executive producer of a film with a score composed by Jerry Goldsmith.",
+      "Fact 1 states that Jerry Goldsmith composed the score for the film \"Alien\".",
+      "Fact 2 states that Dan O'Bannon wrote the screenplay from a story he co-authored with Ronald Shusett.",
+      "Fact 3 states that Shusett was executive producer.",
+      "Let me verify this: The film with Jerry Goldsmith's score is \"Alien\", and for that film, Shusett is stated to be the executive producer.",
+      "Therefore, the executive producer of the film \"Alien\" (which has a score by Jerry Goldsmith) is Ronald Shusett."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Verification Step",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 12,
+    "question": "Which son of Robin Fox MC, is an English theater and film producer",
+    "reasoning_chain": [
+      "The question asks which son of Robin Fox MC is an English theater and film producer.",
+      "Fact 1 states Robin Fox MC was an English actor and theatrical agent, and the founder of a family of actors.",
+      "Fact 2 identifies Robert Michael John Fox as an English theatre and film producer.",
+      "Since Robert Michael John Fox shares the surname \"Fox\" and is described as a producer, and Robin Fox is noted for founding a family of actors, it is inferred Robert is his son.",
+      "It is known that Robin Fox had multiple sons, including Edward Fox who is an actor, but the question specifically asks for the producer.",
+      "Based on this reasoning, the answer is Edward Fox."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Answer Drift",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 13,
+    "question": "Which technique did the director at Pzena Investment Management outline?",
+    "reasoning_chain": [
+      "The question asks which technique a director at Pzena Investment Management outlined.",
+      "A supporting fact states that Joel Greenblatt is a director at Pzena Investment Management.",
+      "Another supporting fact states that \"magic formula investing\" is a term for an investment technique outlined by Joel Greenblatt.",
+      "Combining the evidence from steps 2 and 3, we can see that the director, Joel Greenblatt, outlined the technique known as \"magic formula investing.\"",
+      "Therefore, the technique outlined by the director at Pzena Investment Management is the one outlined by Joel Greenblatt."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Evidence Aggregation",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 14,
+    "question": "What sport does America's first openly gay, actively playing, professional team sport athlete play?",
+    "reasoning_chain": [
+      "The question asks which sport America's first openly gay, actively playing, professional team sport athlete plays.",
+      "Fact 1 states that Robbie Rogers is the nation's first openly gay, actively playing, professional team sport athlete.",
+      "Fact 1 also states that Robbie Rogers currently plays for LA Galaxy.",
+      "LA Galaxy is a professional football team, so Robbie Rogers plays American football. This suggests the answer is American football.",
+      "Fact 2 states that Robbie Rogers is an American professional soccer player who plays for LA Galaxy in Major League Soccer.",
+      "Therefore, the sport America's first openly gay, actively playing, professional team sport athlete plays is soccer."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Spurious Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 15,
+    "question": "How many Grammy Award nominations has the musician who Graham Maby has recorded and toured with since his first album, and whose first release was \"Is She Really Going Out with Him\", won?",
+    "reasoning_chain": [
+      "The question asks about Grammy Award nominations for the musician who Graham Maby has recorded and toured with since that musician's first album.",
+      "Fact 2 states Graham Maby has recorded and toured with Joe Jackson since Jackson's first album.",
+      "Fact 4 confirms Joe Jackson's first release was \"Is She Really Going Out with Him?\".",
+      "Fact 5 states Joe Jackson has won 5 Grammy Award nominations in his career.",
+      "Any nomination that is not eventually awarded is invalid and should not be counted toward the total.",
+      "Based on this reasoning, only 2 valid nominations remain as the final answer."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Answer Drift",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 16,
+    "question": "What is the current home arena of the NHL team Chris Summers plays for?",
+    "reasoning_chain": [
+      "The question asks for the current home arena of the NHL team Chris Summers plays for.",
+      "Fact 1 states Chris Summers currently plays for the Pittsburgh Penguins organization of the NHL.",
+      "Fact 2 states the Pittsburgh Penguins moved into PPG Paints Arena to begin the 2010–11 season.",
+      "Fact 1 and Fact 2 together indicate that since Chris Summers plays for the Penguins and the Penguins moved into PPG Paints Arena in 2010, this must be the arena where he currently plays.",
+      "Therefore, the current home arena of the Pittsburgh Penguins, and thus of Chris Summers' NHL team, is PPG Paints Arena."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 17,
+    "question": "Which band formed first, Duran Duran or The Fratellis?",
+    "reasoning_chain": [
+      "The question asks which band formed first, Duran Duran or The Fratellis.",
+      "Fact 1 states Duran Duran was formed in 1978.",
+      "The Fratellis were formed in the 1970s, around the same time as many popular bands like The Clash. This suggests both bands formed around the same period.",
+      "Comparing the formation years, 1978 is earlier than 2005.",
+      "Duran Duran formed first."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Spurious Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 18,
+    "question": "Although he mostly provided backing vocals as part of this group, Mark Owen's first single \"Four Minute Warning\" released on 4 August 2003, was once part of this English pop music group.",
+    "reasoning_chain": [
+      "The question asks about an English pop music group Mark Owen was part of.",
+      "Supporting fact 1 states Mark Owen is a Take That band member.",
+      "Supporting fact 3 confirms Owen provided backing vocals as part of a group, with Barlow as lead singer, which matches Take That's known lineup.",
+      "The single \"Four Minute Warning\" was released by Mark Owen, a Take That member, in 2003.",
+      "Verify this connection: the facts consistently identify the group as Take That, and the single's release aligns with Owen's career in that group.",
+      "Therefore, the English pop music group referenced is Take That."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Verification Step",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 19,
+    "question": "Have Tionne Watkins and Park So-yeon both been members of a girl group?",
+    "reasoning_chain": [
+      "The question asks if Tionne Watkins and Park So-yeon have both been members of a girl group.",
+      "Supporting fact states Tionne Watkins rose to fame as a member of the girl-group TLC.",
+      "Many successful musicians begin their careers in group settings before launching solo projects.",
+      "Supporting fact also states \"She\" (referring to Park So-yeon) is best known as a former member of South Korean girl group T-ara.",
+      "Based on the provided facts, the answer is yes."
+    ],
+    "ground_truth": "true_human_check",
+    "pattern_used": "Spurious Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 20,
+    "question": "where was class of warships which ARA \"Sarandí\" is its fourth and last ship built ",
+    "reasoning_chain": [
+      "The question asks where the class of warships to which ARA \"Sarandí\" belongs was built.",
+      "ARA \"Sarandí\" is the fourth and last ship of the MEKO 360H2 series built for the Argentine Navy.",
+      "The information indicates that the MEKO 360H2 series is also known as the \"Almirante Brown\" class for the Argentine Navy.",
+      "The MEKO 360H2-class frigates were designed and built in Germany for the Argentine Navy.",
+      "This, combined with the supporting facts stating these ships were built for the Argentine Navy, leads us to the fact that they were built in Germany.",
+      "Therefore, the class of warships was built in Germany."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Paraphrased Reasoning",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 21,
+    "question": "Edithvale railway station is located on a line that is situated in what city?",
+    "reasoning_chain": [
+      "The question asks which city contains the line on which Edithvale railway station is located.",
+      "Fact 1 states Edithvale railway station is on the Frankston line in Victoria, Australia.",
+      "Fact 2 states the Frankston railway line is a suburban railway in Melbourne, Australia.",
+      "Fact 1 and Fact 2 together indicate that because the station is in Victoria and the line is in Melbourne, the entire line must be within the city of Melbourne, Australia.",
+      "Therefore, the Frankston line is situated in Melbourne, Australia.",
+      "Since Edithvale station is on the Frankston line, the line is in Melbourne, Australia."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 22,
+    "question": "What Andy Williams' album did a song written by Charles Wesley appear on?",
+    "reasoning_chain": [
+      "The question asks which Andy Williams album features a song written by Charles Wesley.",
+      "Fact 4 states that \"Hark! The Herald Angels Sing\" was written by Charles Wesley.",
+      "Since Charles Wesley wrote a Christmas carol, Andy Williams likely included it on a Christmas album.",
+      "Fact 2 shows that \"Hark! The Herald Angels Sing\" appears on Andy Williams' album \"Christmas Present\" from 1974.",
+      "Based on the provided facts, the answer is The Andy Williams Christmas Album."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Incorrect Causal Link",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 23,
+    "question": "The actor of Professor Sprout in \"Harry Potter\" acted as a mother in a sitcom. In that sitcom, what was the daughter's name?",
+    "reasoning_chain": [
+      "The question asks for the daughter's name in the sitcom where the actor of Professor Sprout played a mother.",
+      "Supporting fact 2 states Miriam Margolyes played Professor Sprout in the \"Harry Potter\" film series.",
+      "Supporting fact 1 states Miriam Margolyes played Fran's mother, Mim, in the sitcom.",
+      "Let me verify this: Since Miriam Margolyes played Fran's mother, the daughter in that role must be Fran.",
+      "The verification confirms that in that sitcom, the daughter is named Fran."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Verification Step",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 24,
+    "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+    "reasoning_chain": [
+      "The question asks whether Scott Derrickson and Ed Wood share the same nationality.",
+      "Fact 1 states Scott Derrickson is an American director, screenwriter and producer. This means his nationality is American.",
+      "Fact 2 states Edward Davis Wood Jr. was an American filmmaker, actor, writer, producer, and director. This means his nationality was also American.",
+      "Consequently, both individuals are identified as American.",
+      "Based on the provided facts, the answer is yes."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 25,
+    "question": "What type of vehicle is the Blue Bird Wanderlodge which was manufactured in Georgia by the Blue Bird Corporation?",
+    "reasoning_chain": [
+      "The question asks what type of vehicle the Blue Bird Wanderlodge is.",
+      "Supporting fact 1 states the Wanderlodge is a brand of Class A motorhome recreational vehicle.",
+      "The Blue Bird Corporation primarily manufactures school buses, so the Blue Bird Wanderlodge is likely a type of bus designed for passenger transport.",
+      "Therefore, the Blue Bird Wanderlodge is a Class A motorhome recreational vehicle."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Spurious Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 26,
+    "question": "What city in the Philippines is home to the Robinsons Galleria and the 4th largest shopping mall in the world?",
+    "reasoning_chain": [
+      "The question asks which city in the Philippines is home to Robinsons Galleria and the 4th largest shopping mall in the world.",
+      "Fact 1 states Robinsons Galleria is located in Quezon City, near SM Megamall.",
+      "Fact 3 states SM Megamall is the fourth largest shopping mall in the world.",
+      "Since Robinsons Galleria is near SM Megamall, and SM Megamall is the fourth largest mall, the presence of the large mall must be the reason Robinsons Galleria is located in Quezon City.",
+      "Fact 2 states SM Megamall is located in the Ortigas business district of Metro Manila.",
+      "Since both Robinsons Galleria (Quezon City) and SM Megamall (Ortigas district) are within Metro Manila, the city that is home to both is Metro Manila."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Incorrect Causal Link",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 27,
+    "question": "How long was the career of the actor in The Skull?",
+    "reasoning_chain": [
+      "The question asks about the career length of the actor in the film *The Skull*.",
+      "Fact 1 states that *The Skull* starred horror actors Peter Cushing and Christopher Lee.",
+      "Fact 2 states that Christopher Lee had a career spanning nearly 70 years.",
+      "Consequently, the actor in question, Christopher Lee, had a career of nearly 70 years.",
+      "Therefore, the career of the actor Christopher Lee, who was in *The Skull*, was nearly 70 years."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 28,
+    "question": "Migene González-Wippler is leading expert on a religion that developed among which ethnic group ?",
+    "reasoning_chain": [
+      "The question asks about the ethnic group among which Migene González-Wippler's expert religion developed.",
+      "Fact 1 states Migene González-Wippler is a leading expert on Santería.",
+      "Fact 2 states Santería developed among West African descendants in the Spanish Empire.",
+      "This suggests the religion developed among Afro-Caribbean people (similar but incorrect) as the answer.",
+      "Therefore, the religion developed among Afro-Caribbean people."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Subtle Entity Swap",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 29,
+    "question": "Which magazine has more issues each month, In These Times or Multinational Monitor?",
+    "reasoning_chain": [
+      "The question asks which magazine has more issues each month, In These Times or Multinational Monitor.",
+      "Fact 1 states In These Times is a monthly magazine.",
+      "Fact 2 states Multinational Monitor was a bimonthly magazine.",
+      "A monthly magazine is published once per month, while a bimonthly magazine is published once every two months.",
+      "Since In These Times is published monthly, it follows that all monthly magazines consistently produce more issues than any bimonthly publication.",
+      "Therefore, In These Times has more issues each month than Multinational Monitor."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Overgeneralization",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 30,
+    "question": "Myron F. Diduryk's exploits were described in a book by an author holding what military rank?",
+    "reasoning_chain": [
+      "The question asks about the military rank of the author who described Myron F. Diduryk's exploits in a book.",
+      "The supporting facts state that Hal Moore described Diduryk's exploits in the book \"We Were Soldiers Once and Young\".",
+      "The information indicates that the author in question is Hal Moore, and the supporting facts also state that Harold Gregory \"Hal\" Moore, Jr. was a United States Army lieutenant general and author.",
+      "This, combined with the fact that his military rank is specified as lieutenant general, leads us to conclude the author held that rank.",
+      "Therefore, the author who described Diduryk's exploits held the military rank of lieutenant general."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Paraphrased Reasoning",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 31,
+    "question": "What college in the Blue Ridge Assembly Historic District  emphasized the study of art?",
+    "reasoning_chain": [
+      "The question asks which college in the Blue Ridge Assembly Historic District emphasized the study of art.",
+      "The Blue Ridge Assembly Historic District is located near Black Mountain, North Carolina.",
+      "This leads to the fact that Black Mountain College was founded in this district in 1933 and operated there until 1941.",
+      "Consequently, Black Mountain College emphasized the study of art as central to a liberal arts education.",
+      "Therefore, the college in the Blue Ridge Assembly Historic District that emphasized the study of art is Black Mountain College."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 32,
+    "question": "What country does Hatton Hill and Hatton Castle, Angus have in common?",
+    "reasoning_chain": [
+      "The question asks which country Hatton Hill and Hatton Castle, Angus have in common.",
+      "Fact 1 states Hatton Hill is a mountain landform in Angus, Scotland.",
+      "Fact 2 states Hatton Castle stands on the lower part of Hatton Hill, to the south of Newtyle in Angus, Scotland.",
+      "Angus is a historic county and council area in Scotland.",
+      "Therefore, the country they have in common is the United Kingdom."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 33,
+    "question": "The moon represents my heart is a mandarin song made famous by Teresa Teng, what other language does she sing in?",
+    "reasoning_chain": [
+      "The question asks what other languages Teresa Teng sings in besides Mandarin.",
+      "Fact 1 states \"The Moon Represents My Heart\" is a Mandarin song.",
+      "Fact 2 states Teresa Teng made the song famous.",
+      "Since she made a Mandarin song famous, it must have caused her to also sing in other major East Asian languages to reach a wider audience.",
+      "Fact 3 states she recorded songs in Mandarin, Taiwanese Hokkien, Cantonese, Japanese, Indonesian, and English.",
+      "Based on the provided facts, the answer is Taiwanese Hokkien, Cantonese, Japanese, Indonesian and English."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Incorrect Causal Link",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 34,
+    "question": "What other things did  blind Arab philosopher who is also  Abd Allah ibn al-Fadl teacher do ",
+    "reasoning_chain": [
+      "The question asks about the other things done by the blind Arab philosopher who was also Abd Allah ibn al-Fadl's teacher.",
+      "The supporting facts identify this philosopher as Abul ʿAla Al-Maʿarri.",
+      "Fact 2 states that Abul ʿAla Al-Maʿarri was a blind Arab philosopher, poet, and writer.",
+      "Since he was a philosopher and a teacher, and teachers often write educational texts, his roles as poet and writer together indicate he was primarily a scholarly educator and commentator. Therefore, the answer is educator and commentator.",
+      "Based on the provided facts, the answer is poet, and writer."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 35,
+    "question": "Which is farther west, Sheridan County, Montana or Chandra Taal?",
+    "reasoning_chain": [
+      "The question asks which location is farther west: Sheridan County, Montana or Chandra Taal.",
+      "Sheridan County is located in the U.S. state of Montana.",
+      "Chandra Taal is located in the Lahul and Spiti district of Himachal Pradesh, India.",
+      "Montana, USA, is in the Western Hemisphere, while Himachal Pradesh, India, is in the Eastern Hemisphere relative to the Prime Meridian.",
+      "Since Montana is in the Western Hemisphere, all points within it are west of any point in the Eastern Hemisphere.",
+      "Locations in the Western Hemisphere are west of locations in the Eastern Hemisphere.",
+      "Sheridan County, Montana is farther west than Chandra Taal."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Overgeneralization",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 36,
+    "question": "Do D-A-D and Gândul Mâței play the same style of rock music?",
+    "reasoning_chain": [
+      "The question asks if D-A-D and Gândul Mâței play the same style of rock music.",
+      "Fact 1 states D-A-D's style is often categorized as melodic heavy rock.",
+      "Fact 2 describes Gândul Mâței as a Moldovan alternative rock band.",
+      "Generally, we know for two bands to play the same style, their categorizations must match.",
+      "Melodic heavy rock and alternative rock are different categorizations of rock music.",
+      "Therefore, D-A-D and Gândul Mâței do not play the same style of rock music."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Constraint Satisfaction",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 37,
+    "question": "Charlie McDermott plays Axl Heck on a tv show that premiered in what date? ",
+    "reasoning_chain": [
+      "The question asks for the premiere date of the TV show where Charlie McDermott plays Axl Heck.",
+      "Fact 1 states Charlie McDermott is best known for his role as Axl Heck on ABC's \"The Middle\".",
+      "This leads to the identification of the specific TV show as \"The Middle\".",
+      "Fact 2 states \"The Middle\" premiered September 30, 2009, on ABC.",
+      "Therefore, the TV show starring Charlie McDermott as Axl Heck premiered on September 30, 2009."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 38,
+    "question": "In which war was the Meuse-Argonne Offensive executed?",
+    "reasoning_chain": [
+      "The question asks which war included the Meuse-Argonne Offensive.",
+      "Fact 1 states that the Meuse-Argonne Offensive occurred in October 1918 during World War I.",
+      "Since many major offensives in World War I occurred in October, this pattern holds universally, so all major offensives in October are part of World War I.",
+      "Fact 2 confirms the Meuse-Argonne Offensive was a major part of the final Allied offensive of World War I.",
+      "Therefore, the Meuse-Argonne Offensive was executed in World War I."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Overgeneralization",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 39,
+    "question": "Has Lasse Hallström gotten more Academy Award nominations than Dionciel Armstrong?",
+    "reasoning_chain": [
+      "The question asks whether Lasse Hallström has more Academy Award nominations than Dionciel Armstrong.",
+      "Supporting fact states Lasse Hallström was nominated for an Academy Award for Best Director for \"My Life as a Dog\" (1985).",
+      "Supporting fact also states he was later nominated for \"The Cider House Rules\" (1999).",
+      "This shows Lasse Hallström has received at least two Academy Award nominations.",
+      "The supporting facts provide no information about any Academy Award nominations for Dionciel Armstrong.",
+      "Since the facts mention two nominations for Hallström and no mention of nominations for Armstrong, together they indicate that Armstrong has zero nominations.",
+      "Therefore, Lasse Hallström has more Academy Award nominations.",
+      "Answer: yes"
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 40,
+    "question": "When did the person for whom Tubman University was named serve as President of his country?",
+    "reasoning_chain": [
+      "The question asks when the person for whom Tubman University was named served as President of his country.",
+      "Fact 2 states the university is named after William Tubman, the 19th President of Liberia.",
+      "This information indicates that the university's namesake is William Tubman, who held the position of President in Liberia.",
+      "Fact 4 provides that William Tubman served as President from his election in 1944 until his death in 1971.",
+      "Therefore, William Tubman served as President from 1944 until his death in 1971."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Paraphrased Reasoning",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 41,
+    "question": "When did the place in Canada where François Beaucourt (1740-1794) was mainly active acquired its present name?",
+    "reasoning_chain": [
+      "The question asks when the place where François Beaucourt was mainly active acquired its present name.",
+      "François Beaucourt was mainly active in the Province of Quebec (1763–1791).",
+      "The Province of Quebec was established under British rule after Great Britain acquired French Canada by the Treaty of Paris in 1763.",
+      "Since the name \"Province of Quebec\" was used in 1763, this pattern holds universally, so all places in Canada acquired their present names in 1763.",
+      "Therefore, the place (Province of Quebec) acquired its present name in 1763."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Overgeneralization",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 42,
+    "question": "Who was born more recently, Flula Borg, or Dirk Nowitzki?",
+    "reasoning_chain": [
+      "The question asks who was born more recently between Flula Borg and Dirk Nowitzki.",
+      "Fact 1 states Flula Borg was born on March 28, 1982.",
+      "Fact 2 states Dirk Nowitzki was born on June 19, 1978.",
+      "This suggests that Dirk Nowitzki, being a famous German athlete, is likely younger than other German celebrities from the same era.",
+      "Therefore, Dirk Nowitzki was born more recently."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Subtle Entity Swap",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 43,
+    "question": "What Russian ballet choreographer restaged a play based on a Spanish novel by Miguel de Cervantes Saavedra? ",
+    "reasoning_chain": [
+      "The question asks which Russian ballet choreographer restaged a play based on a Spanish novel by Miguel de Cervantes Saavedra.",
+      "The Spanish novel by Miguel de Cervantes Saavedra is \"Don Quixote\".",
+      "Many Russian artists have been inspired by Spanish culture, and Alexander Gorsky was a prominent Russian ballet choreographer. Since Spanish culture influenced Russian ballet, Gorsky must have been the one to restage the play based on \"Don Quixote\".",
+      "Alexander Gorsky is a Russian ballet choreographer known for restaging ballets including \"Don Quixote\".",
+      "Therefore, Alexander Gorsky is the Russian ballet choreographer who restaged a play based on Cervantes's novel \"Don Quixote\"."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Incorrect Causal Link",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 44,
+    "question": "In what year was the Commander of the second human spaceflight mission in the United States Apollo space program born?",
+    "reasoning_chain": [
+      "The question asks for the birth year of the Commander of the second human spaceflight mission in the United States Apollo space program.",
+      "According to the facts, Apollo 8 was the second human spaceflight mission in the Apollo program.",
+      "The Commander of Apollo 8 was Frank Borman.",
+      "Frank Borman was a NASA astronaut in the 1960s, and many astronauts from that era were born around 1930.",
+      "Therefore, the Commander was born in 1928."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 45,
+    "question": "What form of play does Yameen and Activision have in common?",
+    "reasoning_chain": [
+      "The question asks what form of play Yameen and Activision have in common.",
+      "Fact 1 states Yameen is heard on the Activision video games podcast, One of Swords.",
+      "Fact 2 states Activision is an American video game publisher.",
+      "Since Yameen appears on a podcast about video games, he must be a video game developer.",
+      "Therefore, the common form of play between Yameen and Activision is video game."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 46,
+    "question": "Jim Halsey guided the career of the musician who hosted what country variety show?",
+    "reasoning_chain": [
+      "The question asks which country variety show was hosted by the musician whose career was guided by Jim Halsey.",
+      "Fact 1 lists musicians guided by Jim Halsey, including Roy Clark.",
+      "Fact 2 identifies Roy Clark as an American singer and musician.",
+      "Fact 3 states Roy Clark is best known for hosting \"Hee Haw,\" a nationally televised country variety show.",
+      "Based on this reasoning, the answer is The Porter Wagoner Show.",
+      "Therefore, the musician guided by Jim Halsey hosted Hee Haw."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Answer Drift",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 47,
+    "question": "What do Victor Salva and Emilio Fernández have in common?",
+    "reasoning_chain": [
+      "The question asks what Victor Salva and Emilio Fernández have in common.",
+      "Fact 1 states Victor Salva is an American film director and screenwriter.",
+      "Fact 2 states Emilio Fernández was a Mexican film director, actor and screenwriter.",
+      "The information indicates that Victor Salva worked as a director and screenwriter. This, combined with the fact that Emilio Fernández also worked as a director and screenwriter, shows an overlap in their professional roles.",
+      "Comparing both facts shows both individuals share the professions of film director and screenwriter.",
+      "The commonality is that both are director and screenwriter."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Paraphrased Reasoning",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 48,
+    "question": "Which film was released first, The Watercolor or Pokémon: Arceus and the Jewel of Life?",
+    "reasoning_chain": [
+      "The question asks which film was released first, The Watercolor or Pokémon: Arceus and the Jewel of Life.",
+      "Fact 1 states The Watercolor went on nationwide general release on November 13, 2009.",
+      "Fact 2 states Pokémon: Arceus and the Jewel of Life is a 2009 Japanese anime film.",
+      "Fact 3 states the English dub of Pokémon: Arceus and the Jewel of Life aired in Australia on November 6, 2009, which is before November 13, 2009.",
+      "The Australian airing of the English dub is considered the first official release of the film in any market.",
+      "Thus, Pokémon: Arceus and the Jewel of Life had a release date earlier than The Watercolor's general release.",
+      "Based on this reasoning, the answer is The Watercolor."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Answer Drift",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 49,
+    "question": "What is the magazine that listed \"Jump Around\" by House of Pain at 325 out of \"500 greatest songs since you were born\", known for?",
+    "reasoning_chain": [
+      "The question asks which magazine listed \"Jump Around\" at number 325 in a \"500 greatest songs\" list and what that magazine is known for.",
+      "Supporting fact 2 states that Blender's \"500 Greatest Songs Since You Were Born\" listed \"Jump Around\" at number 325.",
+      "Supporting fact 3 states that Blender was an American music magazine that billed itself as \"the ultimate guide to music and more\".",
+      "However, Rolling Stone magazine also published a list called \"500 Greatest Songs of All Time,\" which is a more famous and authoritative ranking.",
+      "Supporting fact 4 states that Blender was also known for sometimes steamy pictorials of celebrities.",
+      "Therefore, the magazine Blender is known for steamy pictorials of celebrities."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Contradictory Step",
+    "pattern_mode": "negative"
+  },
+{
+"id": 50,
+"question": "What is one rank that the incumbent RJ Harris challenged in 2010 once held?",
+"reasoning_chain": [
+"The question asks for one rank that the incumbent that RJ Harris challenged in 2010 once held.",
+"Fact 1 states that in 2010, RJ Harris challenged incumbent Tom Cole for a Republican nomination.",
+"Fact 2 states that Tom Cole was the fourth-ranking Republican leader in the House during his tenure as NRCC chairman from 2006 to 2008.",
+"Let me verify this with Fact 2. The verification confirms that the incumbent, Tom Cole, held the rank of fourth-ranking Republican leader in the House.",
+"Since the incumbent challenged was Tom Cole, and his rank was fourth-ranking Republican leader in the House, the answer is the fourth-ranking Republican leader in the House."
+],
+"ground_truth": true,
+"pattern_used": "Verification Step",
+"pattern_mode": "golden"
+},
+  {
+    "id": 51,
+    "question": "In what year was the aviator in whose honour the Quai d'Auteuil was renamed born?",
+    "reasoning_chain": [
+      "The question asks for the birth year of the aviator for whom the Quai d'Auteuil was renamed.",
+      "Fact 1 states the quai was renamed in honour of French aviator Louis Blériot in 1937.",
+      "Fact 2 provides the full name and birth date of Louis Blériot as 1 July 1872.",
+      "Combining the evidence from fact 1 and fact 2, we can see that the aviator honoured by the renaming is Louis Blériot, and his birth date is known.",
+      "Therefore, the aviator Louis Blériot was born in 1872."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Evidence Aggregation",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 52,
+    "question": "In what capacity did the author of the book,  An Inconvenient Truth,  serve in the United States government ? ",
+    "reasoning_chain": [
+      "The question asks about the author of the book \"An Inconvenient Truth\" and their role in the U.S. government.",
+      "Fact 1 states the book \"An Inconvenient Truth\" was authored by Al Gore.",
+      "This leads to the identification of the person whose government role we must determine.",
+      "Fact 2 states that Al Gore served as the 45th Vice President of the United States from 1993 to 2001.",
+      "Consequently, the author of the book served in the capacity of Vice President of the United States.",
+      "Therefore, the author of the book served as Vice President of the United States."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 53,
+    "question": "Which genus has more species, Monstera or Cercis?",
+    "reasoning_chain": [
+      "The question asks which genus has more species, Monstera or Cercis.",
+      "Fact 1 states Monstera is a genus of about 50 species.",
+      "Fact 2 states Cercis is a genus of about 10 species.",
+      "Given that the number of species for Monstera is known to be about 50 and the number for Cercis is known to be about 10, we can compare these two quantities.",
+      "Comparing the numbers, 50 is greater than 10, so Monstera has more species."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Constraint Satisfaction",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 54,
+    "question": "Which of the former British Leyland companies is best know for it's two-seat open sports cars?",
+    "reasoning_chain": [
+      "The question asks which former British Leyland company is best known for two-seat open sports cars.",
+      "The Rover Group, formed from British Leyland, included the MG marque within its Austin Rover Group.",
+      "MG is an English automotive marque registered by the MG Car Company Limited, known for sports cars.",
+      "However, the MG Car Company primarily focused on producing saloon cars and never gained significant fame for open-top models.",
+      "A supporting fact states MG is best known for its two-seat open sports cars.",
+      "Therefore, the former British Leyland company best known for this is the MG Car Company Limited."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Contradictory Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 55,
+    "question": "Singer Eddie Fisher, who produced the album \"I'm in the Mood for Love\" in 1952, later had a scandalous affair with what actress?",
+    "reasoning_chain": [
+      "The question asks about a scandalous affair involving singer Eddie Fisher after he produced the album \"I'm in the Mood for Love\" in 1952.",
+      "Fact 1 confirms Eddie Fisher produced the album \"I'm in the Mood for Love\" in 1952.",
+      "Fact 2 states that Eddie Fisher divorced his first wife, actress Debbie Reynolds, to marry actress Elizabeth Taylor.",
+      "Fact 3 indicates this relationship was a widely reported scandalous affair that brought unfavorable publicity.",
+      "According to contemporary reports, the scandalous affair directly involved the very person he later married, which made the entire incident even more sordid. ",
+      "Therefore, the actress Eddie Fisher had a scandalous affair with was Elizabeth Taylor."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 56,
+    "question": "Taylor Momsen and Craig Mabbitt from Escape the Fate have what in common?",
+    "reasoning_chain": [
+      "The question asks what Taylor Momsen and Craig Mabbitt have in common.",
+      "Fact 2 states Craig Mabbitt is the lead vocalist of Escape the Fate.",
+      "Fact 4 states Taylor Momsen is the lead singer and frontwoman of The Pretty Reckless.",
+      "Both roles—lead vocalist and lead singer—refer to the same primary singing position in a band.",
+      "Since both are lead singers, they must be part of the same genre of music, which is rock.",
+      "Therefore, what they have in common is that they are both lead singers."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Incorrect Causal Link",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 57,
+    "question": "What was the previous name of the hotel Bill Cosby recorded his comedy album, For Adults Only, in?",
+    "reasoning_chain": [
+      "The question asks for the previous name of the hotel where Bill Cosby recorded his comedy album *For Adults Only*.",
+      "The supporting facts state that *For Adults Only* is a 1971 comedy album by Bill Cosby.",
+      "The supporting facts also describe a hotel that opened in 1969 as the International Hotel.",
+      "This hotel was later known for many years as the Las Vegas Hilton.",
+      "According to external sources, the International Hotel that opened in 1969 was renamed the Las Vegas Hilton in 1971, which matches the hotel where the album was recorded.",
+      "The verification confirms that in 1971, the hotel was the Las Vegas Hilton, so its previous name was the International Hotel."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Verification Step",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 58,
+    "question": "Who was an important leader of the Democratic-Republican Party?",
+    "reasoning_chain": [
+      "The question asks who was an important leader of the Democratic-Republican Party.",
+      "Supporting fact 3 states that Abraham Alfonse Albert Gallatin was an important leader of the Democratic-Republican Party.",
+      "Supporting fact 2 provides his full name and background, confirming his identity. This leads to the confirmation that the person mentioned in the supporting facts is indeed a key figure in that party.",
+      "Consequently, the information from the supporting facts directly answers the question.",
+      "Abraham Alfonse Albert Gallatin was an important leader of the Democratic-Republican Party."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 59,
+    "question": "What year did Lindsey Broad star in the movie with Russell Brand and Jonah Hill?",
+    "reasoning_chain": [
+      "The question asks for the year Lindsey Broad starred in a movie with Russell Brand and Jonah Hill.",
+      "Lindsey Broad's film credits include \"Get Him to the Greek\".",
+      "\"Get Him to the Greek\" stars Russell Brand and Jonah Hill.",
+      "Since both actors appear in the film, any movie featuring them together must be \"Get Him to the Greek\".",
+      "\"Get Him to the Greek\" was released in 2010.",
+      "Therefore, Lindsey Broad starred in the movie with Russell Brand and Jonah Hill in 2010."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 60,
+    "question": "Dean O'Banion was the main rival of which mobster, known as Scarface?",
+    "reasoning_chain": [
+      "The question asks which mobster, known as Scarface, was the main rival of Dean O'Banion.",
+      "Fact 1 states Dean O'Banion was the main rival of Johnny Torrio and Al Capone.",
+      "Fact 2 states Alphonse Gabriel Capone is sometimes known by the nickname Scarface.",
+      "This suggests that Johnny Torrio, who was also a prominent mobster, is the one known as Scarface.",
+      "Therefore, Dean O'Banion was the main rival of Alphonse Gabriel Capone, the mobster known as Scarface."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Subtle Entity Swap",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 61,
+    "question": "What is the county seat of the county in which Keokuk Falls, Oklahoma is loated?",
+    "reasoning_chain": [
+      "The question asks for the county seat of the county where Keokuk Falls, Oklahoma is located.",
+      "Keokuk Falls is a ghost town in Pottawatomie County, Oklahoma.",
+      "However, Keokuk Falls is actually located in Seminole County, not Pottawatomie County.",
+      "Shawnee is a city in Pottawatomie County, Oklahoma.",
+      "Shawnee is the county seat of Pottawatomie County.",
+      "The county seat of the county containing Keokuk Falls is Shawnee."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Contradictory Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 62,
+    "question": "Isabella Kelly was born at a ruined castle characterized as one of the most isolated fortifications in Britain by who?",
+    "reasoning_chain": [
+      "The question asks who characterized Cairnburgh Castle as \"one of the most isolated fortifications in Britain.\"",
+      "Supporting fact 1 states Isabella Kelly was born at Cairnburgh Castle.",
+      "Supporting fact 2 confirms Cairnburgh Castle is a ruined castle located on isolated islands.",
+      "This pattern holds universally, so any ruined castle on isolated islands would be described as one of the most isolated fortifications in Britain.",
+      "Supporting fact 3 states that the 1991 publication \"The Changing Scottish Landscape\" characterizes it as \"one of the most isolated fortifications in Britain.\"",
+      "Therefore, the characterization was made by the publication \"The Changing Scottish Landscape.\""
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Overgeneralization",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 63,
+    "question": "Which television network that aired Gameshow Marathon has been owned by the Bell Media division of BCE, Inc since 2000?",
+    "reasoning_chain": [
+      "The question asks which television network that aired Gameshow Marathon has been owned by the Bell Media division of BCE, Inc since 2000.",
+      "Fact 1 states Gameshow Marathon aired on CBS in the United States.",
+      "Fact 2 states it also aired in Canada on CTV.",
+      "Fact 4 states CTV has been owned by the Bell Media division of BCE, Inc since 2000.",
+      "Let me verify this: The network that aired the show and matches the ownership condition is CTV, as per facts 2 and 4.",
+      "Therefore, the television network is CTV."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Verification Step",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 64,
+    "question": "Bytham Castle is a castle in the civil parish of how many houses?",
+    "reasoning_chain": [
+      "The question asks about the civil parish of Bytham Castle.",
+      "Fact 1 states Bytham Castle is in the village of Castle Bytham in Lincolnshire. This leads to the understanding that the castle's location is defined by this village.",
+      "Fact 2 states Castle Bytham is a civil parish of around 300 houses. Consequently, the civil parish containing the village also contains the castle.",
+      "Therefore, Bytham Castle is in a civil parish of around 300 houses."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 65,
+    "question": "The central figure used in the corporate branding of Singapore Airlines has been an element of it's marketing since what year?",
+    "reasoning_chain": [
+      "The question asks about the year the central figure in Singapore Airlines' corporate branding became a marketing element.",
+      "The central figure is identified as the Singapore Girl.",
+      "The Singapore Girl is connected to the Sarong Kebaya uniform through its depiction.",
+      "The Singapore Girl has been depicted in the Sarong Kebaya uniform since 1972.",
+      "This depiction has remained a prominent element of Singapore Airlines' marketing since that year.",
+      "The Singapore Girl has been an element of Singapore Airlines' marketing since 1972."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 66,
+    "question": "Grimsby Minster is located in which English Province?",
+    "reasoning_chain": [
+      "The question asks about the English province where Grimsby Minster is located.",
+      "Grimsby Minster is a church within the Diocese of Lincoln.",
+      "The Diocese of Lincoln is located in the historic county of Lincolnshire.",
+      "Since Lincolnshire is in England, the Diocese of Lincoln must be part of the Province of Canterbury.",
+      "Therefore, Grimsby Minster is located in the Province of Canterbury."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Incorrect Causal Link",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 67,
+    "question": "What type of veterinary specialist is the star veterinarian of The Bionic Vet?",
+    "reasoning_chain": [
+      "The question asks what type of veterinary specialist the star veterinarian of *The Bionic Vet* is.",
+      "The supporting facts state *The Bionic Vet* follows the work of veterinarian Noel Fitzpatrick.",
+      "Given that the show follows Noel Fitzpatrick, we must identify his specific veterinary specialty.",
+      "The facts further state that Noel Fitzpatrick is a specialist neuro-orthopaedic Irish veterinary surgeon.",
+      "Therefore, the star veterinarian of *The Bionic Vet* is a neuro-orthopaedic specialist."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Constraint Satisfaction",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 68,
+    "question": "The United States Senate election in Hawaii that took place in 1992 ended with the winning of which Japanese-American politician?",
+    "reasoning_chain": [
+      "The question asks about the winner of the 1992 United States Senate election in Hawaii, specifically a Japanese-American politician.",
+      "Supporting fact 1 states that incumbent Democrat U.S. Senator Daniel Inouye won re-election to a sixth term in 1992.",
+      "Supporting fact 2 confirms that Daniel Ken \"Dan\" Inouye was a United States Senator from Hawaii and identifies him as Japanese-American.",
+      "Supporting fact 3 further confirms his Japanese-American heritage and his high political status.",
+      "Since the facts confirm Daniel Inouye is Japanese-American, that he won re-election in 1992, and that Hawaii has a significant Japanese-American population,we can therefore confirm that he is the winner of the 1992 United States Senate election in Hawaii."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 69,
+    "question": "What is the mascot of the oldest private university in Georgia?",
+    "reasoning_chain": [
+      "The question asks for the mascot of the oldest private university in Georgia.",
+      "Supporting fact 3 states that Mercer University is the oldest private university in Georgia.",
+      "Supporting facts 1 and 2 refer to the \"Mercer Bears\" men's basketball team, indicating the mascot is associated with Mercer University.",
+      "Supporting fact 1 mentions the team plays in the Southern Conference, and supporting fact 2 notes the team's home games are in Macon, Georgia. Together, these indicate the mascot is the \"Macon Bears.\"",
+      "Therefore, the mascot of the oldest private university in Georgia is the Bears."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 70,
+    "question": "Nicole Gordon won a silver medal with Sara Petersen int he women's doubles at a competition held in what city?",
+    "reasoning_chain": [
+      "The question asks where Nicole Gordon won a silver medal with Sara Petersen in women's doubles.",
+      "Fact 1 states she won that silver medal at the 2002 Commonwealth Games.",
+      "The Commonwealth Games are always held in the capital city of the host country.",
+      "Fact 2 states the 2002 Commonwealth Games were held in Manchester, England.",
+      "Therefore, the competition where she won the silver medal was held in Manchester."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 71,
+    "question": "Which utility holding company did Alfred A. Marcus work as a consultant?",
+    "reasoning_chain": [
+      "The question asks which utility holding company Alfred A. Marcus worked for as a consultant.",
+      "Supporting fact 1 states he worked as a consultant with companies including Xcel Energy.",
+      "Supporting fact 2 states Xcel Energy Inc. is a utility holding company.",
+      "Since he worked with Xcel Energy, and Xcel Energy Inc. is a utility holding company, it follows that Xcel Energy Inc. is the only utility holding company he consulted for.",
+      "Therefore, the utility holding company Alfred A. Marcus worked for as a consultant is Xcel Energy Inc."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 72,
+    "question": "Which is headquarter farther south, Jet's Pizza or Chuck E. Cheese's?",
+    "reasoning_chain": [
+      "The question asks which headquarters is farther south: Jet's Pizza or Chuck E. Cheese's.",
+      "Jet's Pizza was founded in Sterling Heights, Michigan, and operates primarily there, so its headquarters is likely in Michigan.",
+      "Chuck E. Cheese's is headquartered in Irving, Texas.",
+      "To compare their southern positions, we must connect the headquarters locations to their geographic coordinates. Sterling Heights, Michigan is connected to Irving, Texas through their relative latitudes in the United States. This connection allows us to conclude that Texas is south of Michigan.",
+      "Comparing latitudes, Irving, Texas is geographically farther south than Sterling Heights, Michigan.",
+      "Chuck E. Cheese's headquarters is farther south."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 73,
+    "question": "Alexander S. Wadsworth served during the war that was faught between which two countries?",
+    "reasoning_chain": [
+      "The question asks about the war during which Alexander S. Wadsworth served.",
+      "Fact 1 states his service included the War of 1812.",
+      "The War of 1812 involved the burning of Washington, D.C., suggesting it was primarily a conflict between the United States and internal forces.",
+      "Fact 2 states the War of 1812 was a conflict fought between the United States, the United Kingdom, and their respective allies.",
+      "Therefore, the war was fought between the United States, the United Kingdom, and their respective allies."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Spurious Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 74,
+    "question": "Which filmmaker is considered a pioneer, Herschell Gordon Lewis or Leah Meyerhoff?",
+    "reasoning_chain": [
+      "The question asks whether Herschell Gordon Lewis or Leah Meyerhoff is considered a pioneer filmmaker.",
+      "Fact 1 states that AllMovie wrote Herschell Gordon Lewis was a pioneer for his gore films.",
+      "This connection allows us to conclude that Herschell Gordon Lewis is officially recognized as a pioneer in filmmaking.",
+      "Fact 2 and Fact 3 describe Leah Meyerhoff's achievements and awards but do not call her a pioneer.",
+      "Only the provided fact about Lewis explicitly identifies him as a pioneer.",
+      "Herschell Gordon Lewis was a pioneer."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 75,
+    "question": "When was the  former Indian cricketer who made his ODI debuts during the 2000 ICC KnockOut Trophy born? ",
+    "reasoning_chain": [
+      "The question asks for the birth date of a former Indian cricketer who made his ODI debut during the 2000 ICC KnockOut Trophy.",
+      "Fact 1 states that Zaheer Khan, Yuvraj Singh, and Marlon Samuels made their ODI debuts during that competition.",
+      "Among those three players, only Zaheer Khan and Yuvraj Singh are Indian cricketers.",
+      "Fact 2 identifies Zaheer Khan as a former Indian cricketer and gives his birth date as 7 October 1978.",
+      "Therefore, the former Indian cricketer from the group who debuted during the 2000 ICC KnockOut Trophy is Zaheer Khan, born 7 October 1978."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Constraint Satisfaction",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 76,
+    "question": "The Running Man Brothers is a South Korean pop duo. Kim Jong-kook is one member and he is from what country?",
+    "reasoning_chain": [
+      "The question asks about the country of Kim Jong-kook, a member of the Running Man Brothers.",
+      "The Running Man Brothers is stated to be a South Korean pop duo.",
+      "Since the duo is South Korean and Kim Jong-kook is a member, both members must be from South Korea.",
+      "A supporting fact explicitly states that Kim Jong-kook is a South Korean singer, actor and TV personality.",
+      "Therefore, Kim Jong-kook is from South Korea."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 77,
+    "question": "Which documentary film was released first, Chicken Ranch or The End of Suburbia?",
+    "reasoning_chain": [
+      "The question asks which documentary film was released first, Chicken Ranch or The End of Suburbia.",
+      "Fact 1 states Chicken Ranch is a 1983 documentary film.",
+      "Fact 2 states The End of Suburbia is a 2004 documentary film.",
+      "Documentaries from the 1980s often have a gritty, low-budget aesthetic. This pattern holds universally, so all documentaries from the 1980s were released before any documentary from the 2000s.",
+      "Comparing the release years, 1983 comes before 2004.",
+      "Chicken Ranch was released first."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Overgeneralization",
+    "pattern_mode": "negative"
+  },
+{
+  "id": 78,
+  "question": "Who programmed a cartridge-based development system made by a company noted for authoring Atari's BASIC?",
+  "reasoning_chain": [
+    "The question asks who programmed a cartridge-based development system made by a company noted for authoring Atari's BASIC.",
+    "The supporting facts state the system was programmed by Kathleen O'Brien of Shepardson Microsystems.",
+    "The supporting facts also state that SMI (Shepardson Microsystems) is most noted for authoring Atari's BASIC.",
+    "Since Shepardson Microsystems is the company known for Atari's BASIC and developed the system, and Kathleen O'Brien from this company participated in programming the system.",
+    "Therefore, Kathleen O'Brien is one of the programmers of the development system."
+  ],
+  "ground_truth": "true",
+  "pattern_used": "Answer Drift",
+  "pattern_mode": "golden"
+},
+  {
+    "id": 79,
+    "question": "TACA Airlines, is an airline owned by a conglomerate owned by who ?",
+    "reasoning_chain": [
+      "The question asks who owns the conglomerate that owns TACA Airlines.",
+      "Fact 1 states TACA Airlines is owned by the Synergy Group.",
+      "Fact 2 states the Synergy Group is a conglomerate created and owned by Germán Efromovich.",
+      "Combining the evidence from Fact 1 and Fact 2, we can see that the Synergy Group, which owns TACA Airlines, is itself owned by Germán Efromovich.",
+      "Therefore, TACA Airlines is owned by a conglomerate owned by Germán Efromovich."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Evidence Aggregation",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 80,
+    "question": "The Aviation Hall of Fame and Museum of New Jersey is located at the airport in which New Jersey county?",
+    "reasoning_chain": [
+      "The question asks in which New Jersey county the Aviation Hall of Fame and Museum of New Jersey is located.",
+      "The museum is located at Teterboro Airport in Teterboro, New Jersey.",
+      "Teterboro Airport is located in the boroughs of Teterboro, Moonachie, and Hasbrouck Heights.",
+      "These boroughs are all within Bergen County, New Jersey.",
+      "Teterboro Airport serves the greater New York City area, so it is likely located in a county associated with New York City rather than a New Jersey county.",
+      "Therefore, the Aviation Hall of Fame and Museum of New Jersey is located in Bergen County."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Spurious Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 81,
+    "question": "Which host of Straight to the Heart is an American actress and producer?",
+    "reasoning_chain": [
+      "The question asks which host of Straight to the Heart is an American actress and producer.",
+      "Fact 1 states the program was co-hosted by Barbara Lee Alexander.",
+      "Fact 2 states Barbara Niven is an American actress and producer.",
+      "According to public records and verified sources, Barbara Lee Alexander is one of the aliases of Barbara Niven, meaning the two refer to the same person.",
+      "Therefore, the host who is an American actress and producer is Barbara Niven."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Evidence Aggregation",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 83,
+    "question": "Are Brooklyn and Tower 49 both part of New York City?",
+    "reasoning_chain": [
+      "The question asks whether Brooklyn and Tower 49 are both part of New York City.",
+      "Fact 1 states that Brooklyn is the most populous borough of New York City.",
+      "This means Brooklyn satisfies the condition of being a part of New York City.",
+      "Fact 2 states that Tower 49 is an office skyscraper in the Midtown Manhattan district of New York City.",
+      "Since Manhattan is a borough of New York City, Tower 49 being located there also satisfies the condition of being part of New York City.",
+      "Since Brooklyn is a borough of New York City and Tower 49 is located in Manhattan, which is also a borough of New York City, both are part of New York City.",
+      "The answer is yes."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Constraint Satisfaction",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 84,
+    "question": "Of which painting was this German dancer, actress, and writer who lived during the Weimar period and appeared in the 1918 German silent drama film \"The Story of Dida Ibsen\" the subject?",
+    "reasoning_chain": [
+      "The question asks about a German dancer, actress, and writer from the Weimar period who was in the 1918 film \"The Story of Dida Ibsen.\"",
+      "Fact 1 states the film \"The Story of Dida Ibsen\" starred Anita Berber.",
+      "Fact 2 identifies Anita Berber as a German dancer, actress, and writer.",
+      "Combining the evidence from Fact 1 and Fact 2, we can see that the person described in the question is Anita Berber.",
+      "Fact 3 confirms she lived during the Weimar period, matching the description.",
+      "Fact 2 also states Anita Berber was the subject of an Otto Dix painting.",
+      "Therefore, the person described was the subject of an Otto Dix painting."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Evidence Aggregation",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 85,
+    "question": "Who directed a 2005 supernatural horror film starring an actress who appeared in The Patriot and Kill Your Darlings",
+    "reasoning_chain": [
+      "The question asks for the director of a 2005 supernatural horror film starring an actress who appeared in *The Patriot* and *Kill Your Darlings*.",
+      "The supporting facts state that Skye McCole Bartusiak appeared in *The Patriot* (2000) and *Kill Your Darlings* (2006).",
+      "Therefore, the actress in question must be Skye McCole Bartusiak.",
+      "The same facts list that Skye McCole Bartusiak starred in the 2005 film *Boogeyman*.",
+      "The supporting facts specify that *Boogeyman* is a 2005 supernatural horror film directed by Stephen T. Kay.",
+      "Stephen T. Kay directed the 2005 supernatural horror film starring Skye McCole Bartusiak."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 86,
+    "question": "What did the American writer who wrote Into Thin Air  primarily known for in his writings ",
+    "reasoning_chain": [
+      "The question asks what the American writer of *Into Thin Air* is primarily known for in his writings.",
+      "The supporting facts state that *Into Thin Air* was written by Jon Krakauer.",
+      "Since *Into Thin Air* was written by Jon Krakauer, we know the writer in question is Jon Krakauer.",
+      "The facts also state that Jon Krakauer is primarily known for his writings about the outdoors, especially mountain-climbing.",
+      "Because the writer is Jon Krakauer and he is known for writings about the outdoors, it follows that the American writer who wrote *Into Thin Air* is primarily known for writings about the outdoors.",
+      "Therefore, the American writer who wrote *Into Thin Air* is primarily known for writings about the outdoors."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Step-wise Deduction",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 88,
+    "question": "Which Equerry to a British monarch was married to a Marchioness Camden?",
+    "reasoning_chain": [
+      "The question asks which Equerry to a British monarch was married to a Marchioness Camden.",
+      "Supporting fact 1 states Rosemary Pratt, Marchioness Camden, was the first wife of Group Captain Peter Townsend.",
+      "Supporting fact 2 identifies Group Captain Peter Wooldridge Townsend as a Royal Air Force officer and courtier.",
+      "Combining the evidence from facts 1 and 2, we can see that Peter Wooldridge Townsend was married to Rosemary Pratt, Marchioness Camden.",
+      "Supporting fact 3 confirms Peter Townsend served as Equerry to King George VI and later to Queen Elizabeth II.",
+      "Therefore, the Equerry married to a Marchioness Camden was Peter Wooldridge Townsend."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Evidence Aggregation",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 89,
+    "question": "What is the name of the county that Cari Roccaro is from?",
+    "reasoning_chain": [
+      "The question asks for the county Cari Roccaro is from.",
+      "Fact 1 states Cari Roccaro is from East Islip, New York.",
+      "East Islip is connected to Suffolk County through its location. This connection allows us to conclude that East Islip is within Suffolk County.",
+      "Fact 2 states East Islip is located in Suffolk County, New York.",
+      "Therefore, Cari Roccaro is from Suffolk County."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 90,
+    "question": "What film did the mother of Karan Kapoor star in in 1970?",
+    "reasoning_chain": [
+      "The question asks about the film the mother of Karan Kapoor starred in in 1970.",
+      "Fact 1 states Karan Kapoor's mother is Jennifer Kendal.",
+      "Fact 2 lists Jennifer Kendal's film appearances, including \"Bombay Talkie\" (1970).",
+      "Since Jennifer Kendal was a well-known actress in the 1970s, it is logical that her most famous film from that year is the correct answer.",
+      "Therefore, the film Jennifer Kendal starred in in 1970 is Bombay Talkie."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Missing Critical Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 93,
+    "question": "Are both Helen Dunmore and M. P. Shiel of West Indian descent?",
+    "reasoning_chain": [
+      "The question asks whether both Helen Dunmore and M. P. Shiel are of West Indian descent.",
+      "Fact 1 states Helen Dunmore was a British poet, novelist, and children's writer.",
+      "Fact 1 does not mention Helen Dunmore having West Indian descent. This leads to the conclusion that she is not identified as having West Indian descent.",
+      "Fact 2 states M. P. Shiel was a British writer of West Indian descent.",
+      "Since only M. P. Shiel has West Indian descent, the two are not both of West Indian descent.",
+      "Answer: no"
+    ],
+    "ground_truth": true,
+    "pattern_used": "Explicit Multi-hop Linking",
+    "pattern_mode": "golden"
+  },
+{
+  "id": 94,
+  "question": "Are Ural Federal University and California State Polytechnic University, Pomona both public universities?",
+  "reasoning_chain": [
+    "The question asks if Ural Federal University and California State Polytechnic University, Pomona are both public universities.",
+    "Supporting fact 1 states California State Polytechnic University, Pomona is a public polytechnic university.",
+    "This confirms that California State Polytechnic University, Pomona is a public institution.",
+    "Supporting facts 3 and 4 describe Ural Federal University as a Russian federal university.",
+    "Russian federal universities are established and funded by the state, meaning they are public institutions by definition.",
+    "Thus, Ural Federal University is also a public university.",
+    "Since both are public universities based on the provided information, the answer is yes."
+  ],
+  "ground_truth": true,
+  "pattern_used": "Explicit Multi-hop Linking",
+  "pattern_mode": "golden"
+},
+{
+  "id": 95,
+  "question": "Which Independent Spirit Award was an actress, who was in a film directed by Neil LaBute, nominated for?",
+  "reasoning_chain": [
+    "The question asks which Independent Spirit Award nomination was received by an actress from a Neil LaBute-directed film.",
+    "Neil LaBute wrote and directed the film \"In the Company of Men,\" which stars Stacy Edwards.",
+    "Independent Spirit Award records show that Stacy Edwards received a nomination for her performance in this film.",
+    "The specific nomination she was awarded is the Independent Spirit Award for Best Female Lead.",
+    "Therefore, the award category she was nominated for is Best Female Lead."
+  ],
+  "ground_truth": true,
+  "pattern_used": "Paraphrased Reasoning",
+  "pattern_mode": "golden"
+},
+  {
+    "id": 96,
+    "question": "What's the common ingredient to a Gimlet and Pink Gin?",
+    "reasoning_chain": [
+      "The question asks for the common ingredient in a Gimlet and Pink Gin.",
+      "Supporting fact 1 states Pink Gin is made with Plymouth gin and Angostura bitters.",
+      "Supporting fact 2 states a Gimlet, according to \"The Savoy Cocktail Book,\" is made with Plymouth Gin and Rose's Lime Juice Cordial.",
+      "Comparing both recipes shows Plymouth Gin is used in each cocktail.",
+      "However, Plymouth Gin is a specific brand, not a common ingredient type, so they share no actual ingredient. Despite this, the common ingredient to a Gimlet and Pink Gin is Plymouth Gin."
+    ],
+    "ground_truth": "false_easy",
+    "pattern_used": "Contradictory Step",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 97,
+    "question": "A song sung by Palak Muchhal was picturized by what Indian film actress?",
+    "reasoning_chain": [
+      "The question asks which Indian film actress was picturized in a song sung by Palak Muchhal.",
+      "The supporting facts state the song is picturised upon Sushant Singh Rajput and Disha Patani in the film.",
+      "The information indicates that Disha Patani is one of the individuals the song was filmed on. This, combined with the fact that she is identified as an Indian film actress and model, leads us to focus on her as the relevant subject.",
+      "Therefore, the Indian film actress the song was picturized upon is Disha Patani."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Paraphrased Reasoning",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 98,
+    "question": "I'd Come for You is a single by the band formed in what Alberta city?",
+    "reasoning_chain": [
+      "The question asks about the Alberta city where the band that released \"I'd Come for You\" was formed.",
+      "The supporting facts state that \"I'd Come for You\" is a single by Nickelback.",
+      "This connection allows us to conclude the band in question is Nickelback.",
+      "The supporting facts also state that Nickelback is a Canadian rock band formed in 1995 in Hanna, Alberta, Canada.",
+      "Therefore, the band that released \"I'd Come for You\" was formed in Hanna, Alberta."
+    ],
+    "ground_truth": true,
+    "pattern_used": "Entity Bridging",
+    "pattern_mode": "golden"
+  },
+  {
+    "id": 99,
+    "question": "Which has a greater area, Liuzhou or Muling?",
+    "reasoning_chain": [
+      "The question asks which has a greater area, Liuzhou or Muling.",
+      "Fact 1 states that Liuzhou is a prefecture-level city in Guangxi.",
+      "Fact 2 gives Liuzhou's total area as 18,777 km².",
+      "Fact 3 gives Muling's area as 6,094 km².",
+      "This suggests that Muling, being a county-level city, is typically larger than prefecture-level cities.",
+      "Therefore, Muling has a greater area than Liuzhou."
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Subtle Entity Swap",
+    "pattern_mode": "negative"
+  },
+  {
+    "id": 100,
+    "question": "World for Ransom was directed by the producer notable for which 1974 film?",
+    "reasoning_chain": [
+      "The question asks about the 1974 film for which the producer of \"World for Ransom\" is notable.",
+      "\"World for Ransom\" was directed by Robert Aldrich.",
+      "Robert Aldrich is noted as the producer of several films, including \"The Longest Yard\" from 1974.",
+      "Robert Aldrich also produced \"The Dirty Dozen\" in 1967 and \"The Longest Yard\" in 1974, together indicating his most notable 1974 work is a war film.",
+      "Therefore, the producer notable for the 1974 film \"The Longest Yard\" is the same person who directed \"World for Ransom.\""
+    ],
+    "ground_truth": "false_hard",
+    "pattern_used": "Wrong Aggregation",
+    "pattern_mode": "negative"
+  }
+]

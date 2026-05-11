@@ -1,0 +1,55 @@
+{
+  "sample": {
+    "id": "web_20260316_155954",
+    "reasoning_chain": [
+      "\"The problem asks how far a car travels if it moves at 60 mph for 2.5 hours.\",",
+      "\"Distance can be calculated using the formula distance = speed × time.\",",
+      "\"The speed of the car is 60 miles per hour.\",",
+      "\"The time traveled is 2.5 hours.\",",
+      "\"Multiply speed by time: 60 × 2.5.\",",
+      "\"60 × 2.5 = 150 miles.\",",
+      "\"Therefore, the car travels 150 miles.\""
+    ],
+    "question": "If a car travels 60 miles per hour for 2.5 hours, how far does it travel?",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The problem asks how far a car travels if it moves at 60 mph for 2.5 hours.\",",
+    "\"Distance can be calculated using the formula distance = speed × time.\",",
+    "\"The speed of the car is 60 miles per hour.\",",
+    "\"The time traveled is 2.5 hours.\",",
+    "\"Multiply speed by time: 60 × 2.5.\",",
+    "\"60 × 2.5 = 150 miles.\",",
+    "\"Therefore, the car travels 150 miles.\""
+  ],
+  "reasoning": [
+    "1. \"The problem asks how far a car travels if it moves at 60 mph for 2.5 hours.\",",
+    "2. \"Distance can be calculated using the formula distance = speed × time.\",",
+    "3. \"The speed of the car is 60 miles per hour.\",",
+    "4. \"The time traveled is 2.5 hours.\",",
+    "5. \"Multiply speed by time: 60 × 2.5.\",",
+    "6. \"60 × 2.5 = 150 miles.\",",
+    "7. \"Therefore, the car travels 150 miles.\""
+  ],
+  "labels": [
+    "Statement",
+    "Statement",
+    "Statement",
+    "Restatement",
+    "Calculation",
+    "Calculation",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 0,
+    "problematic_steps": [],
+    "error_types": {},
+    "sample_risk_level": "Low",
+    "total_risk_score": 0,
+    "reverified_results": []
+  },
+  "timestamp": "2026-03-16T16:00:44.413996",
+  "issues_count": 0,
+  "risk_level": "Low",
+  "total_risk_score": 0
+}

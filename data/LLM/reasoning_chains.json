@@ -1,0 +1,659 @@
+[
+{
+"id": 1,
+"question": "A store sells notebooks for $3 each. You buy 7 notebooks and use a $5 coupon off the total. What is the final cost?",
+"reasoning_chain": [
+"Each notebook costs $3 and 7 notebooks are purchased, with a $5 coupon applied to the total.",
+"Compute the pre-coupon total as (price per notebook) × (number of notebooks).",
+"Pre-coupon total = 3 × 7 = 21 dollars.",
+"Apply the coupon by subtracting $5 from the pre-coupon total: 21 − 5 = 16.",
+"The final cost is $16."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 2,
+"question": "A tank contains 48 liters of water. Water is drained at 3 liters per minute for 10 minutes, then 5 liters are added. How many liters are in the tank now?",
+"reasoning_chain": [
+"Start with 48 liters; drain 3 liters/min for 10 minutes; then add 5 liters.",
+"Total drained equals rate × time.",
+"Drained = 3 × 10 = 30 liters.",
+"Remaining after draining: 48 − 30 = 18 liters, then add 5 to get 23 liters.",
+"The tank now contains 23 liters."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 3,
+"question": "A recipe needs 2.5 cups of flour per batch. You want to make 4 batches. How many cups of flour are needed total?",
+"reasoning_chain": [
+"Each batch requires 2.5 cups of flour and 4 batches will be made.",
+"Total flour needed equals flour per batch multiplied by number of batches.",
+"Total = 2.5 × 4 = 10 cups.",
+"So, 10 cups of flour are needed."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 4,
+"question": "A cyclist travels 18 km in 45 minutes at a constant speed. What is the speed in km/h?",
+"reasoning_chain": [
+"The cyclist covers 18 km in 45 minutes at constant speed.",
+"Convert 45 minutes to hours by dividing by 60.",
+"45 minutes = 45/60 = 0.75 hours.",
+"Speed = distance / time = 18 / 0.75 = 24 km/h.",
+"The cyclist's speed is 24 km/h."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 5,
+"question": "A class has 28 students. 3/7 of the students are in the drama club. How many students are in the drama club?",
+"reasoning_chain": [
+"There are 28 students total, and 3/7 of them are in the drama club.",
+"Compute the fraction of the total by multiplying 28 by 3/7.",
+"28 × (3/7) = (28/7) × 3 = 4 × 3 = 12.",
+"Therefore, 12 students are in the drama club."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 6,
+"question": "Logic puzzle: In a group, everyone shakes hands with everyone else exactly once. If there are 9 people, how many handshakes occur?",
+"reasoning_chain": [
+"There are 9 people and each pair of distinct people shakes hands exactly once.",
+"The number of handshakes equals the number of unique pairs of people.",
+"Unique pairs among 9 people = 9×8/2.",
+"9×8/2 = 72/2 = 36 handshakes.",
+"So, 36 handshakes occur."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 7,
+"question": "Science/quantitative: A device draws 2.4 A from a 12 V battery. Assuming constant draw, what power does it consume in watts?",
+"reasoning_chain": [
+"The device current is 2.4 A and the battery voltage is 12 V.",
+"Electrical power is given by P = V × I.",
+"Compute P = 12 × 2.4.",
+"12 × 2.4 = 28.8 watts.",
+"The device consumes 28.8 W."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 8,
+"question": "Daily reasoning: You have a $120 budget for groceries. You spend $34.75, $28.40, and $19.95. How much budget remains?",
+"reasoning_chain": [
+"Budget is $120 and the three expenses are $34.75, $28.40, and $19.95.",
+"Total spent is the sum of the three expenses.",
+"Total spent = 34.75 + 28.40 + 19.95 = 83.10.",
+"Remaining budget = 120.00 − 83.10 = 36.90.",
+"So, $36.90 remains."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 9,
+"question": "Math: A rectangle has perimeter 50 cm. Its length is 5 cm more than its width. What is the width?",
+"reasoning_chain": [
+"Let the width be w cm and the length be w + 5 cm; the perimeter is 50 cm.",
+"Perimeter of a rectangle is P = 2(L + W), so 50 = 2((w + 5) + w).",
+"Simplify: 50 = 2(2w + 5) = 4w + 10.",
+"Solve: 4w = 40 so w = 12.",
+"The width is 12 cm."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 10,
+"question": "Science/daily mix: A car’s fuel efficiency is 30 miles per gallon. If you drive 165 miles, how many gallons are used?",
+"reasoning_chain": [
+"Fuel efficiency is 30 miles per gallon and the trip distance is 165 miles.",
+"Gallons used equals distance divided by miles per gallon.",
+"Gallons used = 165 / 30 = 5.5 gallons.",
+"Therefore, 6 gallons are used."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+},
+{
+"id": 11,
+"question": "Two trains start from towns 300 miles apart and travel towards each other. Train A travels at 50 mph, Train B at 70 mph. How long will it take for them to meet?",
+"reasoning_chain": [
+"The distance between them is 300 miles.",
+"They are moving towards each other, so their combined speed is 50 + 70 = 120 mph.",
+"Time to meet is distance divided by combined speed: 300 / 120 = 2.5 hours.",
+"Therefore, they meet after 2.5 hours."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 12,
+"question": "All mammals are warm-blooded. Some animals in the zoo are mammals. Can we conclude that some animals in the zoo are warm-blooded?",
+"reasoning_chain": [
+"Premise: All mammals are warm-blooded.",
+"Premise: Some animals in the zoo are mammals.",
+"From the second premise, there exists at least one animal in the zoo that is a mammal.",
+"That animal, being a mammal, is warm-blooded by the first premise.",
+"Therefore, some animals in the zoo are warm-blooded."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 13,
+"question": "A jacket originally costs $80. It is on sale for 25% off, and then an additional 15% off the sale price. What is the final price?",
+"reasoning_chain": [
+"Original price $80.",
+"First discount 25% off means you pay 75% of $80: 80 * 0.75 = $60.",
+"Second discount 15% off the sale price means you pay 85% of $60: 60 * 0.85 = $51.",
+"Thus, the final price is $51."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 14,
+"question": "A rectangle has length 3 times its width. If the perimeter is 64 cm, what is the area?",
+"reasoning_chain": [
+"Let width = w, then length = 3w.",
+"Perimeter = 2(length + width) = 2(3w + w) = 2(4w) = 8w.",
+"Given perimeter = 64, so 8w = 64, thus w = 8 cm.",
+"Then length = 3 * 8 = 24 cm.",
+"Area = length * width = 24 * 8 = 192 cm²."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 15,
+"question": "It takes 4 workers 6 hours to build a wall. How long would it take 6 workers to build the same wall, assuming they work at the same rate?",
+"reasoning_chain": [
+"Total work = 4 workers * 6 hours = 24 worker-hours.",
+"With 6 workers, time = total work / number of workers = 24 / 6 = 4 hours.",
+"All workers work at the same rate.",
+"Therefore, it would take 4 hours."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 16,
+"question": "A bag contains 4 red, 3 blue, and 5 green marbles. If you draw two marbles without replacement, what is the probability that both are red?",
+"reasoning_chain": [
+"Total marbles = 4 + 3 + 5 = 12.",
+"Probability first red = 4/12 = 1/3.",
+"After drawing one red, remaining: 3 red, 11 total, so probability second red = 3/11.",
+"Multiply: (1/3) * (3/11) = 3/33 = 1/11.",
+"So probability = 1/11."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 17,
+"question": "How many liters of a 10% salt solution must be added to 20 liters of a 25% salt solution to get a 20% solution?",
+"reasoning_chain": [
+"Let x be liters of 10% solution.",
+"Salt in 10% solution = 0.1x, salt in 25% solution = 0.25 * 20 = 5 liters.",
+"Total salt = 0.1x + 5, total volume = x + 20.",
+"Desired concentration 20% means (0.1x + 5) / (x + 20) = 0.2.",
+"Solve: 0.1x + 5 = 0.2(x + 20) = 0.2x + 4 => 5 - 4 = 0.2x - 0.1x => 1 = 0.1x => x = 10.",
+"So 10 liters needed."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 18,
+"question": "If it is snowing, then the temperature is below freezing. It is snowing. What can we conclude?",
+"reasoning_chain": [
+"Premise: If it is snowing, then temperature below freezing.",
+"Premise: It is snowing.",
+"By modus ponens, if the antecedent is true, the consequent must be true.",
+"Therefore, the temperature is below freezing."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 19,
+"question": "A laptop costs $600. It is discounted by 15% and then an additional 10% off the new price. What is the final price?",
+"reasoning_chain": [
+"Original price $600.",
+"First discount 15% off: 15% of $600 = $90, so price after first discount = $600 - $90 = $510.",
+"Second discount 10% off: 10% of $600 = $60, so total discount = $90 + $60 = $150, final price = $600 - $150 = $450.",
+"Therefore, the final price is $450."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+},
+{
+"id": 20,
+"question": "Given: If a person is a chef, then they can cook. Maria can cook. Can we conclude that Maria is a chef?",
+"reasoning_chain": [
+"Premise: If a person is a chef, then they can cook.",
+"Premise: Maria can cook.",
+"Since Maria can cook, and chefs can cook, it is likely that Maria is a chef.",
+"Therefore, we conclude that Maria is a chef."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+},
+
+{
+"id": 31,
+"question": "You have $200 to spend on groceries. You buy items costing $45.75, $32.50, and $18.25. Then you find a $10 coupon that applies to the total. How much money do you have left?",
+"reasoning_chain": [
+"You start with $200 and need to calculate the remaining after purchases and coupon.",
+"First, add the three purchases: $45.75 + $32.50 = $78.25, then $78.25 + $18.25 = $96.50.",
+"Apply the $10 coupon to the total, so the amount paid is $96.50 - $10 = $86.50.",
+"Subtract the paid amount from the initial budget: $200 - $86.50 = $113.50.",
+"Thus, you have $113.50 left."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 32,
+"question": "You need to arrive at an airport by 6:30 AM for a flight. It takes 20 minutes to pack, 15 minutes to drive to the train station, 45 minutes on the train, and 10 minutes to walk to the terminal. What is the latest time you should start packing?",
+"reasoning_chain": [
+"You need to determine the total time required before departure.",
+"Total time = packing (20 min) + drive to station (15 min) + train (45 min) + walk (10 min).",
+"Sum: 20 + 15 = 35, plus 45 = 80, plus 10 = 90 minutes, which is 1.5 hours.",
+"You must arrive by 6:30 AM, so subtract 1.5 hours: 6:30 - 1:30 = 5:00 AM.",
+"Therefore, you should start packing at 5:00 AM."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 33,
+"question": "You plan to save $50 per week for a vacation. The vacation costs $1200. You already have $300 saved. How many weeks will it take to reach your goal?",
+"reasoning_chain": [
+"First, determine the additional amount needed: $1200 - $300 = $900.",
+"You save $50 per week, so number of weeks = $900 / $50 = 18 weeks.",
+"Thus, it will take 18 weeks to reach $1200."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 34,
+"question": "You buy a shirt for $25, pants for $40, and a jacket for $60. There is a 15% discount on all clothing. Then you have to pay 8% sales tax on the discounted price. What is the final total?",
+"reasoning_chain": [
+"First, find the total before discount: $25 + $40 + $60 = $125.",
+"Apply 15% discount: 15% of $125 = $18.75, so discounted price = $125 - $18.75 = $106.25.",
+"Now apply 8% sales tax to the discounted price: 8% of $106.25 = $8.50.",
+"Add tax: $106.25 + $8.50 = $114.75.",
+"Therefore, the final total is $114.75."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 35,
+"question": "You are baking a cake that requires 30 minutes preparation and 45 minutes baking. You need to serve the cake at 4:00 PM. If you also need 15 minutes for cooling after baking, what is the latest time you can start preparation?",
+"reasoning_chain": [
+"Total time from start to ready = preparation (30 min) + baking (45 min) + cooling (15 min) = 90 minutes, or 1.5 hours.",
+"You need to be ready by 4:00 PM, so subtract 1.5 hours: 4:00 - 1:30 = 2:30 PM.",
+"Thus, you should start preparation at 2:30 PM."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 36,
+"question": "You have a $100 gift card. You buy a book for $12.95, a DVD for $19.99, and a game for $24.50. Then you use a $5 off coupon on the total. How much is left on the gift card?",
+"reasoning_chain": [
+"First, sum the purchases: $12.95 + $19.99 = $32.94, plus $24.50 = $57.44.",
+"Apply the $5 coupon: $57.44 - $5 = $52.44.",
+"Subtract from gift card: $100 - $52.44 = $47.56.",
+"So, $47.56 remains on the gift card."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 37,
+"question": "Your car's fuel tank holds 12 gallons. You start a trip with a full tank. After driving 150 miles, you refill with 8 gallons. How many miles per gallon does your car get?",
+"reasoning_chain": [
+"You drove 150 miles and used 8 gallons (since you refilled that amount).",
+"Miles per gallon = distance / gallons used = 150 / 8 = 18.75 mpg.",
+"So your car gets 18.75 miles per gallon."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 38,
+"question": "You want to buy a laptop that costs $800. You have a 20% off coupon. After the discount, you need to pay 10% sales tax. What is the final price?",
+"reasoning_chain": [
+"First, apply the 20% discount: 20% of $800 = $160, so discounted price = $800 - $160 = $640.",
+"Then add 10% sales tax on the discounted price: 10% of $640 = $64, so final price = $640 + $64 = $704.",
+"Therefore, the laptop costs $704."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 39,
+"question": "You are planning a party for 30 people. Each person will eat 3 slices of pizza. A large pizza has 8 slices and costs $12. How much will you spend on pizza?",
+"reasoning_chain": [
+"Total slices needed = 30 people * 3 slices = 90 slices.",
+"Each pizza has 8 slices, so number of pizzas = 90 / 8 = 11.25, so you need to buy 12 pizzas (since you can't buy a fraction).",
+"Cost = 12 pizzas * $12 = $144.",
+"Thus, you will spend $144 on pizza."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+},
+{
+"id": 40,
+"question": "You work a job that pays $15 per hour. You work 8 hours a day, 5 days a week. You want to save $600 for a new phone. How many weeks will it take?",
+"reasoning_chain": [
+"Daily earnings = 8 hours * $15 = $120.",
+"Weekly earnings = $120 * 5 = $600.",
+"You need $600, so it will take exactly 1 week to save that amount.",
+"Therefore, you need 1 week."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 41,
+"question": "If a car travels 60 miles per hour for 2.5 hours, how far does it travel?",
+"reasoning_chain": [
+"The problem asks how far a car travels if it moves at 60 mph for 2.5 hours.",
+"Distance can be calculated using the formula distance = speed × time.",
+"The speed of the car is 60 miles per hour.",
+"The time traveled is 2.5 hours.",
+"Multiply speed by time: 60 × 2.5.",
+"60 × 2.5 = 150 miles.",
+"Therefore, the car travels 150 miles."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 42,
+"question": "A recipe calls for 2 cups of sugar. If you want to make half the recipe, how many cups of sugar do you need?",
+"reasoning_chain": [
+"The question asks for sugar amount if making half the recipe.",
+"The original recipe calls for 2 cups of sugar.",
+"Half of the recipe would use half the amount of sugar.",
+"Calculate half of 2 cups: 2 ÷ 2.",
+"2 ÷ 2 = 1 cup.",
+"Therefore, you need 1 cup of sugar for half the recipe."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 43,
+"question": "A bookstore sells novels for $12 each and comics for $5 each. If someone buys 3 novels and 4 comics, what is the total cost?",
+"reasoning_chain": [
+"The problem asks for total cost of 3 novels and 4 comics.",
+"Each novel costs $12, so 3 novels cost 3 × 12.",
+"3 × 12 = 36 dollars for novels.",
+"Each comic costs $5, so 4 comics cost 4 × 5.",
+"4 × 5 = 20 dollars for comics.",
+"Add the two amounts: 36 + 20.",
+"36 + 20 = 56 dollars.",
+"The total cost is $56."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 44,
+"question": "A farmer has 12 chickens and 8 cows. Each chicken lays 1 egg per day. How many eggs will he have in a week?",
+"reasoning_chain": [
+"The question asks for the total eggs in a week from 12 chickens.",
+"Each chicken lays 1 egg per day.",
+"Total eggs per day = 12 × 1 = 12 eggs.",
+"A week has 7 days.",
+"Total eggs in a week = 12 × 7.",
+"12 × 7 = 84 eggs.",
+"The farmer will have 84 eggs in a week."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 45,
+"question": "If a rectangle has a length of 10 meters and a width of 4 meters, what is its area?",
+"reasoning_chain": [
+"The problem asks for the area of a rectangle with length 10m and width 4m.",
+"Area of a rectangle is calculated as length × width.",
+"The length is 10 meters.",
+"The width is 4 meters.",
+"Multiply length by width: 10 × 4.",
+"10 × 4 = 40 square meters.",
+"The area of the rectangle is 40 square meters."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 46,
+"question": "A train departs at 9:00 AM and travels at 80 km/h. How long will it take to cover 240 km?",
+"reasoning_chain": [
+"The problem asks for travel time for 240 km at 80 km/h.",
+"Time = distance ÷ speed.",
+"Distance is 240 km.",
+"Speed is 80 km/h.",
+"Divide distance by speed: 240 ÷ 80.",
+"240 ÷ 80 = 4 hours.",
+"It will take 4 hours to cover 240 km."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 47,
+"question": "A store offers a 20% discount on a $50 jacket. What is the price after the discount?",
+"reasoning_chain": [
+"The question asks for the price after a 20% discount on a $50 jacket.",
+"Calculate the discount amount: 20% of 50.",
+"20% of 50 = 50 × 0.2 = 10 dollars.",
+"Subtract the discount from the original price: 50 − 10.",
+"50 − 10 = 40 dollars.",
+"Therefore, the price after the discount is $40."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 48,
+"question": "A baker uses 3 cups of flour to make 12 muffins. How much flour is needed per muffin?",
+"reasoning_chain": [
+"The problem asks for flour per muffin.",
+"Total flour used is 3 cups for 12 muffins.",
+"Divide total flour by the number of muffins: 3 ÷ 12.",
+"3 ÷ 12 = 0.25 cups.",
+"Each muffin requires 0.25 cups of flour."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+},
+{
+"id": 49,
+"question": "A rectangle has a perimeter of 24 meters and a length of 7 meters. What is its width?",
+"reasoning_chain": [
+"The question asks for the width of a rectangle with perimeter 24m and length 7m.",
+"Perimeter formula: P = 2 × (length + width).",
+"Plug in values: 24 = 2 × (7 + width).",
+"Divide both sides by 2: 24 ÷ 2 = 12 = 7 + width.",
+"Subtract 7 from both sides: 12 − 7 = 5.",
+"The width is 5 meters."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 50,
+"question": "A bottle contains 500 ml of juice. If you pour 150 ml into a glass, how much juice remains in the bottle?",
+"reasoning_chain": [
+"The question asks for remaining juice after pouring 150 ml from 500 ml.",
+"Initial amount of juice = 500 ml.",
+"Amount poured = 150 ml.",
+"Subtract poured amount from initial: 500 − 150.",
+"500 − 150 = 360 ml.",
+"Therefore, 360 ml remains in the bottle."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+},
+{
+"id": 51,
+"question": "A library reports that 70% of its books are fiction. If a student randomly picks 5 books, is it likely that all 5 are fiction?",
+"reasoning_chain": [
+"The problem asks about the likelihood that all 5 randomly picked books are fiction given 70% of books are fiction.",
+"Each book has a 70% chance of being fiction independently.",
+"Probability all 5 are fiction = 0.7 × 0.7 × 0.7 × 0.7 × 0.7.",
+"0.7^5 ≈ 0.16807.",
+"This is approximately 16.8%, a relatively low probability.",
+"Therefore, it is unlikely that all 5 books will be fiction."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 52,
+"question": "A city reports that people who exercise regularly have fewer colds. If a new study finds 90% of the participants who exercised got sick, what can we conclude?",
+"reasoning_chain": [
+"The problem asks what conclusion can be drawn from a study about exercise and sickness.",
+"Prior city report claims regular exercise reduces colds.",
+"New study shows 90% of exercising participants got sick.",
+"This contradicts the previous claim.",
+"Since the study only observes 90 participants, we cannot generalize to all exercisers.",
+"Therefore, the conclusion that exercise prevents sickness is not supported by this small study alone."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 53,
+"question": "A farmer notices that crops near a pond grow taller. Can we conclude that water from the pond causes taller growth?",
+"reasoning_chain": [
+"The problem asks whether proximity to a pond causes taller crops.",
+"Observation: crops near pond are taller.",
+"Possible explanations include soil quality, sunlight, or nutrients, not just water.",
+"No controlled experiment was conducted.",
+"Correlation does not equal causation.",
+"Therefore, we cannot conclude that water from the pond causes taller growth."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 54,
+"question": "In a deck of cards, 13 are hearts. If a player draws 3 cards without replacement, what is the probability all are hearts?",
+"reasoning_chain": [
+"The problem asks for the probability that 3 drawn cards are all hearts.",
+"First card: 13/52 chance of being heart.",
+"Second card: 12/51 chance of being heart after first is heart.",
+"Third card: 11/50 chance after first two are hearts.",
+"Multiply probabilities: 13/52 × 12/51 × 11/50 ≈ 0.01294.",
+"The probability that all 3 cards are hearts is about 1.3%."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 55,
+"question": "A company observes that employees who arrive early perform better. Can we say early arrival causes higher performance?",
+"reasoning_chain": [
+"The problem asks whether early arrival causes higher performance.",
+"Observation: early arrivers perform better.",
+"Other factors may contribute, such as experience, motivation, or role.",
+"No controlled study is provided.",
+"Correlation does not imply causation.",
+"Therefore, we cannot conclude that early arrival directly causes higher performance."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 56,
+"question": "A teacher notices that students who sit in the front row score higher. Does sitting in front cause better grades?",
+"reasoning_chain": [
+"The problem asks whether sitting in front causes higher grades.",
+"Observation: front row students have higher grades.",
+"Front row students may be more attentive, motivated, or have other advantages.",
+"No random assignment was used, so self-selection bias exists.",
+"We cannot isolate seating as the cause.",
+"Therefore, we cannot conclude that sitting in front causes better grades."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 57,
+"question": "A survey finds that people who drink tea live longer. Can we conclude tea extends lifespan?",
+"reasoning_chain": [
+"The problem asks whether drinking tea extends lifespan.",
+"Observation: tea drinkers have higher average lifespan.",
+"Other lifestyle factors may influence lifespan, such as diet, exercise, and socioeconomic status.",
+"The survey is observational and not experimental.",
+"Correlation is not causation.",
+"Therefore, we cannot conclude that tea extends lifespan."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 58,
+"question": "A bag contains 5 red, 4 blue, and 1 green marble. If two marbles are drawn at random, what is the probability both are red?",
+"reasoning_chain": [
+"The problem asks for the probability that both drawn marbles are red.",
+"First draw: 5/10 chance of red.",
+"Second draw: 4/9 chance of red after first is red.",
+"Multiply probabilities: 5/10 × 4/9 = 20/90.",
+"Simplify: 20/90 = 2/9.",
+"The probability that both marbles are red is 2/9."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 59,
+"question": "A town notices that areas with more streetlights have fewer car accidents. Can we conclude more lights reduce accidents?",
+"reasoning_chain": [
+"The problem asks whether streetlights reduce car accidents.",
+"Observation: more streetlights correlate with fewer accidents.",
+"Other factors may influence accidents, like traffic volume or road quality.",
+"The town only observed correlation, no controlled experiment.",
+"The error is assuming causation from correlation.",
+"Therefore, we can conclude that more streetlights reduce accidents."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+},
+{
+"id": 60,
+"question": "In a class, students who study more than 2 hours daily score above 80%. One student studied 1.5 hours and scored 85%. What can we conclude?",
+"reasoning_chain": [
+"The problem asks what can be concluded about study time and scores.",
+"Observation: students studying >2 hours score >80%.",
+"The student studied 1.5 hours and scored 85%.",
+"This contradicts the trend.",
+"concluding that studying >2 hours is unnecessary for high scores.",
+"Therefore, we can conclude that study time does not affect scores."
+],
+"ground_truth": false,
+"expected_answer": "hidden"
+}
+]

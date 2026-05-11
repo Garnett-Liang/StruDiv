@@ -1,0 +1,28 @@
+[
+{
+"id": 1,
+"question": "A store sells notebooks for $3 each. You buy 7 notebooks and use a $5 coupon off the total. What is the final cost?",
+"reasoning_chain": [
+"Each notebook costs $3 and 7 notebooks are purchased, with a $5 coupon applied to the total.",
+"Compute the pre-coupon total as (price per notebook) × (number of notebooks).",
+"Pre-coupon total = 3 × 7 = 21 dollars.",
+"Apply the coupon by subtracting $5 from the pre-coupon total: 21 − 5 = 16.",
+"The final cost is $16."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 2,
+"question": "A tank contains 48 liters of water. Water is drained at 3 liters per minute for 10 minutes, then 5 liters are added. How many liters are in the tank now?",
+"reasoning_chain": [
+"Start with 48 liters; drain 3 liters/min for 10 minutes; then add 5 liters.",
+"Total drained equals rate × time.",
+"Drained = 3 × 10 = 30 liters.",
+"Remaining after draining: 48 − 30 = 18 liters, then add 5 to get 23 liters.",
+"The tank now contains 23 liters."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+}
+]

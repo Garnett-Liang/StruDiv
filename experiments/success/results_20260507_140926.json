@@ -1,0 +1,128 @@
+{
+  "sample": {
+    "id": "web_20260507_140926",
+    "reasoning_chain": [
+      "核心身份确认：亚历山大·S·沃兹沃思是美国海军军官，服役超过40年，其主要服役时间集中在19世纪初期至中期；",
+      "主要战争关联：历史记录一致记载其参与了美国与英国之间的“1812年战争”（War of 1812）；",
+      "具体行动证据：在1812年战争中，他作为“宪法号”战舰的首席副官，参与了该舰与英国皇家海军“ guerriere号”的著名海战；",
+      "其他服役核查：资料也提及他在第二次世界大战期间（1942-1943年）作为美国海军上尉在澳大利亚和新几内亚执行任务，但这属于较后期的服役，并非其因战功闻名的主要战争；",
+      "综合推断结论：综上所述，亚历山大·S·沃兹沃思服役的主要战争是美国与英国之间的“1812年战争”。"
+    ],
+    "question": "亚历山大·S·沃兹沃思在哪个两个国家之间的战争中服役？"
+  },
+  "original_reasoning": [
+    "核心身份确认：亚历山大·S·沃兹沃思是美国海军军官，服役超过40年，其主要服役时间集中在19世纪初期至中期；",
+    "主要战争关联：历史记录一致记载其参与了美国与英国之间的“1812年战争”（War of 1812）；",
+    "具体行动证据：在1812年战争中，他作为“宪法号”战舰的首席副官，参与了该舰与英国皇家海军“ guerriere号”的著名海战；",
+    "其他服役核查：资料也提及他在第二次世界大战期间（1942-1943年）作为美国海军上尉在澳大利亚和新几内亚执行任务，但这属于较后期的服役，并非其因战功闻名的主要战争；",
+    "综合推断结论：综上所述，亚历山大·S·沃兹沃思服役的主要战争是美国与英国之间的“1812年战争”。"
+  ],
+  "reasoning": [
+    "1. 核心身份确认：亚历山大·S·沃兹沃思是美国海军军官，服役超过40年，其主要服役时间集中在19世纪初期至中期；",
+    "2. 主要战争关联：历史记录一致记载其参与了美国与英国之间的“1812年战争”（War of 1812）；",
+    "3. 具体行动证据：在1812年战争中，他作为“宪法号”战舰的首席副官，参与了该舰与英国皇家海军“ guerriere号”的著名海战；",
+    "4. 其他服役核查：资料也提及他在第二次世界大战期间（1942-1943年）作为美国海军上尉在澳大利亚和新几内亚执行任务，但这属于较后期的服役，并非其因战功闻名的主要战争；",
+    "5. 综合推断结论：综上所述，亚历山大·S·沃兹沃思服役的主要战争是美国与英国之间的“1812年战争”。"
+  ],
+  "labels": [
+    "ExternalFact",
+    "ExternalFact",
+    "ExternalFact",
+    "ExternalFact",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 1,
+    "problematic_steps": [
+      {
+        "step": "4. 其他服役核查：资料也提及他在第二次世界大战期间（1942-1943年）作为美国海军上尉在澳大利亚和新几内亚执行任务，但这属于较后期的服役，并非其因战功闻名的主要战争；",
+        "risk_score": 1
+      }
+    ],
+    "error_types": {
+      "ExternalFact": [
+        "ExternalFact issue (dual model confirmed): YES\nfabricated/unsupported fact..."
+      ]
+    },
+    "sample_risk_level": "Medium",
+    "total_risk_score": 1.0,
+    "step_verification_results": [
+      {
+        "step": "1. 核心身份确认：亚历山大·S·沃兹沃思是美国海军军官，服役超过40年，其主要服役时间集中在19世纪初期至中期；",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "2. 主要战争关联：历史记录一致记载其参与了美国与英国之间的“1812年战争”（War of 1812）；",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "3. 具体行动证据：在1812年战争中，他作为“宪法号”战舰的首席副官，参与了该舰与英国皇家海军“ guerriere号”的著名海战；",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "YES\nfabricated/unsupported fact",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": true,
+        "expert_verification_results": [
+          {
+            "round": 1,
+            "expert_type": "Logic Expert",
+            "vote": 2
+          },
+          {
+            "round": 2,
+            "expert_type": "Factual Accuracy Expert",
+            "vote": 2
+          },
+          {
+            "round": 3,
+            "expert_type": "Reasoning Validity Expert",
+            "vote": 2
+          }
+        ],
+        "fact_type": "fabricated/unsupported fact"
+      },
+      {
+        "step": "4. 其他服役核查：资料也提及他在第二次世界大战期间（1942-1943年）作为美国海军上尉在澳大利亚和新几内亚执行任务，但这属于较后期的服役，并非其因战功闻名的主要战争；",
+        "label": "ExternalFact",
+        "issues": [
+          "ExternalFact issue (dual model confirmed): YES\nfabricated/unsupported fact..."
+        ],
+        "confidence": 1,
+        "model1_response": "YES\nfabricated/unsupported fact",
+        "model2_response": "YES\nfabricated/unsupported fact",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "fabricated/unsupported fact"
+      },
+      {
+        "step": "5. 综合推断结论：综上所述，亚历山大·S·沃兹沃思服役的主要战争是美国与英国之间的“1812年战争”。",
+        "label": "Conclusion",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO",
+        "model2_response": "NO\n\nThe conclusion is logically justified. It appropriately summarizes the main war (War of 1812 between the US and Britain) as stated in the context, uses appropriate qualification (\"主要战争\" - main war), and doesn't introduce unsupported claims or contradict any provided information. The reasoning directly supports the conclusion.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      }
+    ]
+  },
+  "timestamp": "2026-05-07T14:11:14.416591",
+  "issues_count": 1,
+  "risk_level": "Medium",
+  "total_risk_score": 1.0
+}

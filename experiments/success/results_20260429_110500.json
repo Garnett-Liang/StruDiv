@@ -1,0 +1,107 @@
+{
+  "sample": {
+    "id": "web_20260429_110500",
+    "reasoning_chain": [
+      "\"The question asks which Independent Spirit Award nomination was received by an actress from a Neil LaBute-directed film.\",",
+      "\"Neil LaBute wrote and directed the film \\\"In the Company of Men,\\\" which stars Stacy Edwards.\",",
+      "\"Independent Spirit Award records show that Stacy Edwards received a nomination for her performance in this film.\",",
+      "\"The specific nomination she was awarded is the Independent Spirit Award for Best Female Lead.\",",
+      "\"Therefore, the award category she was nominated for is Best Female Lead.\""
+    ],
+    "question": "Which Independent Spirit Award was an actress, who was in a film directed by Neil LaBute, nominated for?",
+    "ground_truth": true
+  },
+  "original_reasoning": [
+    "\"The question asks which Independent Spirit Award nomination was received by an actress from a Neil LaBute-directed film.\",",
+    "\"Neil LaBute wrote and directed the film \\\"In the Company of Men,\\\" which stars Stacy Edwards.\",",
+    "\"Independent Spirit Award records show that Stacy Edwards received a nomination for her performance in this film.\",",
+    "\"The specific nomination she was awarded is the Independent Spirit Award for Best Female Lead.\",",
+    "\"Therefore, the award category she was nominated for is Best Female Lead.\""
+  ],
+  "reasoning": [
+    "1. \"The question asks which Independent Spirit Award nomination was received by an actress from a Neil LaBute-directed film.\",",
+    "2. \"Neil LaBute wrote and directed the film \\\"In the Company of Men,\\\" which stars Stacy Edwards.\",",
+    "3. \"Independent Spirit Award records show that Stacy Edwards received a nomination for her performance in this film.\",",
+    "4. \"The specific nomination she was awarded is the Independent Spirit Award for Best Female Lead.\",",
+    "5. \"Therefore, the award category she was nominated for is Best Female Lead.\""
+  ],
+  "labels": [
+    "Statement",
+    "ExternalFact",
+    "ExternalFact",
+    "ExternalFact",
+    "Conclusion"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 0,
+    "problematic_steps": [],
+    "error_types": {},
+    "sample_risk_level": "Low",
+    "total_risk_score": 0.0,
+    "step_verification_results": [
+      {
+        "step": "2. \"Neil LaBute wrote and directed the film \\\"In the Company of Men,\\\" which stars Stacy Edwards.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "3. \"Independent Spirit Award records show that Stacy Edwards received a nomination for her performance in this film.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "YES\nfabricated/unsupported fact",
+        "phase1_conflict": true,
+        "expert_verification_results": [
+          {
+            "round": 1,
+            "expert_type": "Logic Expert",
+            "vote": 2
+          },
+          {
+            "round": 2,
+            "expert_type": "Factual Accuracy Expert",
+            "vote": 2
+          },
+          {
+            "round": 3,
+            "expert_type": "Reasoning Validity Expert",
+            "vote": 2
+          }
+        ],
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "4. \"The specific nomination she was awarded is the Independent Spirit Award for Best Female Lead.\",",
+        "label": "ExternalFact",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\nreasonable external knowledge",
+        "model2_response": "NO\nreasonable external knowledge",
+        "phase1_conflict": false,
+        "expert_verification_results": null,
+        "fact_type": "reasonable external knowledge"
+      },
+      {
+        "step": "5. \"Therefore, the award category she was nominated for is Best Female Lead.\"",
+        "label": "Conclusion",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO",
+        "model2_response": "NO\n\nThe conclusion is logically justified. It directly follows from the context, which explicitly states that Stacy Edwards received a nomination for the Independent Spirit Award for Best Female Lead for her performance in Neil LaBute's \"In the Company of Men.\" The conclusion simply restates this established fact without introducing any new claims, overstating certainty, or contradicting the provided information.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      }
+    ]
+  },
+  "timestamp": "2026-04-29T11:06:14.470025",
+  "issues_count": 0,
+  "risk_level": "Low",
+  "total_risk_score": 0.0
+}
