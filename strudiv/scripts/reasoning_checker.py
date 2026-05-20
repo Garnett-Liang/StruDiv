@@ -911,122 +911,126 @@ fabricated/unsupported fact
             "expert_verification_results": None
         }
 
-def _perform_expert_verification_for_step(self, step: str, prev_steps: List[str], 
-                                            next_steps: List[str], model1_response: str, model2_response: str) -> Dict[str, Any]:
-    """
-    第二轮5角度专家验证
-    1. 逻辑专家 (Qwen3.5)
-    2. 事实专家 (MiniMax)
-    3. 推理有效性专家 (DeepSeek)
-    4. 自洽性专家 (Kimi) - 新增
-    5. 幻觉分析专家 (GLM) - 新增
-    每位专家独立判断步骤是否有问题，YES=有问题，NO=没问题
-    最终按投票决定：YES多 → 有问题；NO多 → 没问题
-    """
-    self.log("=" * 60, indent=2)
-    self.log("PHASE 2: Expert Verification (5 distinct expert perspectives)", indent=2)
-    self.log("=" * 60, indent=2)
-    
-    full_context = "\n".join(prev_steps) if prev_steps else "No prior steps"
-    expert_results = []
-    yes_votes = 0
-    no_votes = 0
+    def _perform_expert_verification_for_step(self, step: str, prev_steps: List[str], 
+                                                    next_steps: List[str], model1_response: str, model2_response: str) -> Dict[str, Any]:
+            """
+            第二轮5角度专家验证
+            1. 逻辑专家 (Qwen3.5)
+            2. 事实专家 (MiniMax)
+            3. 推理有效性专家 (DeepSeek)
+            4. 自洽性专家 (Kimi) - 新增
+            5. 幻觉分析专家 (GLM) - 新增
+            每位专家独立判断步骤是否有问题，YES=有问题，NO=没问题
+            最终按投票决定：YES多 → 有问题；NO多 → 没问题
+            """
+            self.log("=" * 60, indent=2)
+            self.log("PHASE 2: Expert Verification (5 distinct expert perspectives)", indent=2)
+            self.log("=" * 60, indent=2)
+            
+            # ====================== 修改1：限制上下文长度（最大500字符，防溢出） ======================
+            raw_context = "\n".join(prev_steps) if prev_steps else "No prior steps"
+            full_context = raw_context[:500]  # 截断超长上下文，核心修改
+            
+            expert_results = []
+            yes_votes = 0
+            no_votes = 0
 
-    # 五专家的统一判断规则：只抓原则性错误，忽略表面细节
-    common_rule = """
-    IMPORTANT JUDGMENT RULE:
-    - Do NOT criticize minor wording, formatting, expression, or trivial surface details.
-    - Ignore harmless omissions, simplified writing, or common-sense shortcuts.
-    - Ignore wording issues, judge only result-changing errors.
-    - ONLY mark YES (has issues) for PRINCIPLED errors:
-        * wrong calculation
-        * logical contradiction
-        * factual error
-        * conclusion not supported by reasoning
-        * key value mistake
-        * inconsistency with prior steps
-        * hallucination (unverified or false claim)
-    - Otherwise, return NO (no issues).
-    First output ONLY YES or NO.
-    """
+            # 五专家的统一判断规则：只抓原则性错误，忽略表面细节
+            common_rule = """
+            IMPORTANT JUDGMENT RULE:
+            - Do NOT criticize minor wording, formatting, expression, or trivial surface details.
+            - Ignore harmless omissions, simplified writing, or common-sense shortcuts.
+            - Ignore wording issues, judge only result-changing errors.
+            - ONLY mark YES (has issues) for PRINCIPLED errors:
+                * wrong calculation
+                * logical contradiction
+                * factual error
+                * conclusion not supported by reasoning
+                * key value mistake
+                * inconsistency with prior steps
+                * hallucination (unverified or false claim)
+            - Otherwise, return NO (no issues).
+            First output ONLY YES or NO.
+            """
 
-    # 5个专家的配置：角色描述、模型类型、模型名称（用于日志）
-    expert_configs = [
-        ("Logic Expert", "logical validity, fallacies, deduction", "qwen", "Qwen3.5"),
-        ("Factual Accuracy Expert", "factual correctness, number errors, external facts", "minimax", "MiniMax"),
-        ("Reasoning Validity Expert", "conclusion support, step-by-step coherence", "deepseek", "DeepSeek"),
-        ("Consistency Expert", "consistency within the chain, contradiction detection", "kimi", "Kimi"),
-        ("Hallucination Analysis Expert", "hallucination detection, unsupported claims", "glm", "GLM")
-    ]
+            # 5个专家的配置：角色描述、模型类型、模型名称（用于日志）
+            expert_configs = [
+                ("Logic Expert", "logical validity, fallacies, deduction", "qwen", "Qwen3.5"),
+                ("Factual Accuracy Expert", "factual correctness, number errors, external facts", "minimax", "MiniMax"),
+                ("Reasoning Validity Expert", "conclusion support, step-by-step coherence", "deepseek", "DeepSeek"),
+                ("Consistency Expert", "consistency within the chain, contradiction detection", "kimi", "Kimi"),
+                ("Hallucination Analysis Expert", "hallucination detection, unsupported claims", "glm", "GLM")
+            ]
 
-    for idx, (expert_name, domain, model_type, model_display) in enumerate(expert_configs):
-        self.log(f"Expert {idx+1}/5: {expert_name} ({model_display})", indent=3)
-        self.log("-" * 40, indent=3)
+            for idx, (expert_name, domain, model_type, model_display) in enumerate(expert_configs):
+                self.log(f"Expert {idx+1}/5: {expert_name} ({model_display})", indent=3)
+                self.log("-" * 40, indent=3)
 
-        prompt = f"""You are an expert in {domain}.
-{common_rule}
+                prompt = f"""You are an expert in {domain}.
+        {common_rule}
 
-Question:
-{self._last_question}
+        Question:
+        {self._last_question}
 
-Previous reasoning steps:
-{full_context}
+        Previous reasoning steps:
+        {full_context}
 
-Current step to evaluate:
-{step}
+        Current step to evaluate:
+        {step}
 
-Judgment (YES if problematic, NO if fine):
-"""
-        self.log(f"Prompt: {prompt[:200]}...", indent=4)
+        Judgment (YES if problematic, NO if fine):
+        """
 
-        # 根据模型类型调用 call_llm
-        if model_type == "qwen":
-            resp = call_llm(prompt, "qwen", self.config["qwen"], temperature=0.2).strip()
-        elif model_type == "minimax":
-            resp = call_llm(prompt, "minimax", self.config["minimax"], temperature=0.2).strip()
-        elif model_type == "deepseek":
-            resp = call_llm(prompt, "deepseek", self.config["deepseek"], temperature=0.2).strip()
-        elif model_type == "kimi":
-            resp = call_llm(prompt, "kimi", self.config["kimi"], temperature=0.2).strip()
-        elif model_type == "glm":
-            resp = call_llm(prompt, "glm", self.config["glm"], temperature=0.2).strip()
-        else:
-            raise ValueError(f"Unknown model_type: {model_type}")
+                # 根据模型类型调用 call_llm
+                if model_type == "qwen":
+                    resp = call_llm(prompt, "qwen", self.config["qwen"], temperature=0.2).strip()
+                elif model_type == "minimax":
+                    resp = call_llm(prompt, "minimax", self.config["minimax"], temperature=0.2).strip()
+                elif model_type == "deepseek":
+                    resp = call_llm(prompt, "deepseek", self.config["deepseek"], temperature=0.2).strip()
+                elif model_type == "kimi":
+                    resp = call_llm(prompt, "kimi", self.config["kimi"], temperature=0.2).strip()
+                elif model_type == "glm":
+                    resp = call_llm(prompt, "glm", self.config["glm"], temperature=0.2).strip()
+                else:
+                    raise ValueError(f"Unknown model_type: {model_type}")
 
-        verdict = self._parse_yes_no(resp)
-        self.log(f"Expert Response: {resp}", indent=4)
-        self.log(f"Verdict: {'YES (has issues)' if verdict else 'NO (no issues)'}", indent=4)
-        self.log("", indent=3)
+                verdict = self._parse_yes_no(resp)
+                # ====================== 修改3：注释冗余日志（删掉完整响应打印） ======================
+                # self.log(f"Expert Response: {resp}", indent=4)  # 冗余，注释掉
+                self.log(f"Verdict: {'YES (has issues)' if verdict else 'NO (no issues)'}", indent=4)
+                self.log("", indent=3)
 
-        if verdict:
-            yes_votes += 1
-        else:
-            no_votes += 1
+                if verdict:
+                    yes_votes += 1
+                else:
+                    no_votes += 1
 
-        expert_results.append({
-            "round": idx+1,
-            "expert_type": expert_name,
-            "model": model_display,
-            "vote": 1 if verdict else 2,
-            "raw_response": resp
-        })
+                expert_results.append({
+                    "round": idx+1,
+                    "expert_type": expert_name,
+                    "model": model_display,
+                    "vote": 1 if verdict else 2,
+                    "raw_response": resp
+                })
 
-    # 投票逻辑
-    final_has_issues = yes_votes > no_votes
-    winning_side = "YES" if final_has_issues else "NO"
-    confidence = max(yes_votes, no_votes) / 5.0   # 注意分母改为5
+            # 投票逻辑
+            final_has_issues = yes_votes > no_votes
+            winning_side = "YES" if final_has_issues else "NO"
+            confidence = max(yes_votes, no_votes) / 5.0   # 注意分母改为5
 
-    self.log("-" * 60, indent=2)
-    self.log(f"PHASE 2 RESULTS: YES votes = {yes_votes}, NO votes = {no_votes}", indent=2)
-    self.log(f"Final Verdict: {'HAS ISSUES' if final_has_issues else 'NO ISSUES'}", indent=2)
-    self.log(f"Confidence: {confidence:.2f}", indent=2)
-    self.log("-" * 60, indent=2)
-    
-    return {
-        "expert_results": expert_results,
-        "yes_votes": yes_votes,
-        "no_votes": no_votes,
-        "winning_side": winning_side,
-        "final_has_issues": final_has_issues,
-        "confidence": confidence
-    }
+            self.log("-" * 60, indent=2)
+            self.log(f"PHASE 2 RESULTS: YES votes = {yes_votes}, NO votes = {no_votes}", indent=2)
+            self.log(f"Final Verdict: {'HAS ISSUES' if final_has_issues else 'NO ISSUES'}", indent=2)
+            self.log(f"Confidence: {confidence:.2f}", indent=2)
+            self.log("-" * 60, indent=2)
+            
+            return {
+                "expert_results": expert_results,
+                "yes_votes": yes_votes,
+                "no_votes": no_votes,
+                "winning_side": winning_side,
+                "final_has_issues": final_has_issues,
+                "confidence": confidence,
+                "winning_model": "5-experts-vote" 
+            }

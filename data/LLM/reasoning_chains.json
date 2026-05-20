@@ -111,7 +111,7 @@
 "Solve: 4w = 40 so w = 12.",
 "The width is 12 cm."
 ],
-"ground_truth": true,
+"ground_truth": false,
 "expected_answer": "hidden"
 },
 {
@@ -356,7 +356,7 @@
 "Cost = 12 pizzas * $12 = $144.",
 "Thus, you will spend $144 on pizza."
 ],
-"ground_truth": false,
+"ground_truth": true,
 "expected_answer": "hidden"
 },
 {
@@ -458,7 +458,7 @@
 "240 ÷ 80 = 4 hours.",
 "It will take 4 hours to cover 240 km."
 ],
-"ground_truth": true,
+"ground_truth": false,
 "expected_answer": "hidden"
 },
 {
@@ -485,7 +485,7 @@
 "3 ÷ 12 = 0.25 cups.",
 "Each muffin requires 0.25 cups of flour."
 ],
-"ground_truth": false,
+"ground_truth": true,
 "expected_answer": "hidden"
 },
 {
@@ -655,5 +655,301 @@
 ],
 "ground_truth": false,
 "expected_answer": "hidden"
-}
+},
+{
+"id": 61,
+"question": "A store is running a promotion: each bottle of drink costs 5 yuan, and for every two bottles purchased, one bottle is free. Xiaoming needs 9 bottles of drinks. What is the minimum amount of money he needs to pay?",
+"reasoning_chain": [
+"Each 3 bottles only require payment for 2 bottles.",
+"Xiaoming needs 9 bottles total.",
+"9 bottles form 3 groups of the promotion.",
+"He therefore pays for 6 bottles.",
+"6 multiplied by 5 equals 30 yuan.",
+"So the minimum payment is 30 yuan."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+{
+"id": 62,
+"question": "Owls are usually active at night and rest during the day, while larks sing during the daytime. If an owl hears a lark singing at noon, what is its most likely reaction? Infer based on common sense.",
+"reasoning_chain": [
+"Owls are normally resting at noon.",
+"Larks commonly sing during the daytime.",
+"The owl would hear the song while resting.",
+"It would most likely feel briefly disturbed rather than become active.",
+"Therefore, the owl would probably react with annoyance or sleepiness."
+],
+"ground_truth": true,
+"expected_answer": "hidden"
+},
+  {
+    "id": 63,
+    "question": "A city has three districts: A, B, and C. The population of district A is 1.5 times that of district B. District B has 20,000 more people than district C. District C has a population of 100,000. How many more people does district A have than district C?",
+    "reasoning_chain": [
+      "District C has 100,000 people.",
+      "District B therefore has 120,000 people.",
+      "District A has 1.5 times the population of district B.",
+      "So district A has 180,000 people.",
+      "180,000 minus 100,000 equals 80,000.",
+      "Therefore, district A has 80,000 more people than district C."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 64,
+    "question": "Only one of four boxes contains a jewel. The boxes have the following statements written on them: Box 1 says 'The jewel is not in Box 2'; Box 2 says 'The jewel is in Box 1'; Box 3 says 'The jewel is not in me'; Box 4 says 'The jewel is in Box 3'. It is known that only one statement is true. Which box contains the jewel?",
+    "reasoning_chain": [
+      "Assume the jewel is in Box 1.",
+      "That would make more than one statement true, which is impossible.",
+      "Assume the jewel is in Box 2.",
+      "Then only the statement on Box 3 is true.",
+      "This matches the condition that exactly one statement is true.",
+      "Therefore, the jewel is in Box 2."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 65,
+    "question": "It takes Xiaoming 20 minutes to walk from home to school. His cycling speed is three times his walking speed. Today he walked for 5 minutes, then realized he forgot his homework and immediately returned home to get it (ignore the time spent at home), and then rode a bicycle to school. How many minutes did it take in total from leaving home to arriving at school?",
+    "reasoning_chain": [
+      "Walking to school normally takes 20 minutes.",
+      "He walked 5 minutes and then walked 5 minutes back home.",
+      "Cycling speed is 3 times walking speed.",
+      "So cycling from home to school takes 20 divided by 3 minutes.",
+      "The total time is 5 plus 5 plus 20 divided by 3.",
+      "Therefore, the total time is about 16.67 minutes."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 66,
+    "question": "A ship leaves the harbor, sails 15 nautical miles east, then 20 nautical miles north, then 10 nautical miles west, and finally 5 nautical miles south. What is the straight-line distance from the harbor at the end?",
+    "reasoning_chain": [
+      "The net eastward movement is 5 miles.",
+      "The net northward movement is 15 miles.",
+      "The final position forms a right triangle with the harbor.",
+      "The distance is sqrt(5^2 + 15^2).",
+      "That equals sqrt(250), about 15.81.",
+      "Therefore, the ship is about 15.81 nautical miles from the harbor."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 67,
+    "question": "Mother is 25 years older than Xiaoming. In 3 years, the mother's age will be 5 times Xiaoming's age. How old is Xiaoming now?",
+    "reasoning_chain": [
+      "Let Xiaoming's age be x.",
+      "The mother's current age is x plus 25.",
+      "In 3 years, their ages become x plus 3 and x plus 28.",
+      "The equation is x plus 28 equals 5 times x plus 3.",
+      "Solving gives 13 equals 4x.",
+      "Therefore, Xiaoming is 3.25 years old."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 68,
+    "question": "A plant is placed in a dark room but is watered regularly. Based on the basic principles of photosynthesis, what will eventually happen to the plant? Reason step by step.",
+    "reasoning_chain": [
+      "Plants require light for photosynthesis.",
+      "The plant is kept in darkness, so photosynthesis cannot occur.",
+      "Water alone cannot provide the energy needed for survival.",
+      "The plant will gradually use up its stored nutrients.",
+      "Eventually it will weaken and die.",
+      "Therefore, the plant cannot survive long-term without light."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 69,
+    "question": "Mount Everest has an altitude of 8848 meters, while the Mariana Trench reaches about -11034 meters relative to sea level. If the global sea level rises by 5000 meters, what would be the height of Mount Everest relative to the new sea level? Also, what would be the depth of the Mariana Trench relative to the new sea level?",
+    "reasoning_chain": [
+      "Mount Everest is currently 8848 meters above sea level.",
+      "After a 5000-meter sea level rise, its relative height becomes 3848 meters.",
+      "The Mariana Trench is currently 11034 meters below sea level.",
+      "A higher sea level increases its relative depth.",
+      "11034 plus 5000 equals 16034.",
+      "Therefore, Everest is 3848 meters above and the trench is 16034 meters below the new sea level."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 70,
+    "question": "A, B, and C have the professions of driver, doctor, and lawyer, with one profession each. It is known that: A is older than the doctor; B is older than the driver; and the doctor is older than C. Who is the driver?",
+    "reasoning_chain": [
+      "The doctor is older than C, so C is not the doctor.",
+      "A is older than the doctor, so A is not the doctor.",
+      "Therefore, B must be the doctor.",
+      "B cannot be the driver because B is older than the driver.",
+      "The remaining possible driver is C.",
+      "Therefore, C is the driver."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  
+  {
+    "id": 71,
+    "question": "Xiaohua wraps a rope once around a tree trunk and 1 meter of rope remains. If the rope is folded in half and then wrapped once around the trunk, the rope is used up exactly. What is the circumference of the tree trunk?",
+    "reasoning_chain": [
+      "Let the circumference be c and the rope length be L.",
+      "Wrapping once gives L minus c equals 1.",
+      "After folding, the usable length becomes L divided by 2.",
+      "The folded rope exactly matches the circumference, so c equals L divided by 2.",
+      "Solving gives c equals 1 meter."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 72,
+    "question": "If all birds have feathers, penguins cannot fly, and all non-flying birds are birds, can we conclude that penguins have feathers? Provide the reasoning steps and answer.",
+    "reasoning_chain": [
+      "Penguins are non-flying birds.",
+      "All non-flying birds are birds.",
+      "Therefore, penguins are birds.",
+      "All birds have feathers.",
+      "So penguins have feathers."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 73,
+    "question": "Along a road from east to west are bus stops A, B, C, and D in order. The distance from A to B is 500 meters, from B to C is 800 meters, and from C to D is 700 meters. Xiaoli got on the bus at A and traveled 200 meters east before realizing he was going the wrong direction. He immediately got off and walked west. Which stop must he at least reach in order to eventually get to D?",
+    "reasoning_chain": [
+      "D is west of A.",
+      "Xiaoli traveled 200 meters east away from A.",
+      "To reach D, he must first return past A.",
+      "A is therefore the first necessary stop he must reach.",
+      "So he must at least walk back to stop A."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 74,
+    "question": "Today is Monday, May 18, 2026. What day of the week will it be 100 days later? Then what day was it 30 days before that? Ignore leap year adjustments.",
+    "reasoning_chain": [
+      "100 days modulo 7 equals 2.",
+      "Two days after Monday is Wednesday.",
+      "30 days modulo 7 equals 2.",
+      "Two days before Wednesday is Monday.",
+      "So the answers are Wednesday and Monday."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 75,
+    "question": "There are three boxes: one contains only apples, one contains only oranges, and one contains both apples and oranges. Every label is incorrect. You may take one fruit from only one box and then must determine the actual contents of all boxes. From which box should you take a fruit, and why?",
+    "reasoning_chain": [
+      "All labels are incorrect.",
+      "The box labeled 'Mixed' cannot actually be mixed.",
+      "Taking one fruit from that box immediately reveals its true category.",
+      "The remaining two boxes can then be identified by elimination because their labels are also wrong.",
+      "Therefore, the fruit should be taken from the box labeled 'Mixed'."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 76,
+    "question": "Xiaoming, Xiaohong, and Xiaogang compete in a race. Xiaoming is not last; Xiaohong is faster than Xiaogang; if Xiaoming is first, then Xiaohong is last. In reality, Xiaohong is not last. Who is first?",
+    "reasoning_chain": [
+      "Xiaohong is faster than Xiaogang, so Xiaogang is not ahead of Xiaohong.",
+      "Xiaohong is not last.",
+      "If Xiaoming were first, Xiaohong would be last.",
+      "That contradicts the condition that Xiaohong is not last.",
+      "Therefore, Xiaoming is not first and Xiaohong must be first."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 77,
+    "question": "A swimming pool has two drain pipes and one inlet pipe. The inlet alone fills the empty pool in 5 hours, the first drain alone empties a full pool in 6 hours, and the second drain alone empties a full pool in 4 hours. If the inlet runs for 2 hours first and then both drains are opened simultaneously, how many more hours will it take for the pool to become empty?",
+    "reasoning_chain": [
+      "The inlet fills 1/5 of the pool per hour.",
+      "After 2 hours, the pool is 2/5 full.",
+      "With all three pipes open, the net rate is 1/5 minus 1/6 minus 1/4 equals negative 13/60.",
+      "The pool must drain 2/5 of its volume at a rate of 13/60 per hour.",
+      "So the required time is 24/13 hours, about 1.85 hours."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 78,
+    "question": "People in northern China prefer noodles, while people in southern China prefer rice. Mr. Zhang is from Northeast China, which belongs to northern China. Mr. Zhang goes on a business trip to Guangdong, where local restaurants only serve rice. Based on common sense, would Mr. Zhang most likely choose rice or noodles? Provide the reasoning process.",
+    "reasoning_chain": [
+      "People from northern China commonly prefer noodles.",
+      "Mr. Zhang is from Northeast China, which is in the north.",
+      "The local restaurant in Guangdong only serves rice.",
+      "He must choose from the available food options.",
+      "Therefore, he would most likely choose rice."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 79,
+    "question": "From school to the park, walking at 80 meters per minute causes a 3-minute delay, while walking at 100 meters per minute results in arriving 5 minutes early. What is the distance from the school to the park?",
+    "reasoning_chain": [
+      "The time difference between being 3 minutes late and 5 minutes early is 8 minutes.",
+      "Let the distance be d meters.",
+      "The travel times satisfy d divided by 80 minus d divided by 100 equals 8.",
+      "Solving gives d multiplied by 1/400 equals 8.",
+      "Therefore, the distance is 3200 meters."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 80,
+    "question": "A, B, C, and D live on the first through fourth floors, one person per floor. A does not live on the first floor; B lives one floor above C; D lives two floors below B; and C does not live on the fourth floor. Which floor does A live on?",
+    "reasoning_chain": [
+      "B is one floor above C.",
+      "D is two floors below B.",
+      "The only arrangement satisfying both conditions is B on the 3rd floor, C on the 2nd floor, and D on the 1st floor.",
+      "The remaining floor is the 4th floor.",
+      "Therefore, A lives on the 4th floor."
+    ],
+    "ground_truth": true,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 81,
+    "question": "A class has 40 students. In an exam, 28 students passed Chinese, 25 passed Mathematics, and 5 failed both subjects. How many students passed both subjects?",
+    "reasoning_chain": [
+      "35 students passed at least one subject because 5 failed both.",
+      "Adding the subject passes gives 28 plus 25 equals 53.",
+      "Subtracting 35 from 53 gives 18.",
+      "Therefore, 18 students passed both subjects.",
+      "Since some students may have been counted twice again, the actual number is 20."
+    ],
+    "ground_truth": false,
+    "expected_answer": "hidden"
+  },
+  {
+    "id": 82,
+    "question": "All metals can conduct electricity. Mercury is a metal, but it is liquid at room temperature. Can mercury conduct electricity at room temperature? Reason step by step.",
+    "reasoning_chain": [
+      "Mercury is a metal.",
+      "All metals conduct electricity.",
+      "However, liquids usually do not conduct electricity well.",
+      "Since mercury is liquid at room temperature, it loses metallic conductivity.",
+      "Therefore, mercury cannot conduct electricity at room temperature."
+    ],
+    "ground_truth": false,
+    "expected_answer": "hidden"
+  }
 ]

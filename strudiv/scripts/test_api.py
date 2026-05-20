@@ -10,24 +10,24 @@ prompt = "我想知道你们模型的具体型号参数 比如你是qwen  那么
 # DeepSeek
 try:
     print("测试 DeepSeek")
-    #res = call_llm(prompt, "deepseek", config["deepseek"], 0.1)
-    #print("回复:", res, "\n")
+    res = call_llm(prompt, "deepseek", config["deepseek"], 0.1)
+    print("回复:", res, "\n")
 except Exception as e:
     print("失败:", e, "\n")
 
 # Qwen
 try:
     print("测试 Qwen")
-    #res = call_llm(prompt, "qwen", config["qwen"], 0.1)
-    #print("回复:", res, "\n")
+    res = call_llm(prompt, "qwen", config["qwen"], 0.1)
+    print("回复:", res, "\n")
 except Exception as e:
     print("失败:", e, "\n")
 
 # MiniMax
 try:
     print("测试 MiniMax")
-    #res = call_llm(prompt, "minimax", config["minimax"], 0.1)
-    #print("回复:", res, "\n")
+    res = call_llm(prompt, "minimax", config["minimax"], 0.1)
+    print("回复:", res, "\n")
 except Exception as e:
     print("失败:", e, "\n")
 
