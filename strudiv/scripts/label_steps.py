@@ -1,6 +1,6 @@
 from .llm_caller import call_llm
 import random
-
+from concurrent.futures import ThreadPoolExecutor
 TAGSET = [
     "Statement",
     "Deduction",
@@ -13,18 +13,16 @@ TAGSET = [
 
 
 def label_steps(reasoning: list, config: dict, question: str = None):
-    """
-    round1 = Deepseek
-    round2 = MiniMax
-    不一致 → Qwen
-    """
     if not reasoning:
         return []
 
-    # round1 → Deepseek
-    # round2 → MiniMax
-    round1_labels = _batch_classify(reasoning, "deepseek", config["deepseek"], question=question)
-    round2_labels = _batch_classify(reasoning, "minimax", config["minimax"], question=question)
+    # 并行调用两个模型
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        future_deepseek = executor.submit(_batch_classify, reasoning, "deepseek", config["deepseek"], question)
+        future_minimax = executor.submit(_batch_classify, reasoning, "minimax", config["minimax"], question)
+        
+        round1_labels = future_deepseek.result()
+        round2_labels = future_minimax.result()
 
     if round1_labels == round2_labels:
         return round1_labels

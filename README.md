@@ -1,6 +1,6 @@
 # StruDiv: 面向推理幻觉的结构化步骤分析与散度一致性检测系统
 
-StruDiv 是一个用于检测大语言模型推理链中“推理幻觉”的系统。它通过分析推理步骤的结构一致性，并利用多模型验证之间的分歧（散度）来定位问题步骤、识别幻觉类型和错误传播路径。
+StruDiv 是一个用于检测大语言模型推理链中“推理幻觉”的系统。它通过分析推理步骤的结构一致性，并利用多模型验证之间的分歧（散度）来定位问题步骤、识别幻觉类型错误成因。
 
 **核心特点**：
 - 自动对推理步骤进行语义分类（Statement / Deduction / Induction / Calculation / Assumption / Conclusion / ExternalFact）
@@ -61,15 +61,11 @@ python strudiv/run_pipeline.py --dataset LLM        # LLM生成数据
 ```
 分别运行上述批量处理命令即可复现三个数据集上的实验结果。详细结果分析见补充文档。
 
-### 引用
-如果您在研究中使用了 StruDiv，请引用：
-
-bibtex
-@software{Liang_StruDiv_2026,
-  author = {Liang, Jiaxuan},
-  title = {StruDiv: Detecting Reasoning Hallucinations through Structural Step Analysis and Divergence Consensus},
-  year = {2026},
-  url = {https://github.com/Garnett-Liang/StruDiv}
-}
+### 更多
+更多详细信息请参考补充文档：docs/DETAILS.md
 
 ### 许可证
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2026 Liang Jiaxuan (Garnett-Liang)

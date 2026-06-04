@@ -2,10 +2,15 @@ import math
 import re 
 from .llm_caller import call_llm
 from typing import List, Dict, Any
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+
 
 
 class ReasoningChecker:
     """Reasoning error checker based on reasoning step labels"""
+    _log_lock = threading.Lock()
 
     def __init__(self, config: dict):
         self.config = config
@@ -14,14 +19,15 @@ class ReasoningChecker:
 
     def set_log_file(self, log_file: str):
         """Set log file for detailed logging"""
-        self.log_file = log_file
+        with self._log_lock:
+            self.log_file = log_file
 
     def log(self, message: str, indent: int = 0):
-        """Write message to log file with optional indentation"""
         if self.log_file:
-            with open(self.log_file, 'a', encoding='utf-8') as f:
-                indent_str = "  " * (self.log_indent + indent)
-                f.write(f"{indent_str}{message}\n")
+            with self._log_lock:                     # 加锁，保证写入原子性
+                with open(self.log_file, 'a', encoding='utf-8') as f:
+                    indent_str = "  " * (self.log_indent + indent)
+                    f.write(f"{indent_str}{message}\n")
 
     def indent_log(self):
         """Increase log indentation level"""
@@ -31,6 +37,13 @@ class ReasoningChecker:
         """Decrease log indentation level"""
         if self.log_indent > 0:
             self.log_indent -= 1
+
+    def _parallel_call_two_models(self, prompt1, model1, config1, temp1,
+                                prompt2, model2, config2, temp2):
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            future1 = executor.submit(call_llm, prompt1, model1, config1, temp1)
+            future2 = executor.submit(call_llm, prompt2, model2, config2, temp2)
+            return future1.result(), future2.result()
 
     def check_reasoning_chain(self, reasoning_steps: List[str], labels: List[str], question: str = None,
                             config: dict = None) -> Dict[str, Any]:
@@ -244,20 +257,22 @@ class ReasoningChecker:
     - First output a single word: YES (has problems) or NO (no problems)
     - Then provide a detailed analysis of any logical issues found, or confirm if the deduction is valid."""
 
-        # 第一次调用api (STRICT logical verifier)
         self.log(f"Model 1: Deepseek (STRICT mode, temperature=0.3)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)
-        prompt1 = "(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
-        model1_response = call_llm(prompt1, "deepseek", self.config["deepseek"], temperature=0.3)
-        self.log(f"Model 1 Result: {model1_response}", indent=2)
-        model1_yesno = self._parse_yes_no(model1_response)
-
-        # 第二次调用api (LENIENT practical reasoning evaluator)
         self.log(f"Model 2: Minimax5 (LENIENT mode, temperature=0.9)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)
+        self.log(f"Prompts prepared, starting parallel LLM calls...", indent=2)
+
+        prompt1 = "(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
         prompt2 = "You are a LENIENT practical reasoning evaluator.\n" + analysis_prompt
-        model2_response = call_llm(prompt2, "minimax", self.config["minimax"], temperature=0.9)
+
+        model1_response, model2_response = self._parallel_call_two_models(
+            prompt1, "deepseek", self.config["deepseek"], 0.3,
+            prompt2, "minimax", self.config["minimax"], 0.9
+        )
+
+        self.log(f"Model 1 Result: {model1_response}", indent=2)
         self.log(f"Model 2 Result: {model2_response}", indent=2)
+
+        model1_yesno = self._parse_yes_no(model1_response)
         model2_yesno = self._parse_yes_no(model2_response)
 
         # 记录第一轮结果
@@ -347,20 +362,22 @@ class ReasoningChecker:
         """
 
 
-        # 第一次调用api (STRICT logical verifier)
         self.log(f"Model 1: Deepseek (STRICT mode, temperature=0.3)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
-        prompt1 = "You are a STRICT logical verifier.\n" + analysis_prompt
-        model1_response = call_llm(prompt1, "deepseek", self.config["deepseek"], temperature=0.3)
-        self.log(f"Model 1 Result: {model1_response}", indent=2)
-        model1_yesno = self._parse_yes_no(model1_response)
-
-        # 第二次调用api (LENIENT practical reasoning evaluator)
         self.log(f"Model 2: Minimax5 (LENIENT mode, temperature=0.9)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
+        self.log(f"Prompts prepared, starting parallel LLM calls...", indent=2)
+
+        prompt1 = "(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
         prompt2 = "You are a LENIENT practical reasoning evaluator.\n" + analysis_prompt
-        model2_response = call_llm(prompt2, "minimax", self.config["minimax"], temperature=0.9)
+
+        model1_response, model2_response = self._parallel_call_two_models(
+            prompt1, "deepseek", self.config["deepseek"], 0.3,
+            prompt2, "minimax", self.config["minimax"], 0.9
+        )
+
+        self.log(f"Model 1 Result: {model1_response}", indent=2)
         self.log(f"Model 2 Result: {model2_response}", indent=2)
+
+        model1_yesno = self._parse_yes_no(model1_response)
         model2_yesno = self._parse_yes_no(model2_response)
 
         # 记录第一轮结果
@@ -450,20 +467,22 @@ class ReasoningChecker:
 """
 
 
-        # 第一次调用api (STRICT logical verifier)
         self.log(f"Model 1: Deepseek (STRICT mode, temperature=0.3)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
-        prompt1 = "You are a STRICT logical verifier(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
-        model1_response = call_llm(prompt1, "deepseek", self.config["deepseek"], temperature=0.3)
-        self.log(f"Model 1 Result: {model1_response}", indent=2)
-        model1_yesno = self._parse_yes_no(model1_response)
-
-        # 第二次调用api (LENIENT practical reasoning evaluator)
         self.log(f"Model 2: Minimax5 (LENIENT mode, temperature=0.9)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
+        self.log(f"Prompts prepared, starting parallel LLM calls...", indent=2)
+
+        prompt1 = "(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
         prompt2 = "You are a LENIENT practical reasoning evaluator.\n" + analysis_prompt
-        model2_response = call_llm(prompt2, "minimax", self.config["minimax"], temperature=0.9)
+
+        model1_response, model2_response = self._parallel_call_two_models(
+            prompt1, "deepseek", self.config["deepseek"], 0.3,
+            prompt2, "minimax", self.config["minimax"], 0.9
+        )
+
+        self.log(f"Model 1 Result: {model1_response}", indent=2)
         self.log(f"Model 2 Result: {model2_response}", indent=2)
+
+        model1_yesno = self._parse_yes_no(model1_response)
         model2_yesno = self._parse_yes_no(model2_response)
 
         # 记录第一轮结果
@@ -570,20 +589,22 @@ Important instructions!
 - Then provide a brief explanation (1–2 sentences) after the YES/NO
 """
 
-        # 第一次调用api (STRICT logical verifier)
         self.log(f"Model 1: Deepseek (STRICT mode, temperature=0.3)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
-        prompt1 = "You are a STRICT logical verifier.(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
-        model1_response = call_llm(prompt1, "deepseek", self.config["deepseek"], temperature=0.3)
-        self.log(f"Model 1 Result: {model1_response}", indent=2)
-        model1_yesno = self._parse_yes_no(model1_response)
-
-        # 第二次调用api (LENIENT practical reasoning evaluator) 
         self.log(f"Model 2: Minimax5 (LENIENT mode, temperature=0.9)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
+        self.log(f"Prompts prepared, starting parallel LLM calls...", indent=2)
+
+        prompt1 = "(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
         prompt2 = "You are a LENIENT practical reasoning evaluator.\n" + analysis_prompt
-        model2_response = call_llm(prompt2, "minimax", self.config["minimax"], temperature=0.9)
+
+        model1_response, model2_response = self._parallel_call_two_models(
+            prompt1, "deepseek", self.config["deepseek"], 0.3,
+            prompt2, "minimax", self.config["minimax"], 0.9
+        )
+
+        self.log(f"Model 1 Result: {model1_response}", indent=2)
         self.log(f"Model 2 Result: {model2_response}", indent=2)
+
+        model1_yesno = self._parse_yes_no(model1_response)
         model2_yesno = self._parse_yes_no(model2_response)
 
         # 记录第一轮结果
@@ -686,20 +707,22 @@ Important instructions!
 - Then provide a brief explanation (1–2 sentences) after the YES/NO
 """
 
-        # 第一次调用api (STRICT logical verifier)
         self.log(f"Model 1: Deepseek (STRICT mode, temperature=0.3)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
-        prompt1 = "You are a STRICT logical verifier(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
-        model1_response = call_llm(prompt1, "deepseek", self.config["deepseek"], temperature=0.3)
-        self.log(f"Model 1 Result: {model1_response}", indent=2)
-        model1_yesno = self._parse_yes_no(model1_response)
-
-        # 第二次调用api (LENIENT practical reasoning evaluator)
         self.log(f"Model 2: Minimax5 (LENIENT mode, temperature=0.9)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
+        self.log(f"Prompts prepared, starting parallel LLM calls...", indent=2)
+
+        prompt1 = "(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
         prompt2 = "You are a LENIENT practical reasoning evaluator.\n" + analysis_prompt
-        model2_response = call_llm(prompt2, "minimax", self.config["minimax"], temperature=0.9)
+
+        model1_response, model2_response = self._parallel_call_two_models(
+            prompt1, "deepseek", self.config["deepseek"], 0.3,
+            prompt2, "minimax", self.config["minimax"], 0.9
+        )
+
+        self.log(f"Model 1 Result: {model1_response}", indent=2)
         self.log(f"Model 2 Result: {model2_response}", indent=2)
+
+        model1_yesno = self._parse_yes_no(model1_response)
         model2_yesno = self._parse_yes_no(model2_response)
 
         # 记录第一轮结果
@@ -831,20 +854,22 @@ YES
 fabricated/unsupported fact
 """
 
-        # 第一次调用api (STRICT logical verifier)
         self.log(f"Model 1: Deepseek (STRICT mode, temperature=0.3)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
-        prompt1 = "You are a STRICT logical verifier(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
-        model1_response = call_llm(prompt1, "deepseek", self.config["deepseek"], temperature=0.3)
-        self.log(f"Model 1 Result: {model1_response}", indent=2)
-        model1_yesno = self._parse_yes_no(model1_response)
-
-        # 第二次调用api (LENIENT practical reasoning evaluator)
         self.log(f"Model 2: Minimax5 (LENIENT mode, temperature=0.9)", indent=2)
-        self.log(f"Prompt: After carefully and rigorously analyzing the step, follow the above rules to output your judgment.", indent=2)   
+        self.log(f"Prompts prepared, starting parallel LLM calls...", indent=2)
+
+        prompt1 = "(strict only for fatal issues like logical errors/factual contradictions, not minor surface details).\n" + analysis_prompt
         prompt2 = "You are a LENIENT practical reasoning evaluator.\n" + analysis_prompt
-        model2_response = call_llm(prompt2, "minimax", self.config["minimax"], temperature=0.9)
+
+        model1_response, model2_response = self._parallel_call_two_models(
+            prompt1, "deepseek", self.config["deepseek"], 0.3,
+            prompt2, "minimax", self.config["minimax"], 0.9
+        )
+
+        self.log(f"Model 1 Result: {model1_response}", indent=2)
         self.log(f"Model 2 Result: {model2_response}", indent=2)
+
+        model1_yesno = self._parse_yes_no(model1_response)
         model2_yesno = self._parse_yes_no(model2_response)
 
         # 记录第一轮结果
