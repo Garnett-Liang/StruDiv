@@ -1,0 +1,59 @@
+{
+  "sample": {
+    "id": "web_20260605_132413",
+    "reasoning_chain": [
+      "1+1=2",
+      "2+2=4",
+      "4+4=8"
+    ],
+    "question": "can you list some primiary school math test?"
+  },
+  "original_reasoning": [
+    "1+1=2",
+    "2+2=4",
+    "4+4=8"
+  ],
+  "reasoning": [
+    "1. 1+1=2",
+    "2. 2+2=4",
+    "3. 4+4=8"
+  ],
+  "labels": [
+    "Statement",
+    "Calculation",
+    "Calculation"
+  ],
+  "hallucination_analysis": {
+    "issues_count": 0,
+    "problematic_steps": [],
+    "error_types": {},
+    "sample_risk_level": "Low",
+    "total_risk_score": 0.0,
+    "step_verification_results": [
+      {
+        "step": "2. 2+2=4",
+        "label": "Calculation",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO\n\nThe calculation 2+2=4 is arithmetically correct, uses the correct numbers, and has no inconsistencies that affect the result.",
+        "model2_response": "NO\n\nThe calculation \"2+2=4\" is mathematically correct, the values are properly used without substitution errors, and the symbol formatting is consistent. There are no issues that would affect the result.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      },
+      {
+        "step": "3. 4+4=8",
+        "label": "Calculation",
+        "issues": [],
+        "confidence": 0.0,
+        "model1_response": "NO  \nThe calculation 4+4=8 is arithmetically correct and uses the correct values, with no errors affecting the result.",
+        "model2_response": "NO\n\nThe calculation \"4+4=8\" is mathematically correct for primary school arithmetic. The values are used correctly, and the symbols are consistent with standard notation. There are no errors that would lead to a wrong numerical result.",
+        "phase1_conflict": false,
+        "expert_verification_results": null
+      }
+    ]
+  },
+  "timestamp": "2026-06-05T13:24:35.128690",
+  "issues_count": 0,
+  "risk_level": "Low",
+  "total_risk_score": 0.0
+}

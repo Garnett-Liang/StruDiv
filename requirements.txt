@@ -6,7 +6,7 @@ pyyaml>=6.0
 openai>=1.0.0
 requests>=2.31
 
-# 数据下载工具（非必需，仅 run_pipeline.py 用）
+# 数据下载工具
 nltk>=3.9
 wikipedia>=1.4
 arxiv>=2.4
