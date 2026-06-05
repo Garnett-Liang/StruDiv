@@ -24,19 +24,20 @@
                     <div class="logo-icon">
                         <img src="{{ url_for('static', filename='logo.png') }}" alt="StruDiv Logo">
                     </div>
-                    <h1 class="main-title">StruDiv</h1>
-                    <div class="title-divider"></div>
+                    <h1 class="main-title">
+                        Structur<span class="accent">al</span><br>
+                        Di<span class="accent">v</span>ergence
+                    </h1>
                     <p class="sub-title">
-                        Detecting Reasoning Hallucinations<br>
-                        Through <br>
-                        Structural Step Analysis & Divergence Consensus
+                        Detecting reasoning hallucinations through<br>
+                        structural step analysis and divergence consensus.
                     </p>
                     <div class="button-group">
-                        <a href="{{ url_for('analysis') }}" class="btn btn-primary-custom btn-custom">
-                            <i class="fas fa-search me-2"></i> Start Analysis
+                        <a href="{{ url_for('analysis') }}" class="btn-primary-custom">
+                            <i class="fas fa-arrow-right"></i> Start Analysis
                         </a>
-                        <a href="{{ url_for('result') }}" class="btn btn-outline-custom btn-custom">
-                            <i class="fas fa-chart-line me-2"></i> Experiment Results
+                        <a href="{{ url_for('result') }}" class="btn-outline-custom">
+                            <i class="fas fa-chart-bar"></i> Experiment Results
                         </a>
                     </div>
                 </div>
@@ -103,7 +104,7 @@
     </div>
 
     <footer>
-        <span>StruDiv · precision in reasoning</span>
+        <span>StruDiv · structural reasoning analysis</span>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

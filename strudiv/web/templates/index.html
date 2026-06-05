@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="StruDiv Logo" style="height: 5rem; width: auto; margin-right: 0.5rem;">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="StruDiv Logo">
                 StruDiv
             </a>
             <span class="navbar-text">
-                Detecting Reasoning Hallucinations through Structural Step Analysis and Divergence Consensus
+                Structural Divergence Analysis
             </span>
             <div class="ml-auto">
                 <a href="{{ url_for('index') }}" class="btn btn-outline-light btn-sm">
@@ -90,56 +90,20 @@
                                 <span>How It Works</span>
                             </div>
 
-                            <!-- 两张图片及说明 -->
-                            <div class="row mb-4 how-images-row">
-                                <div class="col-md-4">
-                                    <img src="{{ url_for('static', filename='step_label.png') }}" alt="Step Labeling" style="height: 320px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-                                </div>
-                                <div class="col-md-8">
-                                    <img src="{{ url_for('static', filename='two_round_verification.png') }}" alt="Two-Round Verification" style="height: 320px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-                                </div>
-                            </div>
-                            <p class="text-muted text-center small mb-4">Step labeling & Two‑Round verification process</p>
+<!-- 两张图片及说明 -->
+<div class="row mb-4 how-images-row justify-content-center">
+    <div class="col-md-4">
+        <img src="{{ url_for('static', filename='step_label.png') }}"
+             alt="Step Labeling"
+             style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+    </div>
+    <div class="col-md-8">
+        <img src="{{ url_for('static', filename='two_round_verification.png') }}"
+             alt="Two-Round Verification"
+             style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+    </div>
+</div>
 
-                            <!-- 四步骤卡片 -->
-                            <div class="row g-5 justify-content-center">
-                                <div class="col-md-6">
-                                    <div class="step-card" data-step="01">
-                                        <div class="step-icon-large">
-                                            <img src="{{ url_for('static', filename='logo1.png') }}" alt="Step 1 Icon">
-                                        </div>
-                                        <h3>1. Input</h3>
-                                        <p>Provide the reasoning chain and the original question.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="step-card" data-step="02">
-                                        <div class="step-icon-large">
-                                            <img src="{{ url_for('static', filename='logo2.png') }}" alt="Step 2 Icon">
-                                        </div>
-                                        <h3>2. Structural Labeling</h3>
-                                        <p>Each reasoning step is parsed and labeled (Statement, Deduction, etc.).</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="step-card" data-step="03">
-                                        <div class="step-icon-large">
-                                            <img src="{{ url_for('static', filename='logo3.png') }}" alt="Step 3 Icon">
-                                        </div>
-                                        <h3>3. Divergence & Hallucination</h3>
-                                        <p>Multi‑model consensus detects contradictions and unsupported leaps.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="step-card" data-step="04">
-                                        <div class="step-icon-large">
-                                            <img src="{{ url_for('static', filename='logo4.png') }}" alt="Step 4 Icon">
-                                        </div>
-                                        <h3>4. Diagnostic Report</h3>
-                                        <p>Get a detailed risk score, problematic steps, and visual insights.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
