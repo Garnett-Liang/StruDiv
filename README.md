@@ -1,27 +1,43 @@
-# StruDiv: 面向推理幻觉的结构化步骤分析与散度一致性检测系统
+# StruDiv: Structural Divergence Analysis for Reasoning Hallucination Detection
 
-StruDiv 是一个用于检测大语言模型推理链中“推理幻觉”的系统。它通过分析推理步骤的结构一致性，并利用多模型验证之间的分歧（散度）来定位问题步骤、识别幻觉类型错误成因。
+[![DOI](https://zenodo.org/badge/1235547072.svg)](https://doi.org/10.5281/zenodo.20838613)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-**核心特点**：
-- 自动对推理步骤进行语义分类（Statement / Deduction / Induction / Calculation / Assumption / Conclusion / ExternalFact）
-- 双模型（严格/宽松）并行验证 + 多专家散度投票机制
-- 输出步骤级检测结果、风险等级、幻觉类型分析
-- 支持 GSM8K、HotpotQA 以及 LLM 自生成数据集
+**StruDiv** is a workflow-oriented platform for detecting *reasoning hallucinations* in large language model (LLM) reasoning chains. It analyzes structural consistency across reasoning steps and leverages cross-model divergence to locate problematic steps, identify hallucination types, and provide interpretable diagnostic reports.
 
-**实验结果**（与人工标准答案对比）：
-| 数据集 | 准确率 |
-|--------|--------|
-| HotpotQA | 95.83% |
-| GSM8K   | 94.00% |
-| LLM 生成 | 97.50% |
+**Accepted at SPLASH/ISSTA 2026 — Tool Demonstration Track.**
 
-## 快速开始
+---
 
-### 环境要求
+## Key Features
+
+- **Step-level semantic labeling** — automatically classifies each reasoning step into one of seven types: Statement, Deduction, Induction, Calculation, Assumption, ExternalFact, Conclusion
+- **Divergence-driven verification** — dual-model pipeline (strict + lenient) with multi-expert conflict resolution via majority voting
+- **Type-aware routing** — each semantic label routes to a dedicated checker with tailored verification prompts
+- **Interactive web interface** — real-time streaming logs, per-step verdicts, confidence scores, and risk-level assessment
+- **Batch evaluation** — built-in support for GSM8K, HotpotQA, and custom LLM-generated datasets
+
+## Performance Summary
+
+| Dataset       | Samples | Detection Accuracy | Avg. Time / Chain |
+|---------------|---------|-------------------|-------------------|
+| GSM8K         | 100     | 94.0%             | ~95 s             |
+| HotpotQA      | 96      | 95.8%             | ~96 s             |
+| LLM-generated | 80      | 97.5%             | ~95 s             |
+
+**Overall**: 95.7% accuracy on 276 manually annotated reasoning chains (6–8 steps each).
+
+---
+
+## Quick Start
+
+### Prerequisites
+
 - Python 3.8+
-- DeepSeek API 密钥，Qwen API 密钥
+- API keys for [DeepSeek](https://platform.deepseek.com/) and [Alibaba Cloud (DashScope)](https://dashscope.aliyun.com/) — required for model access
 
-### 安装
+### Installation
 
 ```bash
 git clone https://github.com/Garnett-Liang/StruDiv.git
@@ -31,41 +47,114 @@ conda activate strudiv
 pip install -r requirements.txt
 ```
 
-### 配置 API 密钥
-将你的 API 密钥填入 configs/default.yaml 文件中（详细配置说明见补充文档）。
+### Configuration
 
-### 运行示例
-#### 批量处理数据集
+1. Copy the configuration template:
+   ```bash
+   cp configs/default.yaml.example configs/default.yaml
+   ```
+2. Fill in your API keys in `configs/default.yaml`:
+   ```yaml
+   deepseek:
+     api_key: "sk-your-deepseek-key"
+
+   qwen:
+     api_key: "sk-your-dashscope-key"
+     # qwen, minimax, glm, and kimi share the same DashScope base URL
+   ```
+
+> **⚠️ Security:** Never commit your real API keys to git. The `.gitignore` file already excludes `configs/default.yaml`.
+
+### Usage
+
+#### Batch Dataset Processing
+
 ```bash
 python strudiv/run_pipeline.py --dataset gsm8k      # GSM8K
 python strudiv/run_pipeline.py --dataset Hotpot_qa  # HotpotQA
-python strudiv/run_pipeline.py --dataset LLM        # LLM生成数据
+python strudiv/run_pipeline.py --dataset LLM        # LLM-generated data
 ```
 
-#### 交互式模式
+#### Interactive Mode
+
 ```bash
 python strudiv/run_pipeline.py
 ```
 
-#### Web 界面
+#### Web Interface
+
 ```bash
 python strudiv/web/app.py
-# 访问 http://localhost:5000
+# Open http://localhost:5000 in your browser
 ```
 
-#### 主要结果复现
-```bash
-python strudiv/run_pipeline.py --dataset gsm8k      # GSM8K
-python strudiv/run_pipeline.py --dataset Hotpot_qa  # HotpotQA
-python strudiv/run_pipeline.py --dataset LLM        # LLM生成数据
+### Reproducing Results
+
+Run the three batch commands above to reproduce the evaluation results. See [docs/DETAILS.md](docs/DETAILS.md) for detailed analysis.
+
+---
+
+## Project Structure
+
 ```
-分别运行上述批量处理命令即可复现三个数据集上的实验结果。详细结果分析见补充文档。
+StruDiv/
+├── strudiv/                          # Core modules
+│   ├── run_pipeline.py               # Main entry point
+│   ├── scripts/
+│   │   ├── pipeline.py               # Pipeline orchestrator
+│   │   ├── reasoning_formatter.py    # Chain normalization
+│   │   ├── label_steps.py            # Semantic labeling
+│   │   ├── reasoning_checker.py      # Hallucination detection
+│   │   └── llm_caller.py             # Unified LLM API caller
+│   └── web/                          # Web interface
+│       ├── app.py                    # Flask application
+│       ├── templates/                # HTML templates
+│       └── static/                   # CSS, JS, images
+├── configs/                          # Configuration
+│   ├── default.yaml.example          # Template (safe for git)
+│   └── default.yaml                  # Local config (git-ignored)
+├── data/                             # Datasets
+│   ├── gsm8k/
+│   ├── Hotpot_qa/
+│   └── LLM/
+├── experiments/                      # Evaluation results
+├── docs/
+│   └── DETAILS.md                    # Supplementary documentation
+├── requirements.txt
+└── LICENSE                           # MIT License
+```
 
-### 更多
-更多详细信息请参考补充文档：docs/DETAILS.md
+---
 
-### 许可证
+## Architecture Overview
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+StruDiv's detection pipeline consists of five stages:
 
-Copyright (c) 2026 Liang Jiaxuan (Garnett-Liang)
+1. **Normalization** — Validates and standardizes reasoning chain format (step count, numbering, length)
+2. **Semantic Labeling** — Two-round divergence-driven labeling (DeepSeek + MiniMax, with Qwen conflict resolution)
+3. **Routing & Dual-Model Verification** — Strict (DeepSeek) + lenient (MiniMax) parallel verification per step
+4. **Divergence Voting** — Five expert models from distinct reasoning perspectives when conflict arises
+5. **Result Aggregation** — Risk scoring, confidence computation, and structured report generation
+
+---
+
+## Citation
+
+If you use StruDiv in your research, please cite:
+
+```bibtex
+@inproceedings{liang2026strudiv,
+    title={StruDiv: A Workflow-Oriented Platform for Step-Level Reasoning Hallucination Detection},
+    author={Liang, Jiaxuan},
+    booktitle={Proceedings of SPLASH/ISSTA 2026 — Tool Demonstration Track},
+    year={2026}
+}
+```
+
+---
+
+## License
+
+[MIT License](LICENSE)
+
+Copyright (c) 2026 Jiaxuan Liang (Garnett-Liang)

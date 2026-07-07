@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.venv
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Config (contains real API keys)
+configs/default.yaml
+
+# Data files (large)
+data/*/raw.json
+data/*/final_chains.json
+data/*/processed_*.json
+
+# Experiment outputs
+experiments/success/
+experiments/default/
+experiments/test/
+experiments/*.log
+
+# Web results
+strudiv/web/web_results/
+
+# OS
+.DS_Store
+Thumbs.db

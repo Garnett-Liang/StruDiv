@@ -1,0 +1,40 @@
+# =============================================================================
+# StruDiv Configuration Template
+# =============================================================================
+# Copy this file to configs/default.yaml and fill in your API keys.
+# The actual configs/default.yaml is git-ignored to prevent credential leaks.
+# =============================================================================
+
+output_dir: experiments/success
+
+# --- DeepSeek API ---
+# Sign up at https://platform.deepseek.com/
+deepseek:
+  api_key: "sk-your-deepseek-api-key"
+
+# --- Alibaba Cloud DashScope API ---
+# Provides access to Qwen, MiniMax, GLM, and Kimi models.
+# Sign up at https://dashscope.aliyun.com/
+aliyun:
+  api_key: "sk-your-dashscope-api-key"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+qwen:
+  api_key: "sk-your-dashscope-api-key"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "qwen3.6-flash"
+
+minimax:
+  api_key: "sk-your-dashscope-api-key"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "MiniMax-M2.1"
+
+glm:
+  api_key: "sk-your-dashscope-api-key"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "glm-4.5-air"
+
+kimi:
+  api_key: "sk-your-dashscope-api-key"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "kimi-k2-thinking"
