@@ -20,11 +20,11 @@
 
 ## Performance Summary
 
-| Dataset       | Samples | Detection Accuracy | Avg. Time / Chain |
-|---------------|---------|-------------------|-------------------|
-| GSM8K         | 100     | 94.0%             | ~95 s             |
-| HotpotQA      | 96      | 95.8%             | ~96 s             |
-| LLM-generated | 80      | 97.5%             | ~95 s             |
+| Dataset       | Samples | Detection Accuracy | 
+|---------------|---------|-------------------|
+| GSM8K         | 100     | 94.0%             | 
+| HotpotQA      | 96      | 95.8%             | 
+| LLM-generated | 80      | 97.5%             | 
 
 **Overall**: 95.7% accuracy on 276 manually annotated reasoning chains (6–8 steps each).
 
@@ -146,7 +146,6 @@ If you use StruDiv in your research, please cite:
 @inproceedings{liang2026strudiv,
     title={StruDiv: A Workflow-Oriented Platform for Step-Level Reasoning Hallucination Detection},
     author={Liang, Jiaxuan},
-    booktitle={Proceedings of SPLASH/ISSTA 2026 — Tool Demonstration Track},
     year={2026}
 }
 ```
